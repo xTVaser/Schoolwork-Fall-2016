@@ -1,0 +1,250 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-11 19:36:39.33419 UTC
+
+interface encry_GhOzz4XK2170QtKajfnlYr:Lib 7103
+  interface hash: ce3edc3efc52ce84796ea0ab9fa39622
+  ABI hash: 8404f3efcf59c38e69e6efb6def7fcbf
+  export-list hash: f4a5dcd857bac733d5ddf3191aae8b01
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.aesEncrypt
+  Lib.bEncrypt
+  Lib.desEncrypt
+  Lib.md5Encrypt
+  Lib.menuOptions
+  Lib.printOption
+  Lib.rsaEncrypt
+  Lib.validSelection
+module dependencies:
+package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+48fe8318029b22b63abdba482d67c6d4
+  aesEncrypt :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ iStr :: GHC.Base.String -> Lib.aesEncrypt1) -}
+0659798c041ac5f6632a4405791384f2
+  aesEncrypt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "AES"#) -}
+97cfa54adea9f77daf9ea641507e1e7d
+  bEncrypt :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ iStr :: GHC.Base.String -> Lib.bEncrypt1) -}
+d9c4891251f5c7f60eb71164a890e4a1
+  bEncrypt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "BCrypt"#) -}
+8c3ec23e7a6246b7f78a375f79803639
+  desEncrypt :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ iStr :: GHC.Base.String -> Lib.desEncrypt1) -}
+26f1b836592d9943ed59b95149acd736
+  desEncrypt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "DES"#) -}
+ce8cc11a1418e30f1994cca80993820b
+  md5Encrypt :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ iStr :: GHC.Base.String -> Lib.md5Encrypt1) -}
+c25ef59ce1cc0846d21bc64b6c2b8ab9
+  md5Encrypt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "MD5"#) -}
+b81987f72e750dfeec64be72deb12caa
+  menuOptions ::
+    GHC.Base.String
+    -> [(GHC.Types.Int, (GHC.Base.String, GHC.Base.String))]
+  {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, True)
+                (\ w :: GHC.Base.String -> Lib.menuOptions1) -}
+0cf1588c8b9a25e04a68d558fdb1b924
+  menuOptions1 ::
+    [(GHC.Types.Int, (GHC.Base.String, GHC.Base.String))]
+  {- Unfolding: (GHC.List.zip
+                   @ GHC.Types.Int
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions18
+                   Lib.menuOptions2) -}
+c49d7e724cc313eb1fb1e5385d9f1f26
+  menuOptions10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "DES Encryption"#) -}
+86079fbdea84dca77c00d52b8de32325
+  menuOptions11 :: ([GHC.Types.Char], GHC.Base.String)
+  {- Unfolding: ((Lib.menuOptions12, Lib.bEncrypt1)) -}
+7445f81eb63984b50aa0693ccad811da
+  menuOptions12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bcrypt"#) -}
+d5a5bc38ea428c1c1d9f8c961e5858d9
+  menuOptions13 :: ([GHC.Types.Char], GHC.Base.String)
+  {- Unfolding: ((Lib.menuOptions15, Lib.menuOptions14)) -}
+fa016710c623a1a2eb0e5335fb1cc160
+  menuOptions14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "RSA"#) -}
+be07a09968ace950a755b642957ca1c6
+  menuOptions15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "RSA Encryption"#) -}
+15078a0ef02e3a80782fcb2f10ba5ffc
+  menuOptions16 :: ([GHC.Types.Char], GHC.Base.String)
+  {- Unfolding: ((Lib.menuOptions17, Lib.aesEncrypt1)) -}
+1ef65f15d872ed43f827bdc8fa04dd94
+  menuOptions17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "AES Encryption"#) -}
+1caad25e59924d49769c074767461e23
+  menuOptions18 :: [GHC.Types.Int]
+  {- Unfolding: (GHC.Enum.eftInt 1 9223372036854775807) -}
+e45812e26dcf5ae83a9045224e29c350
+  menuOptions2 :: [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions16
+                   Lib.menuOptions3) -}
+f8925014821f7e7f60d1575582924435
+  menuOptions3 :: [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions13
+                   Lib.menuOptions4) -}
+2633f193a698826fa9df7012feff1541
+  menuOptions4 :: [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions11
+                   Lib.menuOptions5) -}
+3b71e7c811b8852d04dca59aaa2cd6f1
+  menuOptions5 :: [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions9
+                   Lib.menuOptions6) -}
+ca9a195a8568784f5fdce7f354624fac
+  menuOptions6 :: [(GHC.Base.String, GHC.Base.String)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Base.String)
+                   Lib.menuOptions7
+                   (GHC.Types.[] @ (GHC.Base.String, GHC.Base.String))) -}
+218488dae920827d6cac39bb3f254080
+  menuOptions7 :: ([GHC.Types.Char], GHC.Base.String)
+  {- Unfolding: ((Lib.menuOptions8, Lib.md5Encrypt1)) -}
+d21bdcc3637cdf94955d7f215676cbb5
+  menuOptions8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "MD5 Encryption"#) -}
+a578b0066833a683ff76f3d8f3aaf6f2
+  menuOptions9 :: ([GHC.Types.Char], GHC.Base.String)
+  {- Unfolding: ((Lib.menuOptions10, Lib.desEncrypt1)) -}
+a1977240182c2ea5f31c4b2a57731fdf
+  printOption :: GHC.Types.Int -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,1*U(U)><L,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.printOption1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+597605c77c044b91d9e9098957aed91e
+  printOption1 ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,1*U(U)><L,1*U><L,U>,
+     Unfolding: (\ n :: GHC.Types.Int
+                   oStr :: GHC.Base.String
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Original String: "#
+                           (GHC.Base.++ @ GHC.Types.Char oStr Lib.printOption2))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (case n of wild { GHC.Types.I# x ->
+                    case GHC.List.$w!!
+                           @ (GHC.Types.Int, (GHC.Base.String, GHC.Base.String))
+                           Lib.menuOptions1
+                           (GHC.Prim.-# x 1) of wild1 { (,) ds2 y ->
+                    case y of wild2 { (,) x1 ds3 ->
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      x1
+                      (GHC.CString.unpackAppendCString#
+                         ": "#
+                         (GHC.Base.++ @ GHC.Types.Char ds3 Lib.printOption2)) } } })
+                   GHC.Types.True
+                   ipv }) -}
+a90f57604ddb2f26241bbeaa89aaea27
+  printOption2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+3377a10246237b5940b0e194b2b5249f
+  rsaEncrypt :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ iStr :: GHC.Base.String -> Lib.menuOptions14) -}
+edebbe1bc4b9aae7dac4cac668de08a9
+  validSelection :: GHC.Base.String -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ str :: GHC.Base.String ->
+                 case Text.ParserCombinators.ReadP.run
+                        @ GHC.Types.Int
+                        Lib.validSelection2
+                        str of wild {
+                   [] -> GHC.Base.Nothing @ GHC.Types.Int
+                   : ds ds1
+                   -> case ds of wild1 { (,) n ds2 ->
+                      case n of wild2 { GHC.Types.I# x ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# x 1) of wild3 {
+                        GHC.Types.False
+                        -> case Lib.validSelection1 of wild4 { GHC.Types.I# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.># x y) of wild5 {
+                             GHC.Types.False -> GHC.Base.Just @ GHC.Types.Int wild2
+                             GHC.Types.True -> GHC.Base.Nothing @ GHC.Types.Int } }
+                        GHC.Types.True -> GHC.Base.Nothing @ GHC.Types.Int } } } }) -}
+c65408d4a24fd0649b1d8837de4f5245
+  validSelection1 :: GHC.Types.Int
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ (GHC.Types.Int, (GHC.Base.String, GHC.Base.String))
+                        Lib.menuOptions1
+                        0 of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 }) -}
+6ffcf3d697ea72bfcc29d465b3a5fa9e
+  validSelection2 :: Text.ParserCombinators.ReadP.P GHC.Types.Int
+  {- Unfolding: ((GHC.Read.$fReadInt3
+                    GHC.Read.$fReadInt_$sconvertInt
+                    Text.ParserCombinators.ReadPrec.minPrec)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <GHC.Types.Int>_R)
+                   @ GHC.Types.Int
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
+                      @ GHC.Types.Int)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
