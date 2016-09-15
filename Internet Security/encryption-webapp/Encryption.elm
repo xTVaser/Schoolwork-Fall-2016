@@ -41,8 +41,9 @@ updateAndStore msg model =
 --Define the Model, just a list of records
 type alias Model = 
   { records : List Record
-  ,  plainText : String
-  ,  passPhrase : String
+  , plainText : String
+  , passPhrase : String
+  , uid : Int
   }
 
 --Every record has the input, results, and an ordering
@@ -57,6 +58,8 @@ ourModel : Model
 ourModel = 
   { records = []
   , uid = 0
+  , plainText = ""
+  , passPhrase = ""
   }
 
 --Define default record
@@ -136,20 +139,19 @@ view model =
 
 viewInput : Model -> Html Msg
 viewInput model = 
-  h1
-    [ class "instructions" ]
-    [ text "Please enter your plaintext and passphrase..." ]
-  
-  div
-    [ class "formFields" ]
-    [ section 
+  div[] [
+    [ h1 [ class "instructions" ]
+         [ text "Please enter your plaintext and passphrase..." ]
+    ]
+    
+    ,
+    div [ class "formFields" ] [
       [ input 
         [ class "formField" 
         , placeholder "Plaintext"
         , autofocus True
         , onInput UpdatePlainText
         ]
-        []
       ]
       ,
       [ input
@@ -158,11 +160,44 @@ viewInput model =
         , autofocus False
         , onInput UpdatePassphrase
         ]
-        []
       ]
       ,
-      [ button
-         [ onClick AddRecord model.plaintext model.passphrase
-         ]
+      button [onClick (AddRecord (model.plainText model.passPhrase))]
+      [
+        text ("Encrypt!")
       ]
     ]
+  ]
+
+viewRecords : List Record -> Html Msg
+viewRecords records = 
+  section
+    [ class "recordArea"
+    ]
+    [ Keyed.ul [ class "records" ] <|
+      List.map viewKeyedRecord records
+    ]
+
+viewKeyedRecord : Record -> (String, Html Msg)
+viewKeyedRecord record =
+  ( toString record.id, viewSingleRecord record )
+
+viewSingleRecord : Record -> Html Msg
+viewSingleRecord record =
+  li [class ("record"++toString record.id) ]
+  [
+    div []
+    [
+      label []
+      [
+        text ("Original Text: " ++ record.plainText) 
+      ]
+    ,
+      label []
+      [
+        text ("Passphrase: " ++ record.passPhrase)
+      ]
+      -- encryptions would go here
+    ]
+  ]
+
