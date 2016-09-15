@@ -139,33 +139,33 @@ view model =
 
 viewInput : Model -> Html Msg
 viewInput model = 
-  div[] [
-    [ h1 [ class "instructions" ]
-         [ text "Please enter your plaintext and passphrase..." ]
+  div [] 
+  [
+    h1 [ class "instructions" ]
+    [
+      text ("Please enter your plaintext and passphrase...")
     ]
-    
+  ,
+    div [ class "formFields" ] 
+    [
+      input [
+        class "formField" 
+      , placeholder "Plaintext"
+      , autofocus True
+      , onInput UpdatePlainText
+      ] []
     ,
-    div [ class "formFields" ] [
-      [ input 
-        [ class "formField" 
-        , placeholder "Plaintext"
-        , autofocus True
-        , onInput UpdatePlainText
-        ]
-      ]
-      ,
-      [ input
-        [ class "formField"
-        , placeholder "Passphrase"
-        , autofocus False
-        , onInput UpdatePassphrase
-        ]
-      ]
-      ,
-      button [onClick (AddRecord (model.plainText model.passPhrase))]
+      input [
+        class "formField"
+      , placeholder "Passphrase"
+      , autofocus False
+      , onInput UpdatePassphrase
+      ] []
+    ,
+      button [onClick (AddRecord model.plainText model.passPhrase) ]
       [
         text ("Encrypt!")
-      ]
+      ] 
     ]
   ]
 

@@ -8515,6 +8515,13 @@ var _user$project$Encryption$UpdatePassphrase = function (a) {
 var _user$project$Encryption$UpdatePlainText = function (a) {
 	return {ctor: 'UpdatePlainText', _0: a};
 };
+var _user$project$Encryption$DeleteRecord = function (a) {
+	return {ctor: 'DeleteRecord', _0: a};
+};
+var _user$project$Encryption$AddRecord = F2(
+	function (a, b) {
+		return {ctor: 'AddRecord', _0: a, _1: b};
+	});
 var _user$project$Encryption$viewInput = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8561,7 +8568,18 @@ var _user$project$Encryption$viewInput = function (model) {
 								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePassphrase)
 							]),
 						_elm_lang$core$Native_List.fromArray(
-							[]))
+							[])),
+						A2(
+						_elm_lang$html$Html$button,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Events$onClick(
+								A2(_user$project$Encryption$AddRecord, model.plainText, model.passPhrase))
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('Encrypt!')
+							]))
 					]))
 			]));
 };
@@ -8661,13 +8679,6 @@ var _user$project$Encryption$main = {
 					}))
 			]))
 };
-var _user$project$Encryption$DeleteRecord = function (a) {
-	return {ctor: 'DeleteRecord', _0: a};
-};
-var _user$project$Encryption$AddRecord = F2(
-	function (a, b) {
-		return {ctor: 'AddRecord', _0: a, _1: b};
-	});
 var _user$project$Encryption$NoOp = {ctor: 'NoOp'};
 
 var Elm = {};
