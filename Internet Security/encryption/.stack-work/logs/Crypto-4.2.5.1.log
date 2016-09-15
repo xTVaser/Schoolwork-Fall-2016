@@ -1,0 +1,2217 @@
+Configuring Crypto-4.2.5.1...
+Building Crypto-4.2.5.1...
+Preprocessing library Crypto-4.2.5.1...
+[ 1 of 26] Compiling Data.Digest.SHA2 ( Data/Digest/SHA2.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA2.o )
+
+Data/Digest/SHA2.hs:88:35: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:89:39: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:92:10: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:97:11: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:99:51: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:142:26: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/Digest/SHA2.hs:147:12: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[ 2 of 26] Compiling Data.Digest.MD5Aux ( Data/Digest/MD5Aux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/MD5Aux.o )
+
+Data/Digest/MD5Aux.hs:107:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, ‘fromInteger’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num ABCD’
+[ 3 of 26] Compiling Codec.Encryption.Modes ( Codec/Encryption/Modes.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/Modes.o )
+
+Codec/Encryption/Modes.hs:19:1: Warning: Tab character
+[ 4 of 26] Compiling Codec.Encryption.BlowfishAux ( Codec/Encryption/BlowfishAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/BlowfishAux.o )
+[ 5 of 26] Compiling Codec.Encryption.TEA ( Codec/Encryption/TEA.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/TEA.o )
+[ 6 of 26] Compiling Data.LargeWord   ( Data/LargeWord.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/LargeWord.o )
+
+Data/LargeWord.hs:46:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:58:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:68:38: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:70:39: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:26: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:93:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:95:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:102:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num (LargeKey a b)’
+
+Data/LargeWord.hs:109:10: Warning:
+    No explicit implementation for
+      ‘complement’, (either ‘rotate’ or (‘rotateL’ and ‘rotateR’)),
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits (LargeKey a b)’
+
+Data/LargeWord.hs:133:10: Warning:
+    No explicit implementation for
+      ‘quotRem’
+    In the instance declaration for ‘Integral (LargeKey a b)’
+
+Data/LargeWord.hs:137:10: Warning:
+    No explicit implementation for
+      ‘toRational’
+    In the instance declaration for ‘Real (LargeKey a b)’
+
+Data/LargeWord.hs:140:10: Warning:
+    No explicit implementation for
+      ‘toEnum’ and ‘fromEnum’
+    In the instance declaration for ‘Enum (LargeKey a b)’
+[ 7 of 26] Compiling Codec.Encryption.DESAux ( Codec/Encryption/DESAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/DESAux.o )
+
+Codec/Encryption/DESAux.hs:21:10: Warning:
+    No explicit implementation for
+      ‘+’, ‘*’, ‘abs’, ‘signum’, ‘fromInteger’, and (either ‘negate’
+                                                            or
+                                                            ‘-’)
+    In the instance declaration for ‘Num [Bool]’
+
+Codec/Encryption/DESAux.hs:23:10: Warning:
+    No explicit implementation for
+      ‘.&.’, ‘.|.’, ‘complement’,
+      (either ‘shift’ or (‘shiftL’ and ‘shiftR’)), ‘bitSize’,
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits [Bool]’
+[ 8 of 26] Compiling Codec.Encryption.DES ( Codec/Encryption/DES.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/DES.o )
+[ 9 of 26] Compiling Codec.Encryption.RSA.NumberTheory ( Codec/Encryption/RSA/NumberTheory.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/RSA/NumberTheory.o )
+
+Codec/Encryption/RSA/NumberTheory.hs:57:1: Warning: Tab character
+
+Codec/Encryption/RSA/NumberTheory.hs:61:1: Warning: Tab character
+[10 of 26] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[11 of 26] Compiling Codec.Encryption.RSA ( Codec/Encryption/RSA.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/RSA.o )
+[12 of 26] Compiling Codec.Encryption.RSA.EMEOAEP ( Codec/Encryption/RSA/EMEOAEP.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/RSA/EMEOAEP.o )
+
+Codec/Encryption/RSA/EMEOAEP.hs:52:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:59:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:85:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:87:1: Warning: Tab character
+[13 of 26] Compiling Codec.Encryption.RSA.MGF ( Codec/Encryption/RSA/MGF.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/RSA/MGF.o )
+
+Codec/Encryption/RSA/MGF.hs:32:1: Warning: Tab character
+[14 of 26] Compiling Codec.Encryption.AESAux ( Codec/Encryption/AESAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/AESAux.o )
+
+Codec/Encryption/AESAux.hs:3:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:4:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:5:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:6:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:7:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:8:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:18:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:19:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:23:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:24:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:28:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:29:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:33:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:34:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:38:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:39:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:43:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:44:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:48:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:49:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:50:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:51:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:53:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:54:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:55:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:56:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:57:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:58:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:59:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:60:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:64:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:71:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:72:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:73:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:74:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:75:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:78:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:79:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:80:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:81:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:83:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:84:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:85:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:86:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:87:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:88:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:89:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:90:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:94:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:101:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:102:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:103:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:105:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:106:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:110:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:111:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:112:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:698:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:704:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:705:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:711:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:712:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:713:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:732:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:733:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:734:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:735:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:736:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:30: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:738:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:739:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:741:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:742:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:743:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:744:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:745:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:747:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:748:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:749:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:750:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:754:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:755:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:756:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:760:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:761:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:762:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:763:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:764:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:765:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:766:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:767:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:771:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:774:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:775:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:776:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:777:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:781:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:784:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:785:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:786:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:787:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:789:28: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:791:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:794:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:795:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:796:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:797:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:799:31: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:801:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:804:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:805:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:806:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:807:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:811:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:812:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:813:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:814:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:816:29: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:818:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:821:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:822:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:823:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:824:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:825:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:826:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:827:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:828:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:831:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:833:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:834:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:835:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:836:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:838:32: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:840:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:843:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:844:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:845:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:846:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:847:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:848:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:849:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:850:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:854:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:855:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:857:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:858:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:859:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:861:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:862:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:863:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:864:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:869:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:870:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:871:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:872:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:873:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:874:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:875:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:876:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:884:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:885:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:886:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:887:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:888:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:893:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:894:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:895:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:896:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:897:1: Warning: Tab character
+[15 of 26] Compiling Codec.Encryption.AES ( Codec/Encryption/AES.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/AES.o )
+
+Codec/Encryption/AES.hs:43:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:58:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[16 of 26] Compiling Codec.Encryption.Blowfish ( Codec/Encryption/Blowfish.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/Blowfish.o )
+[17 of 26] Compiling Codec.Encryption.Padding ( Codec/Encryption/Padding.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Encryption/Padding.o )
+
+Codec/Encryption/Padding.hs:58:20: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:68:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:103:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:106:29: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:107:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:108:1: Warning: Tab character
+[18 of 26] Compiling Codec.Text.Raw   ( Codec/Text/Raw.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Text/Raw.o )
+[19 of 26] Compiling Data.Digest.MD5  ( Data/Digest/MD5.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/MD5.o )
+
+Data/Digest/MD5.hs:41:1: Warning: Tab character
+[20 of 26] Compiling Data.Digest.SHA1 ( Data/Digest/SHA1.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA1.o )
+[21 of 26] Compiling Data.Digest.SHA224 ( Data/Digest/SHA224.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA224.o )
+[22 of 26] Compiling Data.Digest.SHA256 ( Data/Digest/SHA256.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA256.o )
+[23 of 26] Compiling Data.Digest.SHA384 ( Data/Digest/SHA384.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA384.o )
+[24 of 26] Compiling Data.Digest.SHA512 ( Data/Digest/SHA512.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Digest/SHA512.o )
+[25 of 26] Compiling Data.HMAC        ( Data/HMAC.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/HMAC.o )
+
+Data/HMAC.hs:108:45: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/HMAC.hs:118:28: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[26 of 26] Compiling Codec.Binary.BubbleBabble ( Codec/Binary/BubbleBabble.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Codec/Binary/BubbleBabble.o )
+In-place registering Crypto-4.2.5.1...
+Preprocessing executable 'SymmetricTest' for Crypto-4.2.5.1...
+[ 1 of 11] Compiling Codec.Encryption.DESAux ( Codec/Encryption/DESAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/DESAux.o )
+
+Codec/Encryption/DESAux.hs:21:10: Warning:
+    No explicit implementation for
+      ‘+’, ‘*’, ‘abs’, ‘signum’, ‘fromInteger’, and (either ‘negate’
+                                                            or
+                                                            ‘-’)
+    In the instance declaration for ‘Num [Bool]’
+
+Codec/Encryption/DESAux.hs:23:10: Warning:
+    No explicit implementation for
+      ‘.&.’, ‘.|.’, ‘complement’,
+      (either ‘shift’ or (‘shiftL’ and ‘shiftR’)), ‘bitSize’,
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits [Bool]’
+[ 2 of 11] Compiling Codec.Encryption.BlowfishAux ( Codec/Encryption/BlowfishAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/BlowfishAux.o )
+[ 3 of 11] Compiling Data.LargeWord   ( Data/LargeWord.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Data/LargeWord.o )
+
+Data/LargeWord.hs:46:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:58:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:68:38: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:70:39: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:26: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:93:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:95:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:102:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num (LargeKey a b)’
+
+Data/LargeWord.hs:109:10: Warning:
+    No explicit implementation for
+      ‘complement’, (either ‘rotate’ or (‘rotateL’ and ‘rotateR’)),
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits (LargeKey a b)’
+
+Data/LargeWord.hs:133:10: Warning:
+    No explicit implementation for
+      ‘quotRem’
+    In the instance declaration for ‘Integral (LargeKey a b)’
+
+Data/LargeWord.hs:137:10: Warning:
+    No explicit implementation for
+      ‘toRational’
+    In the instance declaration for ‘Real (LargeKey a b)’
+
+Data/LargeWord.hs:140:10: Warning:
+    No explicit implementation for
+      ‘toEnum’ and ‘fromEnum’
+    In the instance declaration for ‘Enum (LargeKey a b)’
+[ 4 of 11] Compiling Codec.Encryption.DES ( Codec/Encryption/DES.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/DES.o )
+[ 5 of 11] Compiling Codec.Encryption.Modes ( Codec/Encryption/Modes.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/Modes.o )
+
+Codec/Encryption/Modes.hs:19:1: Warning: Tab character
+[ 6 of 11] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[ 7 of 11] Compiling Codec.Encryption.Blowfish ( Codec/Encryption/Blowfish.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/Blowfish.o )
+[ 8 of 11] Compiling Codec.Encryption.Padding ( Codec/Encryption/Padding.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/Padding.o )
+
+Codec/Encryption/Padding.hs:58:20: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:68:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:103:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:106:29: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:107:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:108:1: Warning: Tab character
+[ 9 of 11] Compiling Codec.Encryption.AESAux ( Codec/Encryption/AESAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/AESAux.o )
+
+Codec/Encryption/AESAux.hs:3:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:4:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:5:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:6:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:7:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:8:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:18:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:19:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:23:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:24:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:28:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:29:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:33:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:34:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:38:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:39:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:43:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:44:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:48:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:49:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:50:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:51:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:53:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:54:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:55:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:56:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:57:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:58:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:59:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:60:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:64:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:71:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:72:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:73:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:74:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:75:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:78:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:79:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:80:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:81:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:83:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:84:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:85:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:86:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:87:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:88:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:89:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:90:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:94:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:101:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:102:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:103:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:105:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:106:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:110:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:111:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:112:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:698:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:704:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:705:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:711:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:712:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:713:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:732:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:733:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:734:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:735:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:736:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:30: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:738:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:739:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:741:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:742:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:743:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:744:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:745:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:747:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:748:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:749:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:750:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:754:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:755:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:756:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:760:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:761:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:762:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:763:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:764:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:765:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:766:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:767:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:771:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:774:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:775:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:776:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:777:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:781:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:784:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:785:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:786:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:787:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:789:28: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:791:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:794:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:795:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:796:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:797:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:799:31: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:801:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:804:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:805:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:806:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:807:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:811:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:812:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:813:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:814:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:816:29: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:818:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:821:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:822:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:823:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:824:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:825:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:826:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:827:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:828:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:831:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:833:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:834:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:835:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:836:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:838:32: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:840:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:843:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:844:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:845:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:846:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:847:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:848:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:849:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:850:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:854:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:855:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:857:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:858:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:859:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:861:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:862:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:863:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:864:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:869:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:870:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:871:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:872:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:873:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:874:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:875:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:876:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:884:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:885:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:886:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:887:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:888:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:893:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:894:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:895:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:896:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:897:1: Warning: Tab character
+[10 of 11] Compiling Codec.Encryption.AES ( Codec/Encryption/AES.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Codec/Encryption/AES.o )
+
+Codec/Encryption/AES.hs:43:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:58:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[11 of 11] Compiling Main             ( SymmetricTest.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SymmetricTest/SymmetricTest ...
+Preprocessing executable 'SHA1Test' for Crypto-4.2.5.1...
+[1 of 4] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SHA1Test/SHA1Test-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[2 of 4] Compiling Data.Digest.SHA1 ( Data/Digest/SHA1.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SHA1Test/SHA1Test-tmp/Data/Digest/SHA1.o )
+[3 of 4] Compiling Codec.Text.Raw   ( Codec/Text/Raw.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SHA1Test/SHA1Test-tmp/Codec/Text/Raw.o )
+[4 of 4] Compiling Main             ( SHA1Test.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SHA1Test/SHA1Test-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/SHA1Test/SHA1Test ...
+Preprocessing executable 'RSATest' for Crypto-4.2.5.1...
+[1 of 7] Compiling Codec.Encryption.RSA.NumberTheory ( Codec/Encryption/RSA/NumberTheory.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Codec/Encryption/RSA/NumberTheory.o )
+
+Codec/Encryption/RSA/NumberTheory.hs:57:1: Warning: Tab character
+
+Codec/Encryption/RSA/NumberTheory.hs:61:1: Warning: Tab character
+[2 of 7] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[3 of 7] Compiling Data.Digest.SHA1 ( Data/Digest/SHA1.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Data/Digest/SHA1.o )
+[4 of 7] Compiling Codec.Encryption.RSA ( Codec/Encryption/RSA.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Codec/Encryption/RSA.o )
+[5 of 7] Compiling Codec.Encryption.RSA.MGF ( Codec/Encryption/RSA/MGF.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Codec/Encryption/RSA/MGF.o )
+
+Codec/Encryption/RSA/MGF.hs:32:1: Warning: Tab character
+[6 of 7] Compiling Codec.Encryption.RSA.EMEOAEP ( Codec/Encryption/RSA/EMEOAEP.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Codec/Encryption/RSA/EMEOAEP.o )
+
+Codec/Encryption/RSA/EMEOAEP.hs:52:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:59:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:85:1: Warning: Tab character
+
+Codec/Encryption/RSA/EMEOAEP.hs:87:1: Warning: Tab character
+[7 of 7] Compiling Main             ( RSATest.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/RSATest/RSATest ...
+Preprocessing executable 'QuickTest' for Crypto-4.2.5.1...
+[1 of 9] Compiling Codec.Encryption.BlowfishAux ( Codec/Encryption/BlowfishAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/BlowfishAux.o )
+[2 of 9] Compiling Data.LargeWord   ( Data/LargeWord.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Data/LargeWord.o )
+
+Data/LargeWord.hs:46:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:58:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:68:38: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:70:39: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:26: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:93:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:95:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:102:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num (LargeKey a b)’
+
+Data/LargeWord.hs:109:10: Warning:
+    No explicit implementation for
+      ‘complement’, (either ‘rotate’ or (‘rotateL’ and ‘rotateR’)),
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits (LargeKey a b)’
+
+Data/LargeWord.hs:133:10: Warning:
+    No explicit implementation for
+      ‘quotRem’
+    In the instance declaration for ‘Integral (LargeKey a b)’
+
+Data/LargeWord.hs:137:10: Warning:
+    No explicit implementation for
+      ‘toRational’
+    In the instance declaration for ‘Real (LargeKey a b)’
+
+Data/LargeWord.hs:140:10: Warning:
+    No explicit implementation for
+      ‘toEnum’ and ‘fromEnum’
+    In the instance declaration for ‘Enum (LargeKey a b)’
+[3 of 9] Compiling Codec.Encryption.Modes ( Codec/Encryption/Modes.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/Modes.o )
+
+Codec/Encryption/Modes.hs:19:1: Warning: Tab character
+[4 of 9] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[5 of 9] Compiling Codec.Encryption.Blowfish ( Codec/Encryption/Blowfish.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/Blowfish.o )
+[6 of 9] Compiling Codec.Encryption.Padding ( Codec/Encryption/Padding.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/Padding.o )
+
+Codec/Encryption/Padding.hs:58:20: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:68:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:103:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:106:29: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/Padding.hs:107:1: Warning: Tab character
+
+Codec/Encryption/Padding.hs:108:1: Warning: Tab character
+[7 of 9] Compiling Codec.Encryption.AESAux ( Codec/Encryption/AESAux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/AESAux.o )
+
+Codec/Encryption/AESAux.hs:3:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:4:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:5:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:6:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:7:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:8:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:18:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:19:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:23:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:24:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:28:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:29:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:33:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:34:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:38:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:39:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:43:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:44:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:48:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:49:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:50:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:51:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:53:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:54:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:55:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:56:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:57:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:58:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:59:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:60:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:61:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:62:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:63:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:64:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:65:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:66:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:67:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:68:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:69:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:70:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:71:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:72:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:73:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:74:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:75:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:78:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:79:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:80:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:81:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:83:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:84:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:85:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:86:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:87:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:88:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:89:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:90:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:91:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:92:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:93:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:94:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:95:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:96:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:97:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:98:21: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:99:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:100:53: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:101:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:102:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:103:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:104:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:105:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:106:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:110:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:111:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:112:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:697:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:698:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:703:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:704:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:705:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:710:14: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:711:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:712:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:713:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:732:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:733:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:734:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:735:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:736:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:737:30: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:738:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:739:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:740:15: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:741:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:742:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:743:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:744:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:745:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:746:41: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:747:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:748:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:749:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:750:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:754:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:755:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:756:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:760:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:761:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:762:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:763:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:764:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:765:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:766:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:767:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:771:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:772:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:773:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:774:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:775:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:776:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:777:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:781:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:782:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:783:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:784:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:785:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:786:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:787:3: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:789:28: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:791:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:792:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:793:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:794:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:795:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:796:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:797:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:799:31: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:801:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:802:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:803:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:804:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:805:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:806:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:807:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:811:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:812:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:813:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:814:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:816:29: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:818:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:819:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:820:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:821:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:822:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:823:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:824:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:825:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:826:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:827:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:828:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:831:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:833:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:834:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:835:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:836:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:838:32: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:840:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:841:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:842:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:843:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:844:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:845:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:846:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:847:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:848:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:849:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:850:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:854:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:855:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:856:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:857:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:858:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:859:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:860:10: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:861:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:862:2: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:863:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:864:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:869:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:870:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:871:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:872:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:873:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:874:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:875:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:876:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:877:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:878:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:879:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:880:50: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:884:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:885:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:886:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:887:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:888:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:893:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:894:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:895:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:896:1: Warning: Tab character
+
+Codec/Encryption/AESAux.hs:897:1: Warning: Tab character
+[8 of 9] Compiling Codec.Encryption.AES ( Codec/Encryption/AES.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Codec/Encryption/AES.o )
+
+Codec/Encryption/AES.hs:43:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:50:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:17: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:51:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Encryption/AES.hs:58:9: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[9 of 9] Compiling Main             ( QuickTest.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/QuickTest/QuickTest ...
+Preprocessing executable 'HMACTest' for Crypto-4.2.5.1...
+[1 of 6] Compiling Data.Digest.MD5Aux ( Data/Digest/MD5Aux.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Data/Digest/MD5Aux.o )
+
+Data/Digest/MD5Aux.hs:107:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, ‘fromInteger’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num ABCD’
+[2 of 6] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[3 of 6] Compiling Data.Digest.MD5  ( Data/Digest/MD5.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Data/Digest/MD5.o )
+
+Data/Digest/MD5.hs:41:1: Warning: Tab character
+[4 of 6] Compiling Data.Digest.SHA1 ( Data/Digest/SHA1.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Data/Digest/SHA1.o )
+[5 of 6] Compiling Data.HMAC        ( Data/HMAC.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Data/HMAC.o )
+
+Data/HMAC.hs:108:45: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/HMAC.hs:118:28: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[6 of 6] Compiling Main             ( HMACTest.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HMACTest/HMACTest ...
+Preprocessing executable 'WordListTest' for Crypto-4.2.5.1...
+
+WordListTest.hs:1:35: Warning:
+    -XPatternSignatures is deprecated: use -XScopedTypeVariables or pragma {-# LANGUAGE ScopedTypeVariables #-} instead
+[1 of 3] Compiling Codec.Utils      ( Codec/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/WordListTest/WordListTest-tmp/Codec/Utils.o )
+
+Codec/Utils.hs:24:1: Warning: Tab character
+
+Codec/Utils.hs:65:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:74:7: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:93:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Codec/Utils.hs:107:1: Warning: Tab character
+
+Codec/Utils.hs:108:1: Warning: Tab character
+[2 of 3] Compiling Data.LargeWord   ( Data/LargeWord.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/WordListTest/WordListTest-tmp/Data/LargeWord.o )
+
+Data/LargeWord.hs:46:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:58:19: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:68:38: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:70:39: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:13: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:91:26: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:93:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:95:66: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+Data/LargeWord.hs:102:10: Warning:
+    No explicit implementation for
+      ‘*’, ‘abs’, ‘signum’, and (either ‘negate’ or ‘-’)
+    In the instance declaration for ‘Num (LargeKey a b)’
+
+Data/LargeWord.hs:109:10: Warning:
+    No explicit implementation for
+      ‘complement’, (either ‘rotate’ or (‘rotateL’ and ‘rotateR’)),
+      ‘bitSizeMaybe’, ‘isSigned’, ‘testBit’, ‘bit’, and ‘popCount’
+    In the instance declaration for ‘Bits (LargeKey a b)’
+
+Data/LargeWord.hs:133:10: Warning:
+    No explicit implementation for
+      ‘quotRem’
+    In the instance declaration for ‘Integral (LargeKey a b)’
+
+Data/LargeWord.hs:137:10: Warning:
+    No explicit implementation for
+      ‘toRational’
+    In the instance declaration for ‘Real (LargeKey a b)’
+
+Data/LargeWord.hs:140:10: Warning:
+    No explicit implementation for
+      ‘toEnum’ and ‘fromEnum’
+    In the instance declaration for ‘Enum (LargeKey a b)’
+[3 of 3] Compiling Main             ( WordListTest.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/WordListTest/WordListTest-tmp/Main.o )
+
+WordListTest.hs:1:35: Warning:
+    -XPatternSignatures is deprecated: use -XScopedTypeVariables or pragma {-# LANGUAGE ScopedTypeVariables #-} instead
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/WordListTest/WordListTest ...
+Installing library in /home/tyler/Repos/My
+Repositories/Schoolwork-Fall-2016/Internet
+Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/lib/x86_64-linux-ghc-7.10.3/Crypto-4.2.5.1-5LAkHcbhlXQ7c0SgiMzGrF
+Installing executable(s) in /home/tyler/Repos/My
+Repositories/Schoolwork-Fall-2016/Internet
+Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/bin
+Registering Crypto-4.2.5.1...

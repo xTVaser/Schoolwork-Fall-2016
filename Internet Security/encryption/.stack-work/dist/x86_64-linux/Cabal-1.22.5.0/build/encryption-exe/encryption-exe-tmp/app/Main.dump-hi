@@ -1,50 +1,44 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-11 19:36:39.754559 UTC
+2016-09-14 14:57:52.874374 UTC
 
 interface main@main:Main 7103
-  interface hash: 7763a3de57dea9360a259e5de4b52fa2
-  ABI hash: 1455678b9907b6d2afff1d9d746144e0
-  export-list hash: 3e5db6a2e6b3cccc995376cb2abfea26
+  interface hash: 43c52076971631c1749c2dd5a68c7746
+  ABI hash: b7e13600dd8c55fad7101f627e0dce8d
+  export-list hash: d392d4051275dfba4e9ab700f67154e4
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 2034a7bfc47a6a242d640d7907284d3e
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Main.bar
-  Main.foo
   Main.main
   Main.menu
 module dependencies:
-package dependencies: base-4.8.2.0*
-                      encryption-0.1.0.0@encry_GhOzz4XK2170QtKajfnlYr ghc-prim-0.4.0.0
+package dependencies: Crypto-4.2.5.1@Crypt_5LAkHcbhlXQ7c0SgiMzGrF
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0*
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      encryption-0.1.0.0@encry_EOgpKxzfJmICS2a9k914ug ghc-prim-0.4.0.0
                       integer-gmp-1.0.0.0
 orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
 family instance modules: base-4.8.2.0:Control.Applicative
-                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
-                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Generics
 import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  encryption-0.1.0.0@encry_GhOzz4XK2170QtKajfnlYr:Lib 8404f3efcf59c38e69e6efb6def7fcbf
+import  -/  encryption-0.1.0.0@encry_EOgpKxzfJmICS2a9k914ug:Lib aad1949cbf806445dbd2feb6b18e530e
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-31e767469eafdc838625107a11b3cb5e
-  bar :: t
-  {- Strictness: b,
-     Unfolding: InlineRule (0, True, True) GHC.Err.undefined -}
-c6828953de5f3b7edbfabd47465509c2
-  foo :: t
-  {- Strictness: b,
-     Unfolding: InlineRule (0, True, True) GHC.Err.undefined -}
-1865bc7a5d26f0cb442dc4706d90279d
+72d7466a3e3d05a3883d00b3d63cd15d
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-421f10f78903086f27c3f6b652375b07
+975d8a1a352ef6917eeb1f06540b1c6c
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -52,7 +46,7 @@ c6828953de5f3b7edbfabd47465509c2
      Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
-                        Main.main6
+                        Main.main4
                         GHC.Types.True
                         s of ds1 { (#,#) ipv ipv1 ->
                  case GHC.IO.Handle.Internals.wantReadableHandle_1
@@ -66,7 +60,12 @@ c6828953de5f3b7edbfabd47465509c2
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
-                        Main.main3
+                        (Data.OldList.unlines
+                           (GHC.Base.map
+                              @ (GHC.Types.Int, ([GHC.Types.Char], GHC.Base.String))
+                              @ [GHC.Types.Char]
+                              Main.main3
+                              (Lib.menuOptions ipv3)))
                         GHC.Types.True
                         ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  case GHC.IO.Handle.Internals.wantReadableHandle_1
@@ -80,7 +79,7 @@ c6828953de5f3b7edbfabd47465509c2
                         ipv4 of ds4 { (#,#) ipv6 ipv7 ->
                  case Text.ParserCombinators.ReadP.run
                         @ GHC.Types.Int
-                        Lib.validSelection2
+                        Lib.validSelection4
                         ipv7 of wild {
                    []
                    -> GHC.IO.Handle.Text.hPutStr2
@@ -115,18 +114,8 @@ c6828953de5f3b7edbfabd47465509c2
 5554bfb81da97b793006356c89d3df89
   main2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Please try again"#) -}
-d02d5527e7aa83313aeb7b5b95c5df42
-  main3 :: GHC.Base.String
-  {- Unfolding: (Data.OldList.unlines Main.main4) -}
-fbfac6a98f3cbcf6bca13e2ff4d2614e
-  main4 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Base.map
-                   @ (GHC.Types.Int, ([GHC.Types.Char], GHC.Base.String))
-                   @ [GHC.Types.Char]
-                   Main.main5
-                   Lib.menuOptions1) -}
-7100ecc7e3c8ff1aa0f6781967a18543
-  main5 ::
+69eb1d052ec0f9943e9acece1cb617d0
+  main3 ::
     (GHC.Types.Int, ([GHC.Types.Char], GHC.Base.String))
     -> [GHC.Types.Char]
   {- Arity: 1, HasNoCafRefs,
@@ -143,19 +132,19 @@ fbfac6a98f3cbcf6bca13e2ff4d2614e
                    @ GHC.Types.Char
                    (GHC.Types.: @ GHC.Types.Char ww5 ww6)
                    (GHC.CString.unpackAppendCString# ".) "# s) } } } }) -}
-7b8068760a900d1c4be78efc62b92f7a
-  main6 :: [GHC.Types.Char]
+e71fcbbaefab0c0f516e2a998594c1d3
+  main4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Enter some text to be encrypted: "#) -}
-8ac9c966211266b71fbb4145718dd01b
-  main7 ::
+96e13731780e3a10f95820842a1f7033
+  main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
-27cfc217c5bcb94bcde1354230dd2604
+007c49105f22ac97c4edde2f76581af2
   menu :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)

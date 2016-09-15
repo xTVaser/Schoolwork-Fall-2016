@@ -17,7 +17,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/bin"
-libdir     = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/lib/x86_64-linux-ghc-7.10.3/encryption-0.1.0.0-GhOzz4XK2170QtKajfnlYr"
+libdir     = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/lib/x86_64-linux-ghc-7.10.3/encryption-0.1.0.0-EOgpKxzfJmICS2a9k914ug"
 datadir    = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/share/x86_64-linux-ghc-7.10.3/encryption-0.1.0.0"
 libexecdir = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/libexec"
 sysconfdir = "/home/tyler/Repos/My Repositories/Schoolwork-Fall-2016/Internet Security/encryption/.stack-work/install/x86_64-linux/lts-6.16/7.10.3/etc"

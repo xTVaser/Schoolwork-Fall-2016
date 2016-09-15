@@ -1,5 +1,7 @@
 module Lib where
 
+import qualified Codec.Encryption.AES as AES
+import qualified Data.ByteString.Char8 as BS
 
 validSelection :: String -> Maybe Int
 validSelection str = isValid (reads str :: [(Int, String)])
@@ -27,8 +29,8 @@ printOption n oStr = do
     putStrLn (fst menuResults ++ ": " ++ snd menuResults ++ "\n")
 
 
-aesEncrypt :: String -> String
-aesEncrypt iStr = "AES"
+aesEncrypt :: Word128 -> String
+aesEncrypt iStr = BS.unpack . AES.encrypt ("lol" fromIntegral BS.pack iStr)
 
 rsaEncrypt :: String -> String
 rsaEncrypt iStr = "RSA"

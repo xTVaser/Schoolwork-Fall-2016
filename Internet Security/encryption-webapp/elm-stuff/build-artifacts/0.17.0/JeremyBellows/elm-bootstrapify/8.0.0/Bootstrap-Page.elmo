@@ -1,0 +1,29 @@
+var _JeremyBellows$elm_bootstrapify$Bootstrap_Page$jumbotron = F2(
+	function (attributes, htmlList) {
+		var attributes = A2(
+			_elm_lang$core$List_ops['::'],
+			_elm_lang$html$Html_Attributes$class('jumbotron'),
+			attributes);
+		return A2(_elm_lang$html$Html$div, attributes, htmlList);
+	});
+var _JeremyBellows$elm_bootstrapify$Bootstrap_Page$pageHeader = F2(
+	function (attributes, htmlList) {
+		var attributes = A2(
+			_elm_lang$core$List_ops['::'],
+			_elm_lang$html$Html_Attributes$class('page-header'),
+			attributes);
+		return A2(_elm_lang$html$Html$div, attributes, htmlList);
+	});
+var _JeremyBellows$elm_bootstrapify$Bootstrap_Page$pullRight = F2(
+	function (attributes, htmlList) {
+		var attributes = A2(
+			_elm_lang$core$List_ops['::'],
+			_elm_lang$html$Html_Attributes$class('pull-right'),
+			attributes);
+		return A2(_elm_lang$html$Html$div, attributes, htmlList);
+	});
+var _JeremyBellows$elm_bootstrapify$Bootstrap_Page$automationTag = F2(
+	function (tag, value) {
+		var tag = A2(_elm_lang$core$Basics_ops['++'], 'data-uia-', tag);
+		return A2(_elm_lang$html$Html_Attributes$attribute, tag, value);
+	});

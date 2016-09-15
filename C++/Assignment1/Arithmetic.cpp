@@ -15,12 +15,16 @@ int main(int argc,  char* argv[] ) {
     cout << "Please enter three integers: " << endl;
 
     cin >> first >> second >> third;
+   
+    //If no input errors, print the results.
+    if(cin) {
 
-    cout << "Sum is: " << sum(first, second, third) << endl;
-    cout << "Average is: " << avg(first, second, third) << endl;
-    cout << "Product is: " << product(first, second, third) << endl;
-    cout << "Smallest is: " << smallest(first, second, third) << endl;
-    cout << "Largest is: " << largest(first, second, third) << endl;
+        cout << "The Sum is: " << sum(first, second, third) << endl;
+        cout << "The Average is: " << avg(first, second, third) << endl;
+        cout << "The Product is: " << product(first, second, third) << endl;
+        cout << "The Smallest is: " << smallest(first, second, third) << endl;
+        cout << "The Largest is: " << largest(first, second, third) << endl;
+    }
 
     return 0;
 }
