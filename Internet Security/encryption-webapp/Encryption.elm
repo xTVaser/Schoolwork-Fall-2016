@@ -4,6 +4,7 @@ import Dom
 import Html exposing (..)
 import String
 import Task
+import Array exposing (..)
 
 import Html.App as App
 import Html.Attributes exposing (..)
@@ -20,8 +21,20 @@ main =
     { init = init
     , view = view
     , update = updateAndStore
-    , subscriptions = \_ -> Sub.none
+    , subscriptions = subscriptions
     }
+
+--Call javascript function to generate the hashes
+--Cmd msg = the return from the javascript function
+port getHashes : List String -> Cmd msg
+
+--Receive list of strings from javascript function.
+port receiveHashes : (Array String -> msg) -> Sub msg
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  receiveHashes AddRecord
+
 
 --So our program can store results in local storage
 --Need to use javascript method inside index.html
@@ -48,9 +61,7 @@ type alias Model =
 
 --Every record has the input, results, and an ordering
 type alias Record = 
-  { plainText : String
-  , passPhrase : String
-  , hashes : List String
+  { hashes : Array String
   , id : Int
   }
 
@@ -63,11 +74,9 @@ ourModel =
   }
 
 --Define default record
-newRecord : String -> String -> Int -> Record
-newRecord orgText password id = 
-  { plainText = orgText
-  , passPhrase = password
-  , hashes = [] --No computed hashes yet
+newRecord : Array String -> Int -> Record
+newRecord hashes id = 
+  { hashes = hashes
   , id = id
   }
 
@@ -85,10 +94,11 @@ init savedModel =
 
 type Msg
     = NoOp
-    | AddRecord String String
+    | AddRecord (Array String)
     | DeleteRecord Int
     | UpdatePlainText String
     | UpdatePassphrase String
+    | ComputeHashes
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model = 
@@ -96,15 +106,13 @@ update msg model =
     NoOp ->
       model ! []
 
-    AddRecord orgText password ->
+    AddRecord hashes ->
       { model
         | records = 
-            if String.isEmpty orgText then
+            if Array.isEmpty hashes then
                model.records
             else
-               model.records ++ [newRecord orgText password model.uid]
-               -- here when we make the record, we could call the cryptojs functions
-               -- and pass the result it returns
+               model.records ++ [newRecord hashes model.uid ]
       }
         ! []
 
@@ -121,6 +129,9 @@ update msg model =
     UpdatePassphrase string ->
       { model | passPhrase = string }
         ! []
+
+    ComputeHashes ->
+      ( model, getHashes ([model.plainText, model.passPhrase]))
 
 -- Define the View finally
 
@@ -162,7 +173,7 @@ viewInput model =
       , onInput UpdatePassphrase
       ] []
     ,
-      button [onClick (AddRecord model.plainText model.passPhrase) ]
+      button [onClick ComputeHashes ]
       [
         text ("Encrypt!")
       ] 
@@ -180,24 +191,17 @@ viewRecords records =
 
 viewKeyedRecord : Record -> (String, Html Msg)
 viewKeyedRecord record =
-  ( toString record.id, viewSingleRecord record )
+  ( toString record.id, viewSingleRecord (Array.toList record.hashes) )
 
-viewSingleRecord : Record -> Html Msg
-viewSingleRecord record =
-  li [class ("record"++toString record.id) ]
+viewSingleRecord : List String -> Html Msg
+viewSingleRecord list =
+  ul [class "record" ]
+    (List.map createListItem list)
+     
+
+createListItem : String -> Html Msg
+createListItem string = 
+  li [class "recordItem"]
   [
-    div []
-    [
-      label []
-      [
-        text ("Original Text: " ++ record.plainText) 
-      ]
-    ,
-      label []
-      [
-        text ("Passphrase: " ++ record.passPhrase)
-      ]
-      -- encryptions would go here
-    ]
+    text string
   ]
-

@@ -3,7 +3,7 @@
 
   <head>
       <meta charset="UTF-8">
-        <title>Elm • TodoMVC</title>
+        <title>Assignment 1 - Encryption - Tyler Wilding</title>
           <script type="text/javascript" src="elm.js"></script>
             <link rel="stylesheet" href="style.css">
   </head>
@@ -11,13 +11,32 @@
   <body>
   </body>
 
+  <script type="text/javascript" src="bower_components/crypto-js/crypto-js.js"></script>
   <script type="text/javascript">
-  var storedState = localStorage.getItem('elm-encryption-save');
-  var startingState = storedState ? JSON.parse(storedState) : null;
-  var todomvc = Elm.Encryption.fullscreen(startingState);
-  todomvc.ports.setStorage.subscribe(function(state) {
-      localStorage.setItem('elm-encryption-save', JSON.stringify(state));
-  });
-  </script>
+    //Initializing local storage
+    var storedState = localStorage.getItem('elm-encryption-save');
+    var startingState = storedState ? JSON.parse(storedState) : null;
+    //Establishing the port to Encryption.elm
+    var encryptionMVC = Elm.Encryption.fullscreen(startingState);
+    //Subscribe to the 'setStorage' function in Encryption.elm
+    //Whenever the function is called, we write the data to localstorage
+    encryptionMVC.ports.setStorage.subscribe(function(state) {
+        localStorage.setItem('elm-encryption-save', JSON.stringify(state));
+    });
 
+    encryptionMVC.ports.getHashes.subscribe(function(list) {
+      
+      console.log("Cipher: " + list[0]);
+      console.log("Passphrase: " + list[1]);
+
+      //Generate the hashes
+      var hashes = new Array();
+      hashes.push("AES: " + CryptoJS.AES.encrypt(list[0], list[1]));
+
+      //Send them back
+      encryptionMVC.ports.receiveHashes.send(hashes);
+
+    });
+
+  </script>
 </html>

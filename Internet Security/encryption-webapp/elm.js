@@ -8315,51 +8315,33 @@ var _elm_lang$html$Html_Keyed$node = _elm_lang$virtual_dom$VirtualDom$keyedNode;
 var _elm_lang$html$Html_Keyed$ol = _elm_lang$html$Html_Keyed$node('ol');
 var _elm_lang$html$Html_Keyed$ul = _elm_lang$html$Html_Keyed$node('ul');
 
-var _user$project$Encryption$viewSingleRecord = function (record) {
+var _user$project$Encryption$createListItem = function (string) {
 	return A2(
 		_elm_lang$html$Html$li,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html_Attributes$class(
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					'record',
-					_elm_lang$core$Basics$toString(record.id)))
+				_elm_lang$html$Html_Attributes$class('recordItem')
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(
-						_elm_lang$html$Html$label,
-						_elm_lang$core$Native_List.fromArray(
-							[]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text(
-								A2(_elm_lang$core$Basics_ops['++'], 'Original Text: ', record.plainText))
-							])),
-						A2(
-						_elm_lang$html$Html$label,
-						_elm_lang$core$Native_List.fromArray(
-							[]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text(
-								A2(_elm_lang$core$Basics_ops['++'], 'Passphrase: ', record.passPhrase))
-							]))
-					]))
+				_elm_lang$html$Html$text(string)
 			]));
+};
+var _user$project$Encryption$viewSingleRecord = function (list) {
+	return A2(
+		_elm_lang$html$Html$ul,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('record')
+			]),
+		A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list));
 };
 var _user$project$Encryption$viewKeyedRecord = function (record) {
 	return {
 		ctor: '_Tuple2',
 		_0: _elm_lang$core$Basics$toString(record.id),
-		_1: _user$project$Encryption$viewSingleRecord(record)
+		_1: _user$project$Encryption$viewSingleRecord(
+			_elm_lang$core$Array$toList(record.hashes))
 	};
 };
 var _user$project$Encryption$viewRecords = function (records) {
@@ -8380,15 +8362,31 @@ var _user$project$Encryption$viewRecords = function (records) {
 				A2(_elm_lang$core$List$map, _user$project$Encryption$viewKeyedRecord, records))
 			]));
 };
-var _user$project$Encryption$newRecord = F3(
-	function (orgText, password, id) {
-		return {
-			plainText: orgText,
-			passPhrase: password,
-			hashes: _elm_lang$core$Native_List.fromArray(
-				[]),
-			id: id
-		};
+var _user$project$Encryption$newRecord = F2(
+	function (hashes, id) {
+		return {hashes: hashes, id: id};
+	});
+var _user$project$Encryption$ourModel = {
+	records: _elm_lang$core$Native_List.fromArray(
+		[]),
+	uid: 0,
+	plainText: '',
+	passPhrase: ''
+};
+var _user$project$Encryption$init = function (savedModel) {
+	return A2(
+		_elm_lang$core$Platform_Cmd_ops['!'],
+		A2(_elm_lang$core$Maybe$withDefault, _user$project$Encryption$ourModel, savedModel),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _user$project$Encryption$getHashes = _elm_lang$core$Native_Platform.outgoingPort(
+	'getHashes',
+	function (v) {
+		return _elm_lang$core$Native_List.toArray(v).map(
+			function (v) {
+				return v;
+			});
 	});
 var _user$project$Encryption$update = F2(
 	function (msg, model) {
@@ -8407,12 +8405,12 @@ var _user$project$Encryption$update = F2(
 					_elm_lang$core$Native_Utils.update(
 						model,
 						{
-							records: _elm_lang$core$String$isEmpty(_p1) ? model.records : A2(
+							records: _elm_lang$core$Array$isEmpty(_p1) ? model.records : A2(
 								_elm_lang$core$Basics_ops['++'],
 								model.records,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										A3(_user$project$Encryption$newRecord, _p1, _p0._1, model.uid)
+										A2(_user$project$Encryption$newRecord, _p1, model.uid)
 									]))
 						}),
 					_elm_lang$core$Native_List.fromArray(
@@ -8440,7 +8438,7 @@ var _user$project$Encryption$update = F2(
 						{plainText: _p0._0}),
 					_elm_lang$core$Native_List.fromArray(
 						[]));
-			default:
+			case 'UpdatePassphrase':
 				return A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
@@ -8448,22 +8446,19 @@ var _user$project$Encryption$update = F2(
 						{passPhrase: _p0._0}),
 					_elm_lang$core$Native_List.fromArray(
 						[]));
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$Encryption$getHashes(
+						_elm_lang$core$Native_List.fromArray(
+							[model.plainText, model.passPhrase]))
+				};
 		}
 	});
-var _user$project$Encryption$ourModel = {
-	records: _elm_lang$core$Native_List.fromArray(
-		[]),
-	uid: 0,
-	plainText: '',
-	passPhrase: ''
-};
-var _user$project$Encryption$init = function (savedModel) {
-	return A2(
-		_elm_lang$core$Platform_Cmd_ops['!'],
-		A2(_elm_lang$core$Maybe$withDefault, _user$project$Encryption$ourModel, savedModel),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
-};
+var _user$project$Encryption$receiveHashes = _elm_lang$core$Native_Platform.incomingPort(
+	'receiveHashes',
+	_elm_lang$core$Json_Decode$array(_elm_lang$core$Json_Decode$string));
 var _user$project$Encryption$setStorage = _elm_lang$core$Native_Platform.outgoingPort(
 	'setStorage',
 	function (v) {
@@ -8471,9 +8466,7 @@ var _user$project$Encryption$setStorage = _elm_lang$core$Native_Platform.outgoin
 			records: _elm_lang$core$Native_List.toArray(v.records).map(
 				function (v) {
 					return {
-						plainText: v.plainText,
-						passPhrase: v.passPhrase,
-						hashes: _elm_lang$core$Native_List.toArray(v.hashes).map(
+						hashes: _elm_lang$core$Native_Array.toJSArray(v.hashes).map(
 							function (v) {
 								return v;
 							}),
@@ -8505,23 +8498,17 @@ var _user$project$Encryption$Model = F4(
 	function (a, b, c, d) {
 		return {records: a, plainText: b, passPhrase: c, uid: d};
 	});
-var _user$project$Encryption$Record = F4(
-	function (a, b, c, d) {
-		return {plainText: a, passPhrase: b, hashes: c, id: d};
+var _user$project$Encryption$Record = F2(
+	function (a, b) {
+		return {hashes: a, id: b};
 	});
+var _user$project$Encryption$ComputeHashes = {ctor: 'ComputeHashes'};
 var _user$project$Encryption$UpdatePassphrase = function (a) {
 	return {ctor: 'UpdatePassphrase', _0: a};
 };
 var _user$project$Encryption$UpdatePlainText = function (a) {
 	return {ctor: 'UpdatePlainText', _0: a};
 };
-var _user$project$Encryption$DeleteRecord = function (a) {
-	return {ctor: 'DeleteRecord', _0: a};
-};
-var _user$project$Encryption$AddRecord = F2(
-	function (a, b) {
-		return {ctor: 'AddRecord', _0: a, _1: b};
-	});
 var _user$project$Encryption$viewInput = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8573,8 +8560,7 @@ var _user$project$Encryption$viewInput = function (model) {
 						_elm_lang$html$Html$button,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Events$onClick(
-								A2(_user$project$Encryption$AddRecord, model.plainText, model.passPhrase))
+								_elm_lang$html$Html_Events$onClick(_user$project$Encryption$ComputeHashes)
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
@@ -8610,16 +8596,18 @@ var _user$project$Encryption$view = function (model) {
 					]))
 			]));
 };
+var _user$project$Encryption$DeleteRecord = function (a) {
+	return {ctor: 'DeleteRecord', _0: a};
+};
+var _user$project$Encryption$AddRecord = function (a) {
+	return {ctor: 'AddRecord', _0: a};
+};
+var _user$project$Encryption$subscriptions = function (model) {
+	return _user$project$Encryption$receiveHashes(_user$project$Encryption$AddRecord);
+};
 var _user$project$Encryption$main = {
 	main: _elm_lang$html$Html_App$programWithFlags(
-		{
-			init: _user$project$Encryption$init,
-			view: _user$project$Encryption$view,
-			update: _user$project$Encryption$updateAndStore,
-			subscriptions: function (_p3) {
-				return _elm_lang$core$Platform_Sub$none;
-			}
-		}),
+		{init: _user$project$Encryption$init, view: _user$project$Encryption$view, update: _user$project$Encryption$updateAndStore, subscriptions: _user$project$Encryption$subscriptions}),
 	flags: _elm_lang$core$Json_Decode$oneOf(
 		_elm_lang$core$Native_List.fromArray(
 			[
@@ -8646,24 +8634,14 @@ var _user$project$Encryption$main = {
 												A2(
 													_elm_lang$core$Json_Decode_ops[':='],
 													'hashes',
-													_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)),
+													_elm_lang$core$Json_Decode$array(_elm_lang$core$Json_Decode$string)),
 												function (hashes) {
 													return A2(
 														_elm_lang$core$Json_Decode$andThen,
 														A2(_elm_lang$core$Json_Decode_ops[':='], 'id', _elm_lang$core$Json_Decode$int),
 														function (id) {
-															return A2(
-																_elm_lang$core$Json_Decode$andThen,
-																A2(_elm_lang$core$Json_Decode_ops[':='], 'passPhrase', _elm_lang$core$Json_Decode$string),
-																function (passPhrase) {
-																	return A2(
-																		_elm_lang$core$Json_Decode$andThen,
-																		A2(_elm_lang$core$Json_Decode_ops[':='], 'plainText', _elm_lang$core$Json_Decode$string),
-																		function (plainText) {
-																			return _elm_lang$core$Json_Decode$succeed(
-																				{hashes: hashes, id: id, passPhrase: passPhrase, plainText: plainText});
-																		});
-																});
+															return _elm_lang$core$Json_Decode$succeed(
+																{hashes: hashes, id: id});
 														});
 												}))),
 									function (records) {
