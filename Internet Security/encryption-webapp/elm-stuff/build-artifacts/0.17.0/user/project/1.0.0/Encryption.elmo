@@ -100,6 +100,23 @@ var _user$project$Encryption$viewNavbar = function (model) {
 													[
 														_elm_lang$html$Html$text('Back to notTuring')
 													]))
+											])),
+										A2(
+										_elm_lang$html$Html$li,
+										_elm_lang$core$Native_List.fromArray(
+											[]),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												A2(
+												_elm_lang$html$Html$a,
+												_elm_lang$core$Native_List.fromArray(
+													[
+														_elm_lang$html$Html_Attributes$href('WildingTyler_Assignment1.pdf')
+													]),
+												_elm_lang$core$Native_List.fromArray(
+													[
+														_elm_lang$html$Html$text('Encryption Writeup PDF')
+													]))
 											]))
 									]))
 							]))
