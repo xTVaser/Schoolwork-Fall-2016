@@ -1,3 +1,6 @@
+body {
+  font-family: Oswald, sans-serif; }
+
 .record {
   margin: 10px 10px 10px 10px;
   list-style-type: none;
@@ -5,7 +8,8 @@
   background-color: #DCEDC8;
   border-radius: 10px 10px;
   border: 2px solid #689F38;
-  font-size: 75%; }
+  font-size: 100%;
+  font-weight: 300; }
 
 .navbar-default {
   background-image: linear-gradient(to bottom, #689F38 0, #8BC34A 100%);
@@ -24,5 +28,8 @@
 .navbar-default .navbar-nav > li > a {
   color: #EDEDED;
   font-weight: bold; }
+
+#allRecords {
+  margin-bottom: 25px; }
 
 /*# sourceMappingURL=styles.css.map */

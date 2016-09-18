@@ -226,7 +226,7 @@ viewInput model =
 
 viewRecords : List Record -> Html Msg
 viewRecords records = 
-  div [ class "container" ]
+  div [ class "container", id "allRecords" ]
   [ 
     h1 [] 
     [
@@ -246,7 +246,13 @@ viewSingleRecord list id =
   div [ class "col-md-4" ]
   [
     ul [ class "record" ]
-      (List.map createListItem list)
+      (List.map createListItem (zip [ "Plain Text:"
+                                    , "Passphrase:"
+                                    , "AES:"
+                                    , "DES:"
+                                    , "Triple DES:"
+                                    , "Rabbit:"
+                                    , "RC4:"] list))
   ,
     div [ class "text-center" ] [
 
@@ -257,9 +263,17 @@ viewSingleRecord list id =
     ]
   ]
 
-createListItem : String -> Html Msg
-createListItem string = 
+createListItem : (String, String) -> Html Msg
+createListItem (heading, content) = 
   li [ class "recordItem"]
   [
-    text string
+    label [ class "boldtext" ]
+    [
+      text heading
+    ]
+  ,  
+    text content
   ]
+
+zip : List a -> List b -> List (a,b)
+zip list1 list2 = List.map2 (,) list1 list2

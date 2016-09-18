@@ -1,4 +1,16 @@
-var _user$project$Encryption$createListItem = function (string) {
+var _user$project$Encryption$zip = F2(
+	function (list1, list2) {
+		return A3(
+			_elm_lang$core$List$map2,
+			F2(
+				function (v0, v1) {
+					return {ctor: '_Tuple2', _0: v0, _1: v1};
+				}),
+			list1,
+			list2);
+	});
+var _user$project$Encryption$createListItem = function (_p0) {
+	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$li,
 		_elm_lang$core$Native_List.fromArray(
@@ -7,7 +19,17 @@ var _user$project$Encryption$createListItem = function (string) {
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html$text(string)
+				A2(
+				_elm_lang$html$Html$label,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('boldtext')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(_p1._0)
+					])),
+				_elm_lang$html$Html$text(_p1._1)
 			]));
 };
 var _user$project$Encryption$viewNavbar = function (model) {
@@ -112,8 +134,8 @@ var _user$project$Encryption$getHashes = _elm_lang$core$Native_Platform.outgoing
 	});
 var _user$project$Encryption$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
+		var _p2 = msg;
+		switch (_p2.ctor) {
 			case 'NoOp':
 				return A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
@@ -134,7 +156,7 @@ var _user$project$Encryption$update = F2(
 								model.records,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										A2(_user$project$Encryption$newRecord, _p0._0, model.uid)
+										A2(_user$project$Encryption$newRecord, _p2._0, model.uid)
 									]))
 						}),
 					_elm_lang$core$Native_List.fromArray(
@@ -148,7 +170,7 @@ var _user$project$Encryption$update = F2(
 							records: A2(
 								_elm_lang$core$List$filter,
 								function (t) {
-									return !_elm_lang$core$Native_Utils.eq(t.id, _p0._0);
+									return !_elm_lang$core$Native_Utils.eq(t.id, _p2._0);
 								},
 								model.records)
 						}),
@@ -159,7 +181,7 @@ var _user$project$Encryption$update = F2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
 						model,
-						{plainText: _p0._0}),
+						{plainText: _p2._0}),
 					_elm_lang$core$Native_List.fromArray(
 						[]));
 			case 'UpdatePassphrase':
@@ -167,7 +189,7 @@ var _user$project$Encryption$update = F2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
 						model,
-						{passPhrase: _p0._0}),
+						{passPhrase: _p2._0}),
 					_elm_lang$core$Native_List.fromArray(
 						[]));
 			default:
@@ -204,9 +226,9 @@ var _user$project$Encryption$setStorage = _elm_lang$core$Native_Platform.outgoin
 	});
 var _user$project$Encryption$updateAndStore = F2(
 	function (msg, model) {
-		var _p1 = A2(_user$project$Encryption$update, msg, model);
-		var newModel = _p1._0;
-		var cmds = _p1._1;
+		var _p3 = A2(_user$project$Encryption$update, msg, model);
+		var newModel = _p3._0;
+		var cmds = _p3._1;
 		return {
 			ctor: '_Tuple2',
 			_0: newModel,
@@ -335,7 +357,14 @@ var _user$project$Encryption$viewSingleRecord = F2(
 						[
 							_elm_lang$html$Html_Attributes$class('record')
 						]),
-					A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list)),
+					A2(
+						_elm_lang$core$List$map,
+						_user$project$Encryption$createListItem,
+						A2(
+							_user$project$Encryption$zip,
+							_elm_lang$core$Native_List.fromArray(
+								['Plain Text:', 'Passphrase:', 'AES:', 'DES:', 'Triple DES:', 'Rabbit:', 'RC4:']),
+							list))),
 					A2(
 					_elm_lang$html$Html$div,
 					_elm_lang$core$Native_List.fromArray(
@@ -370,7 +399,8 @@ var _user$project$Encryption$viewRecords = function (records) {
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html_Attributes$class('container')
+				_elm_lang$html$Html_Attributes$class('container'),
+				_elm_lang$html$Html_Attributes$id('allRecords')
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
