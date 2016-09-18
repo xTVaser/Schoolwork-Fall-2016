@@ -137,16 +137,52 @@ update msg model =
 
 view : Model -> Html Msg
 view model = 
-  div
-    [ class "container"
-    , style [ ("visibility", "hidden") ]
+  div []
+  [ 
+    div []
+    [
+      viewNavbar model
     ]
-    [ section
-      [ class "app" ]
-      [ viewInput model
-      , viewRecords model.records
+  ,
+    div [ class "container" ]
+    [ 
+      viewInput model
+    , viewRecords model.records
+    ]
+  ]
+
+viewNavbar : Model -> Html Msg
+viewNavbar model =
+  div [ class "navbar navbar-default navbar-static-top" ]
+  [
+    div [ class "container" ]
+    [
+      div [ class "navbar-header" ]
+      [
+        a [ class "navbar-brand" ]
+        [
+          text "Assignment 1 - Encryption"
+        ]
+      ]
+    ,
+      div [ class "navbar-collapse collapse" ]
+      [
+        ul [ class "nav navbar-nav" ]
+        [
+          li []
+          [
+            Html.a [ href "http://notturing.ddns.net" ]
+            [
+              text "Back to notTuring"
+            ]
+          ]
+        ]
       ]
     ]
+  ]
+
+
+
 
 viewInput : Model -> Html Msg
 viewInput model = 
@@ -173,7 +209,7 @@ viewInput model =
       , onInput UpdatePassphrase
       ] []
     ,
-      button [onClick ComputeHashes ]
+      button [class "btn btn-primary", onClick ComputeHashes ]
       [
         text ("Encrypt!")
       ] 
