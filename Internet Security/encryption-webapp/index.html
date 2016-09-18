@@ -5,9 +5,9 @@
       <meta charset="UTF-8">
       <title>Assignment 1 - Encryption - Tyler Wilding</title>
       <script type="text/javascript" src="elm.js"></script>
-      <link rel="stylesheet" href="stylee.css">
       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="styles.css">
       <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
   </head>
@@ -38,6 +38,7 @@
       hashes.push("Plain Text: " + list[0]);
       hashes.push("Passphrase: " + list[1]);
       //Slice the array in the elm file and print heading and lower part.
+      //Could get ^ to work lel
       hashes.push("AES:        " + CryptoJS.AES.encrypt(list[0], list[1]));
       hashes.push("DES:        " + CryptoJS.DES.encrypt(list[0], list[1]));
       hashes.push("Triple DES: " + CryptoJS.TripleDES.encrypt(list[0], list[1]));

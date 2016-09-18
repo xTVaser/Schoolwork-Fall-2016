@@ -1,0 +1,450 @@
+var _user$project$Encryption$createListItem = function (string) {
+	return A2(
+		_elm_lang$html$Html$li,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('recordItem')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text(string)
+			]));
+};
+var _user$project$Encryption$viewSingleRecord = function (list) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('col-md-4')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$ul,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('record')
+					]),
+				A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list))
+			]));
+};
+var _user$project$Encryption$viewHashesInRecord = function (record) {
+	return _user$project$Encryption$viewSingleRecord(
+		_elm_lang$core$Array$toList(record.hashes));
+};
+var _user$project$Encryption$viewRecords = function (records) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('container')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$h1,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Records')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				A2(_elm_lang$core$List$map, _user$project$Encryption$viewHashesInRecord, records))
+			]));
+};
+var _user$project$Encryption$viewNavbar = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('navbar navbar-default navbar-static-top')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('container')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('navbar-header')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$class('navbar-brand')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Assignment 1 - Encryption')
+									]))
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('navbar-collapse collapse')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								A2(
+								_elm_lang$html$Html$ul,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$class('nav navbar-nav')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										A2(
+										_elm_lang$html$Html$li,
+										_elm_lang$core$Native_List.fromArray(
+											[]),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												A2(
+												_elm_lang$html$Html$a,
+												_elm_lang$core$Native_List.fromArray(
+													[
+														_elm_lang$html$Html_Attributes$href('http://notturing.ddns.net')
+													]),
+												_elm_lang$core$Native_List.fromArray(
+													[
+														_elm_lang$html$Html$text('Back to notTuring')
+													]))
+											]))
+									]))
+							]))
+					]))
+			]));
+};
+var _user$project$Encryption$newRecord = F2(
+	function (hashes, id) {
+		return {hashes: hashes, id: id};
+	});
+var _user$project$Encryption$ourModel = {
+	records: _elm_lang$core$Native_List.fromArray(
+		[]),
+	uid: 0,
+	plainText: '',
+	passPhrase: ''
+};
+var _user$project$Encryption$init = function (savedModel) {
+	return A2(
+		_elm_lang$core$Platform_Cmd_ops['!'],
+		A2(_elm_lang$core$Maybe$withDefault, _user$project$Encryption$ourModel, savedModel),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _user$project$Encryption$getHashes = _elm_lang$core$Native_Platform.outgoingPort(
+	'getHashes',
+	function (v) {
+		return _elm_lang$core$Native_List.toArray(v).map(
+			function (v) {
+				return v;
+			});
+	});
+var _user$project$Encryption$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'NoOp':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'AddRecord':
+				var _p1 = _p0._0;
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							records: _elm_lang$core$Array$isEmpty(_p1) ? model.records : A2(
+								_elm_lang$core$Basics_ops['++'],
+								model.records,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										A2(_user$project$Encryption$newRecord, _p1, model.uid)
+									]))
+						}),
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'DeleteRecord':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							records: A2(
+								_elm_lang$core$List$filter,
+								function (t) {
+									return !_elm_lang$core$Native_Utils.eq(t.id, _p0._0);
+								},
+								model.records)
+						}),
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'UpdatePlainText':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{plainText: _p0._0}),
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'UpdatePassphrase':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{passPhrase: _p0._0}),
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$Encryption$getHashes(
+						_elm_lang$core$Native_List.fromArray(
+							[model.plainText, model.passPhrase]))
+				};
+		}
+	});
+var _user$project$Encryption$receiveHashes = _elm_lang$core$Native_Platform.incomingPort(
+	'receiveHashes',
+	_elm_lang$core$Json_Decode$array(_elm_lang$core$Json_Decode$string));
+var _user$project$Encryption$setStorage = _elm_lang$core$Native_Platform.outgoingPort(
+	'setStorage',
+	function (v) {
+		return {
+			records: _elm_lang$core$Native_List.toArray(v.records).map(
+				function (v) {
+					return {
+						hashes: _elm_lang$core$Native_Array.toJSArray(v.hashes).map(
+							function (v) {
+								return v;
+							}),
+						id: v.id
+					};
+				}),
+			plainText: v.plainText,
+			passPhrase: v.passPhrase,
+			uid: v.uid
+		};
+	});
+var _user$project$Encryption$updateAndStore = F2(
+	function (msg, model) {
+		var _p2 = A2(_user$project$Encryption$update, msg, model);
+		var newModel = _p2._0;
+		var cmds = _p2._1;
+		return {
+			ctor: '_Tuple2',
+			_0: newModel,
+			_1: _elm_lang$core$Platform_Cmd$batch(
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_user$project$Encryption$setStorage(newModel),
+						cmds
+					]))
+		};
+	});
+var _user$project$Encryption$Model = F4(
+	function (a, b, c, d) {
+		return {records: a, plainText: b, passPhrase: c, uid: d};
+	});
+var _user$project$Encryption$Record = F2(
+	function (a, b) {
+		return {hashes: a, id: b};
+	});
+var _user$project$Encryption$ComputeHashes = {ctor: 'ComputeHashes'};
+var _user$project$Encryption$UpdatePassphrase = function (a) {
+	return {ctor: 'UpdatePassphrase', _0: a};
+};
+var _user$project$Encryption$UpdatePlainText = function (a) {
+	return {ctor: 'UpdatePlainText', _0: a};
+};
+var _user$project$Encryption$viewInput = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('container')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$h1,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('instructions')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Please enter your plaintext and passphrase...')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('form-group')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$input,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('form-control'),
+								_elm_lang$html$Html_Attributes$placeholder('Plaintext'),
+								_elm_lang$html$Html_Attributes$autofocus(true),
+								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePlainText)
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[]))
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('form-group')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$input,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('form-control'),
+								_elm_lang$html$Html_Attributes$placeholder('Passphrase'),
+								_elm_lang$html$Html_Attributes$autofocus(false),
+								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePassphrase)
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[]))
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('form-group')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$button,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('btn btn-primary'),
+								_elm_lang$html$Html_Events$onClick(_user$project$Encryption$ComputeHashes)
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('Encrypt!')
+							]))
+					]))
+			]));
+};
+var _user$project$Encryption$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_user$project$Encryption$viewNavbar(model)
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('container')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_user$project$Encryption$viewInput(model),
+						_user$project$Encryption$viewRecords(model.records)
+					]))
+			]));
+};
+var _user$project$Encryption$DeleteRecord = function (a) {
+	return {ctor: 'DeleteRecord', _0: a};
+};
+var _user$project$Encryption$AddRecord = function (a) {
+	return {ctor: 'AddRecord', _0: a};
+};
+var _user$project$Encryption$subscriptions = function (model) {
+	return _user$project$Encryption$receiveHashes(_user$project$Encryption$AddRecord);
+};
+var _user$project$Encryption$main = {
+	main: _elm_lang$html$Html_App$programWithFlags(
+		{init: _user$project$Encryption$init, view: _user$project$Encryption$view, update: _user$project$Encryption$updateAndStore, subscriptions: _user$project$Encryption$subscriptions}),
+	flags: _elm_lang$core$Json_Decode$oneOf(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$core$Json_Decode$null(_elm_lang$core$Maybe$Nothing),
+				A2(
+				_elm_lang$core$Json_Decode$map,
+				_elm_lang$core$Maybe$Just,
+				A2(
+					_elm_lang$core$Json_Decode$andThen,
+					A2(_elm_lang$core$Json_Decode_ops[':='], 'passPhrase', _elm_lang$core$Json_Decode$string),
+					function (passPhrase) {
+						return A2(
+							_elm_lang$core$Json_Decode$andThen,
+							A2(_elm_lang$core$Json_Decode_ops[':='], 'plainText', _elm_lang$core$Json_Decode$string),
+							function (plainText) {
+								return A2(
+									_elm_lang$core$Json_Decode$andThen,
+									A2(
+										_elm_lang$core$Json_Decode_ops[':='],
+										'records',
+										_elm_lang$core$Json_Decode$list(
+											A2(
+												_elm_lang$core$Json_Decode$andThen,
+												A2(
+													_elm_lang$core$Json_Decode_ops[':='],
+													'hashes',
+													_elm_lang$core$Json_Decode$array(_elm_lang$core$Json_Decode$string)),
+												function (hashes) {
+													return A2(
+														_elm_lang$core$Json_Decode$andThen,
+														A2(_elm_lang$core$Json_Decode_ops[':='], 'id', _elm_lang$core$Json_Decode$int),
+														function (id) {
+															return _elm_lang$core$Json_Decode$succeed(
+																{hashes: hashes, id: id});
+														});
+												}))),
+									function (records) {
+										return A2(
+											_elm_lang$core$Json_Decode$andThen,
+											A2(_elm_lang$core$Json_Decode_ops[':='], 'uid', _elm_lang$core$Json_Decode$int),
+											function (uid) {
+												return _elm_lang$core$Json_Decode$succeed(
+													{passPhrase: passPhrase, plainText: plainText, records: records, uid: uid});
+											});
+									});
+							});
+					}))
+			]))
+};
+var _user$project$Encryption$NoOp = {ctor: 'NoOp'};

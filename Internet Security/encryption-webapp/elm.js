@@ -8329,37 +8329,48 @@ var _user$project$Encryption$createListItem = function (string) {
 };
 var _user$project$Encryption$viewSingleRecord = function (list) {
 	return A2(
-		_elm_lang$html$Html$ul,
+		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html_Attributes$class('record')
-			]),
-		A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list));
-};
-var _user$project$Encryption$viewKeyedRecord = function (record) {
-	return {
-		ctor: '_Tuple2',
-		_0: _elm_lang$core$Basics$toString(record.id),
-		_1: _user$project$Encryption$viewSingleRecord(
-			_elm_lang$core$Array$toList(record.hashes))
-	};
-};
-var _user$project$Encryption$viewRecords = function (records) {
-	return A2(
-		_elm_lang$html$Html$section,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('recordArea')
+				_elm_lang$html$Html_Attributes$class('col-md-4')
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
-				_elm_lang$html$Html_Keyed$ul,
+				_elm_lang$html$Html$ul,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Attributes$class('records')
+						_elm_lang$html$Html_Attributes$class('record')
 					]),
-				A2(_elm_lang$core$List$map, _user$project$Encryption$viewKeyedRecord, records))
+				A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list))
+			]));
+};
+var _user$project$Encryption$viewHashesInRecord = function (record) {
+	return _user$project$Encryption$viewSingleRecord(
+		_elm_lang$core$Array$toList(record.hashes));
+};
+var _user$project$Encryption$viewRecords = function (records) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('container')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$h1,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Records')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				A2(_elm_lang$core$List$map, _user$project$Encryption$viewHashesInRecord, records))
 			]));
 };
 var _user$project$Encryption$viewNavbar = function (model) {

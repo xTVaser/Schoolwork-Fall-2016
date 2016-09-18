@@ -223,23 +223,30 @@ viewRecords : List Record -> Html Msg
 viewRecords records = 
   div [ class "container" ]
   [ 
-    Keyed.ul [ class "records" ] <|
-    List.map viewKeyedRecord records
+    h1 [] 
+    [
+      text "Records"
+    ]
+  ,
+    div []
+      (List.map viewHashesInRecord records)
   ]
 
-viewKeyedRecord : Record -> (String, Html Msg)
-viewKeyedRecord record =
-  ( toString record.id, viewSingleRecord (Array.toList record.hashes) )
+viewHashesInRecord : Record -> Html Msg
+viewHashesInRecord record =
+  viewSingleRecord (Array.toList record.hashes)
 
 viewSingleRecord : List String -> Html Msg
 viewSingleRecord list =
-  ul [class "record" ]
-    (List.map createListItem list)
-     
+  div [ class "col-md-4" ]
+  [
+    ul [ class "record" ]
+      (List.map createListItem list)
+  ]
 
 createListItem : String -> Html Msg
 createListItem string = 
-  li [class "recordItem"]
+  li [ class "recordItem"]
   [
     text string
   ]
