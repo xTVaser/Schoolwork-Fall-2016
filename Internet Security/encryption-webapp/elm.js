@@ -8587,7 +8587,9 @@ var _user$project$Encryption$viewInput = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
-			[]),
+			[
+				_elm_lang$html$Html_Attributes$class('container')
+			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
@@ -8604,7 +8606,7 @@ var _user$project$Encryption$viewInput = function (model) {
 				_elm_lang$html$Html$div,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Attributes$class('formFields')
+						_elm_lang$html$Html_Attributes$class('form-group')
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -8612,24 +8614,42 @@ var _user$project$Encryption$viewInput = function (model) {
 						_elm_lang$html$Html$input,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$class('formField'),
+								_elm_lang$html$Html_Attributes$class('form-control'),
 								_elm_lang$html$Html_Attributes$placeholder('Plaintext'),
 								_elm_lang$html$Html_Attributes$autofocus(true),
 								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePlainText)
 							]),
 						_elm_lang$core$Native_List.fromArray(
-							[])),
+							[]))
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('form-group')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
 						A2(
 						_elm_lang$html$Html$input,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$class('formField'),
+								_elm_lang$html$Html_Attributes$class('form-control'),
 								_elm_lang$html$Html_Attributes$placeholder('Passphrase'),
 								_elm_lang$html$Html_Attributes$autofocus(false),
 								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePassphrase)
 							]),
 						_elm_lang$core$Native_List.fromArray(
-							[])),
+							[]))
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('form-group')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
 						A2(
 						_elm_lang$html$Html$button,
 						_elm_lang$core$Native_List.fromArray(

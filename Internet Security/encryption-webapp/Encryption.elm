@@ -181,34 +181,37 @@ viewNavbar model =
     ]
   ]
 
-
-
-
 viewInput : Model -> Html Msg
 viewInput model = 
-  div [] 
+  div [ class "container" ] 
   [
     h1 [ class "instructions" ]
     [
       text ("Please enter your plaintext and passphrase...")
     ]
   ,
-    div [ class "formFields" ] 
+    div [ class "form-group" ] 
     [
       input [
-        class "formField" 
+        class "form-control" 
       , placeholder "Plaintext"
       , autofocus True
       , onInput UpdatePlainText
       ] []
-    ,
+    ]
+  ,
+    div [ class "form-group" ]
+    [
       input [
-        class "formField"
+        class "form-control"
       , placeholder "Passphrase"
       , autofocus False
       , onInput UpdatePassphrase
       ] []
-    ,
+    ]
+  ,
+    div [ class "form-group" ]
+    [
       button [class "btn btn-primary", onClick ComputeHashes ]
       [
         text ("Encrypt!")
