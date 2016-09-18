@@ -108,8 +108,11 @@ update msg model =
 
     AddRecord hashes ->
       { model
-        | records = 
-            if Array.isEmpty hashes then
+        | uid = model.uid + 1
+        , plainText = ""
+        , passPhrase = ""
+        , records = 
+            if String.isEmpty model.plainText then
                model.records
             else
                model.records ++ [newRecord hashes model.uid ]
@@ -193,7 +196,8 @@ viewInput model =
     div [ class "form-group" ] 
     [
       input [
-        class "form-control" 
+        class "form-control"
+      , id "plaintext-input"
       , placeholder "Plaintext"
       , autofocus True
       , onInput UpdatePlainText
@@ -204,6 +208,7 @@ viewInput model =
     [
       input [
         class "form-control"
+      , id "passphrase-input"
       , placeholder "Passphrase"
       , autofocus False
       , onInput UpdatePassphrase
@@ -234,14 +239,22 @@ viewRecords records =
 
 viewHashesInRecord : Record -> Html Msg
 viewHashesInRecord record =
-  viewSingleRecord (Array.toList record.hashes)
+  viewSingleRecord (Array.toList record.hashes) record.id
 
-viewSingleRecord : List String -> Html Msg
-viewSingleRecord list =
+viewSingleRecord : List String -> Int -> Html Msg
+viewSingleRecord list id =
   div [ class "col-md-4" ]
   [
     ul [ class "record" ]
       (List.map createListItem list)
+  ,
+    div [ class "text-center" ] [
+
+      button [ class "btn btn-danger", onClick (DeleteRecord id) ]
+      [
+        text "Delete"
+      ]
+    ]
   ]
 
 createListItem : String -> Html Msg

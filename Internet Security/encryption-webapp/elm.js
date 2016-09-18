@@ -8327,52 +8327,6 @@ var _user$project$Encryption$createListItem = function (string) {
 				_elm_lang$html$Html$text(string)
 			]));
 };
-var _user$project$Encryption$viewSingleRecord = function (list) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('col-md-4')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$ul,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('record')
-					]),
-				A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list))
-			]));
-};
-var _user$project$Encryption$viewHashesInRecord = function (record) {
-	return _user$project$Encryption$viewSingleRecord(
-		_elm_lang$core$Array$toList(record.hashes));
-};
-var _user$project$Encryption$viewRecords = function (records) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('container')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				A2(
-				_elm_lang$html$Html$h1,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Records')
-					])),
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				A2(_elm_lang$core$List$map, _user$project$Encryption$viewHashesInRecord, records))
-			]));
-};
 var _user$project$Encryption$viewNavbar = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8484,18 +8438,20 @@ var _user$project$Encryption$update = F2(
 					_elm_lang$core$Native_List.fromArray(
 						[]));
 			case 'AddRecord':
-				var _p1 = _p0._0;
 				return A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
 						model,
 						{
-							records: _elm_lang$core$Array$isEmpty(_p1) ? model.records : A2(
+							uid: model.uid + 1,
+							plainText: '',
+							passPhrase: '',
+							records: _elm_lang$core$String$isEmpty(model.plainText) ? model.records : A2(
 								_elm_lang$core$Basics_ops['++'],
 								model.records,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										A2(_user$project$Encryption$newRecord, _p1, model.uid)
+										A2(_user$project$Encryption$newRecord, _p0._0, model.uid)
 									]))
 						}),
 					_elm_lang$core$Native_List.fromArray(
@@ -8565,9 +8521,9 @@ var _user$project$Encryption$setStorage = _elm_lang$core$Native_Platform.outgoin
 	});
 var _user$project$Encryption$updateAndStore = F2(
 	function (msg, model) {
-		var _p2 = A2(_user$project$Encryption$update, msg, model);
-		var newModel = _p2._0;
-		var cmds = _p2._1;
+		var _p1 = A2(_user$project$Encryption$update, msg, model);
+		var newModel = _p1._0;
+		var cmds = _p1._1;
 		return {
 			ctor: '_Tuple2',
 			_0: newModel,
@@ -8626,6 +8582,7 @@ var _user$project$Encryption$viewInput = function (model) {
 						_elm_lang$core$Native_List.fromArray(
 							[
 								_elm_lang$html$Html_Attributes$class('form-control'),
+								_elm_lang$html$Html_Attributes$id('plaintext-input'),
 								_elm_lang$html$Html_Attributes$placeholder('Plaintext'),
 								_elm_lang$html$Html_Attributes$autofocus(true),
 								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePlainText)
@@ -8646,6 +8603,7 @@ var _user$project$Encryption$viewInput = function (model) {
 						_elm_lang$core$Native_List.fromArray(
 							[
 								_elm_lang$html$Html_Attributes$class('form-control'),
+								_elm_lang$html$Html_Attributes$id('passphrase-input'),
 								_elm_lang$html$Html_Attributes$placeholder('Passphrase'),
 								_elm_lang$html$Html_Attributes$autofocus(false),
 								_elm_lang$html$Html_Events$onInput(_user$project$Encryption$UpdatePassphrase)
@@ -8675,6 +8633,79 @@ var _user$project$Encryption$viewInput = function (model) {
 					]))
 			]));
 };
+var _user$project$Encryption$DeleteRecord = function (a) {
+	return {ctor: 'DeleteRecord', _0: a};
+};
+var _user$project$Encryption$viewSingleRecord = F2(
+	function (list, id) {
+		return A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('col-md-4')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$ul,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('record')
+						]),
+					A2(_elm_lang$core$List$map, _user$project$Encryption$createListItem, list)),
+					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('text-center')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							A2(
+							_elm_lang$html$Html$button,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html_Attributes$class('btn btn-danger'),
+									_elm_lang$html$Html_Events$onClick(
+									_user$project$Encryption$DeleteRecord(id))
+								]),
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html$text('Delete')
+								]))
+						]))
+				]));
+	});
+var _user$project$Encryption$viewHashesInRecord = function (record) {
+	return A2(
+		_user$project$Encryption$viewSingleRecord,
+		_elm_lang$core$Array$toList(record.hashes),
+		record.id);
+};
+var _user$project$Encryption$viewRecords = function (records) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('container')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$h1,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Records')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				A2(_elm_lang$core$List$map, _user$project$Encryption$viewHashesInRecord, records))
+			]));
+};
 var _user$project$Encryption$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8702,9 +8733,6 @@ var _user$project$Encryption$view = function (model) {
 						_user$project$Encryption$viewRecords(model.records)
 					]))
 			]));
-};
-var _user$project$Encryption$DeleteRecord = function (a) {
-	return {ctor: 'DeleteRecord', _0: a};
 };
 var _user$project$Encryption$AddRecord = function (a) {
 	return {ctor: 'AddRecord', _0: a};

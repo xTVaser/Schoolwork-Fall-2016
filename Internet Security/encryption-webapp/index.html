@@ -47,6 +47,9 @@
 
       console.log(hashes[6]);
 
+      $('#plaintext-input').val('');
+      $('#passphrase-input').val('');
+
       //Send them back
       encryptionMVC.ports.receiveHashes.send(hashes);
 
