@@ -221,12 +221,11 @@ viewInput model =
 
 viewRecords : List Record -> Html Msg
 viewRecords records = 
-  section
-    [ class "recordArea"
-    ]
-    [ Keyed.ul [ class "records" ] <|
-      List.map viewKeyedRecord records
-    ]
+  div [ class "container" ]
+  [ 
+    Keyed.ul [ class "records" ] <|
+    List.map viewKeyedRecord records
+  ]
 
 viewKeyedRecord : Record -> (String, Html Msg)
 viewKeyedRecord record =
