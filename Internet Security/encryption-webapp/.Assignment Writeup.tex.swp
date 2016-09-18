@@ -4,6 +4,7 @@
 \usepackage{fullpage} % changes the margin
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{cite}
 
 \begin{document}
 %Header-Make sure you update this information!!!!
@@ -90,7 +91,27 @@ do{
 \section*{Summary}
 It is important to note that when looking at the complexity of breaking an encryption method that one looks at the key size.  If the keysize for an encryption method is 128 bits, than this means that the brute force complexity for the key is $2^{128}$, meaning that as long as the complexity to break the algorithm exceeds this, it is not a security threat.\\
 
-For this reason, AES or Rabbit would be perfectly fine to choose as an encryption method, however the other algorithms that can be cracked in less than brute-force time, actually make it easier to crack the passwords than brute forcing the password, assuming the password was stored as 128bits. Definitely algorithms like DES or especially RC4 should not be used, but Triple DES is a gray area, there are definitely better encryption methods but using Triple DES would probably not compromise your security.
+For this reason, AES or Rabbit would be perfectly fine to choose as an encryption method, however the other algorithms that can be cracked in less than brute-force time, actually make it easier to crack the passwords than brute forcing the password, assuming the password was stored as 128bits. Definitely algorithms like DES or especially RC4 should not be used, but Triple DES is a gray area, there are definitely better encryption methods but using Triple DES would probably not compromise your security.  In fact, many companies such as Mozilla and Microsoft and outright prohibited using it.
 
 
+\begin{thebibliography}{9}
+
+\bibitem{quoraAnswer}
+	S. Sanadhya. (2014). \textit{Cryptography: What is an intuitive explanation of the RC4 encryption algorithm and its weaknesses?} [Online]. \href{https://www.quora.com/Cryptography-What-is-an-intuitive-explanation-of-the-RC4-encryption-algorithm-and-its-weaknesses?srid=Gp4A}{https://www.quora.com/Cryptography-What-is-an-intuitive-explanation-of-the-RC4-encryption-algorithm-and-its-weaknesses?srid=Gp4A}
+	
+\bibitem{desExplained}
+	\textit{DES Explanation} [Online]. \href{http://www.tero.co.uk/des/explain.php}{http://www.tero.co.uk/des/explain.php}
+	
+\bibitem{des}
+	\textit{Data Encryption Standard} Online. \href{https://en.wikipedia.org/wiki/Data_Encryption_Standard}{https://en.wikipedia.org/wiki/Data\_Encryption\_Standard}
+\bibitem{aes}
+	\textit{Advanced Encryption Standard} [Online]. \href{https://en.wikipedia.org/wiki/Advanced_Encryption_Standard}{https://en.wikipedia.org/wiki/Advanced\_Encrypt\\ion\_Standard}
+	
+\bibitem{aesKS}
+	\textit{Rijndael key schedule} [Online]. \href{https://en.wikipedia.org/wiki/Rijndael_key_schedule}{https://en.wikipedia.org/wiki/Rijndael\_key\_schedule}
+
+\bibitem{rc4}
+	\textit{RC4} [Online]. \href{https://en.wikipedia.org/wiki/RC4}{https://en.wikipedia.org/wiki/RC4}
+
+\end{thebibliography}
 \end{document}
