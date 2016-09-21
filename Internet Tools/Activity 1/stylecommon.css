@@ -1,0 +1,10 @@
+/* Common Stylesheet Definitions */
+
+.container {
+    xmin-width: 900px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: auto;
+}

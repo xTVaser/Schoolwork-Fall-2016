@@ -1,0 +1,96 @@
+/* Stylesheet 2: */
+
+/*Styles by tag */
+body {
+  font-family: 'Arial';
+  background-color: #d14836;
+  line-height: 20px;
+}
+
+a {
+  color: #d14836;
+  text-decoration: none;
+}
+
+/*Styles by ID*/
+#top {
+
+  font-size: 30px;
+  line-height: 26px;
+  color: white;
+  padding: 15px;
+}
+
+#menubar {
+
+  width: 190px;
+  float: right;
+}
+
+#menulist {
+
+  padding: 0px;
+  font: 16px verdana;
+}
+
+#main {
+
+  font: 80% verdana;
+  background-color: white;
+  padding: 10px;
+}
+
+#sidebar {
+
+  background-color: #f6dad7;
+  color: #d14836;
+  padding: 10px;
+}
+
+#bottom {
+
+  text-align: center;
+  color: white;
+  font-size: 70%;
+  padding: 10px;
+}
+
+/*Styles by class */
+.menuitem {
+
+  border-radius: 40px;
+  margin: 10px;
+  background-color: #d14836;
+  border: 1px solid #d14836;
+  color: white;
+  list-style-type: none;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  width: 155px;
+
+}
+/*Styles by ID+class combo */
+#top h1{
+  margin: 0px;
+  line-height: 50px;
+}
+
+#main h1, #main h2{
+  color: #d14836;
+}
+/*Styles by psuedoclass */
+a: hover{
+  text-decoration: underline;
+}
+
+.menuitem: hover{
+  background-color: white;
+  color: #d14836;
+}
+
+.menuitem:nth-child(2) {
+  background-color: white;
+  color: #d14836;
+  font-weight: bold;
+}

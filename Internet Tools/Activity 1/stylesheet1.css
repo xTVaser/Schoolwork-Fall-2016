@@ -1,0 +1,100 @@
+/* Stylesheet 1: */
+
+/*Styles by tag */
+body {
+  font: 100% Lucida Sans,Verdana;
+  margin: 20px;
+  line-height: 26px;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+/*Styles by ID*/
+
+#top {
+
+  border-radius: 4px;
+  margin: 4px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+}
+
+#menubar {
+
+  border-radius: 4px;
+  margin: 4px;
+  width: 200px;
+  float: left;
+}
+
+#menulist {
+
+  padding: 0px;
+  margin: 0px;
+}
+
+#main {
+
+  margin: 10px;
+  padding: 0px, 210px;
+}
+
+#sidebar {
+
+  width: 180px;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: #32a4e7;
+  color: white;
+  padding: 10px;
+}
+
+#bottom {
+
+  border: 1px, solid, #d4d4d4;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: 70%;
+  padding: 10px;
+  line-height: 14px;
+}
+
+/*Styles by class */
+.menuitem{
+  border-radius: 4px;
+  margin: 4px;
+  background-color: #f1f1f1;
+  border: 1px solid #d4d4d4;
+  list-style-type: none;
+  padding: 2px;
+  cursor: pointer;
+}
+/*Styles by ID+class combo */
+#top h1{
+   margin: 0px;
+   padding: 0px;
+}
+
+#top p{
+   margin: 0px;
+   padding: 0px;
+}
+/*Styles by psuedoclass */
+a: hover{
+  text-decoration: none;
+}
+
+.menuitem: hover{
+  background-color: white;
+}
+
+.menuitem:first-child{
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
