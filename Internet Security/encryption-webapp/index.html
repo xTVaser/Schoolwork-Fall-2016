@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
       <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
       <link rel="stylesheet" href="styles.css">
-      <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
   </head>
 
@@ -37,11 +37,11 @@
       hashes.push(" " + list[1]);
       //Slice the array in the elm file and print heading and lower part.
       //Couldnt get ^ to work lel
-      hashes.push(" " + CryptoJS.AES.encrypt(list[0], list[1]));
-      hashes.push(" " + CryptoJS.DES.encrypt(list[0], list[1]));
-      hashes.push(" " + CryptoJS.TripleDES.encrypt(list[0], list[1]));
-      hashes.push(" " + CryptoJS.Rabbit.encrypt(list[0], list[1]));
-      hashes.push(" " + CryptoJS.RC4.encrypt(list[0], list[1]));
+      hashes.push(" " + CryptoJS.AES.encrypt(list[0], list[1]).ciphertext);
+      hashes.push(" " + CryptoJS.DES.encrypt(list[0], list[1]).ciphertext);
+      hashes.push(" " + CryptoJS.TripleDES.encrypt(list[0], list[1]).ciphertext);
+      hashes.push(" " + CryptoJS.Rabbit.encrypt(list[0], list[1]).ciphertext);
+      hashes.push(" " + CryptoJS.RC4.encrypt(list[0], list[1]).ciphertext);
 
       console.log(hashes[6]);
 
