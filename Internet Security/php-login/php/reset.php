@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $server = "localhost";
 $user = "tyler";
 $password = "MR83ggJu";
@@ -13,8 +11,8 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $email = strtolower($_POST['email']);
-    $password = $_POST['password'];
-    $datetime = date("Y-m-d H:i:s");
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $pin = $_POST['pin'];
     
     $select = $conn->prepare("SELECT * FROM users WHERE (email = '$email')");
     $select->execute();
@@ -22,26 +20,26 @@ try {
     $rowCount = $select->rowCount();
     $row = $select->fetch(PDO::FETCH_ASSOC);
     
-    if($rowCount == 1 && password_verify($password, $row['password'])) {
     
-        if($row['verified'] == 0)
-            echo "verify";
+    if($rowCount == 1) {
+        
+        if($row['reset_pin'] != $pin)
+            echo "pin";
+            
+        else if($row['reset_pin'] == null || $row['reset_pin'] == 0)
+            echo "fail";
+            
         else {
             echo "success";
-            $_SESSION['email'] = $email;
             
-            $update = $conn->prepare("UPDATE users SET last_login='$datetime' WHERE (email = '$email')");
+            $update = $conn->prepare("UPDATE users SET password='$password', reset_pin=0 WHERE (email = '$email')");
             $update->execute();
         }
     }
-        
-    else
-        echo "fail";
-    
 }
 catch(PDOException $e) {
     
-    echo $select . "Error: " . $e->getMessage();
+    echo "fail";
 }
 
 $conn = null;

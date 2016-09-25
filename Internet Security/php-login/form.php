@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+	//echo var_dump($_SESSION);
+	//echo isset($_SESSION['email'])
+?>
+
 <!doctype = HTML>
 <html>
     <head>
@@ -16,23 +23,22 @@
                     <div class="mdl-tabs__tab-bar">
                         <a href="#loginform-panel" class="mdl-tabs__tab is-active">Login</a>
                         <a href="#registerform-panel" class="mdl-tabs__tab">Register</a>
+                        <a href="#forgot-panel" class="mdl-tabs__tab">Forgot Password</a>
                     </div>
 
                     <div class="mdl-tabs__panel is-active" id="loginform-panel">
                         <form id="loginform" class="mdl-layout" method="POST">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="email" required>
+                                <input class="mdl-textfield__input" type="text" id="email" name="email" required>
                                 <label class="mdl-textfield__label" for="email">Email...</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" id="password" required>
-                                <label class="mdl-textfield__label" for"password">Password...</label>
+                                <input class="mdl-textfield__input" type="password" id="password" name="password" required>
+                                <label class="mdl-textfield__label" for="password">Password...</label>
                             </div>
-                            <div class="mdl-cell">
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                                    Sign In
-                                </button>
-                            </div>
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                Sign In
+                            </button>
                         </form>
                     </div>
                     <div class="mdl-tabs__panel" id="registerform-panel">
@@ -51,14 +57,30 @@
                                 <input class="mdl-textfield__input" type="password" id="passwordRegConf" required>
                                 <label class="mdl-textfield__label" for="passwordRegConf">Re-Enter Password...</label>
                             </div>
-                            <div class="mdl-cell">
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                Sign Up
+                            </button>
+                        </form>
+                    </div>
+                    <div class="mdl-tabs__panel" id="forgot-panel">
+                        <form id="forgotform" class="mdl-layout" action="php/forgot.php" method="POST">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="emailforgot" name="emailforgot" pattern="[\S]+[@][\S]+[.][\S]+" required>
+                                <label class="mdl-textfield__label" for="emailforgot">Email...</label>
+                                <span class="mdl-textfield__error">Not a Valid Email!</span>
+                            </div>
+                            <div style="padding-top:15px;">
                                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                                    Sign In
+                                    Send Reset PIN
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
+            <div id="toast-error" class="mdl-js-snackbar mdl-snackbar">
+                 <div class="mdl-snackbar__text"></div>
+                 <button class="mdl-snackbar__action" type="button"></button>
             </div>
         </div>
         <script src="js/scripts.js"></script>

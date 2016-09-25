@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $server = "localhost";
 $user = "tyler";
 $password = "MR83ggJu";
@@ -14,7 +12,7 @@ try {
     
     $email = strtolower($_POST['email']);
     $password = $_POST['password'];
-    $datetime = date("Y-m-d H:i:s");
+    $pin = $_POST['pin'];
     
     $select = $conn->prepare("SELECT * FROM users WHERE (email = '$email')");
     $select->execute();
@@ -22,26 +20,26 @@ try {
     $rowCount = $select->rowCount();
     $row = $select->fetch(PDO::FETCH_ASSOC);
     
-    if($rowCount == 1 && password_verify($password, $row['password'])) {
     
-        if($row['verified'] == 0)
-            echo "verify";
-        else {
-            echo "success";
-            $_SESSION['email'] = $email;
+    if($rowCount == 1 && password_verify($password, $row['password'])) {
+        
+        if($row['verified'] == 1)
+            echo "alreadyverified";
             
-            $update = $conn->prepare("UPDATE users SET last_login='$datetime' WHERE (email = '$email')");
+        else if ($row['verify_pin'] == $pin) {
+            echo "success";
+            
+            $update = $conn->prepare("UPDATE users SET verified=1, verify_pin=0 WHERE (email = '$email')");
             $update->execute();
         }
-    }
         
-    else
-        echo "fail";
-    
+        else
+            echo "pin";
+    }
 }
 catch(PDOException $e) {
     
-    echo $select . "Error: " . $e->getMessage();
+    echo "fail";
 }
 
 $conn = null;
