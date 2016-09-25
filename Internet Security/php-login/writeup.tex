@@ -1,0 +1,29 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large\textbf{Assignment 2} \hfill \textbf{Tyler Wilding} \\
+\normalsize COSC 4426 \hfill Due Date: 25/09/16 \\
+Prof. Biocchi \hfill \href{https://github.com/xTVaser/Schoolwork-Fall-2016/tree/master/Internet%20Security/php-login}{Source Code} \\
+TA: -- \hfill \href{https://notturing.ddns.net/tyler/IS_ASS2/form.php}{Live Demo}
+
+\section*{Assignment Description}
+Made with PHP and Javascript and Google Material Design Lite instead of Bootstrap.  Allows the user to create an account, login, reset their password, and verify their email after registering.  It has some basic checks inplace, such as not allowing an unverified account to login, not allowing duplicate emails to be used to login, etc.  When you login it just redirects to a simple page for now, this will be where things are improved in the coming assignments.\\
+
+Don't use the school email because the emails get completely filtered out of hotmail due to the fact that we are using a default digitalocean VPS with no fully fledged domain.  I used Gmail to test, and the emails always were received but they went to spam.\\
+
+I used the PHP session variables to kick the user off the secured page if they were not logged in, however I did not make the session variables expire yet.
+
+%
+%\begin{thebibliography}{9}
+%\bibitem{Robotics} Fred G. Martin \emph{Robotics Explorations: A Hands-On Introduction to Engineering}. New Jersey: Prentice Hall.
+%\bibitem{Flueck}  Flueck, Alexander J. 2005. \emph{ECE 100}[online]. Chicago: Illinois Institute of Technology, Electrical and Computer Engineering Department, 2005 [cited 30
+%August 2005]. Available from World Wide Web: (http://www.ece.iit.edu/~flueck/ece100).
+%\end{thebibliography}
+
+\end{document}
