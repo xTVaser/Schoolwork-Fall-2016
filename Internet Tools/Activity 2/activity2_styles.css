@@ -17,6 +17,7 @@ footer{
 	bottom: 0px;
 	left: 75%;
 	z-index: 1337;
+	/* it would be better to change the margins and padding */
     clip: rect(25px, 325px, 50px, 20px);
 
 	
