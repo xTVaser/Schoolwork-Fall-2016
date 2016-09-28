@@ -1,0 +1,100 @@
+body {
+	background:GoldenRod;
+	color:#FAE6C1; 
+	margin:0px; padding:0px;
+	font-size: 14pt;
+	/*Step 7 here */
+    counter-reset: section 0;
+}
+
+footer{ 
+	background-color: YellowGreen;
+	width: 96%;
+	height: 20px;
+	padding: 2%;
+	/* put step 2 here */
+	position: fixed;
+	bottom: 0px;
+	left: 75%;
+	z-index: 1337;
+    clip: rect(25px, 325px, 50px, 20px);
+
+	
+}
+
+
+/*Step 1 here */
+a:link {
+    color: SaddleBrown;
+}
+
+a:hover {
+    color: PapayaWhip;
+}
+
+a:visited {
+    color: RebeccaPurple;
+}
+
+
+/*Step 3 a, b, c here */
+li:nth-child(2n+1) {
+    background: linear-gradient(90deg, rgb(240, 155, 220) 15%, Transparent 45%);
+   
+}
+
+
+/*Setp 4 here */
+p:first-letter {
+    font-size: 3em;
+    float: left;
+    margin: 0.25in;
+}
+
+/*Step 5 here */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/*Step 6 here */
+section.article {
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+}
+
+section.article p {
+    text-alignment: justify;
+    font-family: "New Courier", courier, monospace;
+    max-width: 360px;
+    min-width: 450px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 40px, 50px, 40px, 40px;
+    margin: 0px, 10px, 5px, 0px;
+    float: left;
+}
+
+section.clearAbove {
+    clear: both;
+}
+
+
+/*Step 7 here */
+section:not(.article) h2:before {
+    counter-increment: section;
+    content: counter(section) ") ";
+}
+
+
+/*Step 8 here */
+section:not(.article) p {
+    width: 80%;
+}
