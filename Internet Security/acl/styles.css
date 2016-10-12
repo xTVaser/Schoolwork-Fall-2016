@@ -1,0 +1,30 @@
+.mdl-layout {
+    align-items: center;
+    overflow-y: hidden;
+}
+
+#container {
+    margin-top: 15%;
+}
+
+.mdl-layout-title {
+    background-color: #9C27B0;
+    color: #FFFFFF;
+}
+
+.mdl-navigation__link.is-active {
+    background-color: lightgrey;
+    color: #000000 !important;
+}
+
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
+	text-align: center;
+}
+
+.mdl-data-table th {
+	text-align: center;
+}
+
+.mdl-layout__custom {
+	align-items: center;
+}
