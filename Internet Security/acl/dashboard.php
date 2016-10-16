@@ -10,9 +10,43 @@
         header('Location: form.php');
     }
     
-    //Add check here to see if the account has the proper ACL
-    //Modify ACL Levels, small radio buttons for Admin, Mod and User, on submit php file will parse and do updates, do not display self.
-    //Also another form can delete accounts, other than admins, so we just wont display the admins.
+    $server = "localhost";
+    $user = "tyler";
+    $password = "MR83ggJu";
+    $db = "tyler";
+    
+    try {
+        $conn = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e) {
+    
+        echo $select . "Error: " . $e->getMessage();
+    }
+    
+    $aclQuery = $conn->prepare("SELECT acl FROM users WHERE email=:email");
+    $aclQuery->bindParam(":email", $_SESSION['email']);
+    $aclQuery->execute();
+    $acl = $aclQuery->fetch(PDO::FETCH_ASSOC);
+    
+    $permFlag = $acl['acl'];
+    
+    if($permFlag != 3) {
+        header('Location: home.php');
+    }
+    
+    //Getting all the users to use later on.
+    $userQuery = $conn->prepare("SELECT * FROM users WHERE email!=:email ORDER BY email ASC");
+    $userQuery->bindParam(":email", $_SESSION['email']);
+    $userQuery->execute();
+    $users = $userQuery->fetchAll();
+    
+    //Getting all the users to use later on.
+    $attemptQuery = $conn->prepare("SELECT * FROM login_attempts ORDER BY timestamp DESC LIMIT 25");
+    $attemptQuery->execute();
+    $attempts = $attemptQuery->fetchAll();
+    
+    //TODO
     //Lastly, can view the information on past logins.
 ?>
 
@@ -40,7 +74,7 @@
                   <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <a class="mdl-navigation__link is-active" href="dashboard.php">Admin Dashboard</a>
               <a class="mdl-navigation__link" href="home.php">Comments</a>
-              <a class="mdl-navigation__link" href="php/logout.php">Logout</a>
+              <a class="mdl-navigation__link" href="logout.php">Logout</a>
                   </nav>
                 </div>
               </header>
@@ -57,30 +91,30 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">test@test.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user1" value="" checked />
-                      </td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user1" value="" />
-                      </td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user1" value="" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">ye@test.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user2" value="" />
-                      </td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user2" value="" checked/>
-                      </td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <input type="radio" class="mdl-radio__button" name="user2" value="" />
-                      </td>
-                    </tr>
+                    <?php
+                        foreach($users as $user) {
+                            
+                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">");
+                            printf("%s</td><td class=\"mdl-data-table__cell--non-numeric\">",$user['email']);
+                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_user\" name=\"user-%d\" value=\"\"", $user['id']);
+                            if($user['acl'] == 1) {
+                                printf(" checked");
+                            }
+                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
+                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_mod\" name=\"user-%d\" value=\"\"", $user['id']);
+                            if($user['acl'] == 2) {
+                                printf(" checked");
+                            }
+                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
+                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_admin\" name=\"user-%d\" value=\"\"", $user['id']);
+                            if($user['acl'] == 3) {
+                                printf(" checked");
+                            }
+                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
+                            printf("</tr>");
+                        
+                        }
+                    ?>
                   </tbody>
                 </table>
                 </div>
@@ -94,22 +128,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">test@test.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                          <i class="material-icons">delete_forever</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">ye@test.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">
-                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="callthedeleteajaxcall(withtheID)">
-                          <i class="material-icons">delete_forever</i>
-                        </button>
-                      </td>
-                    </tr>
+                    <?php
+                        foreach($users as $user) {
+                            
+                            if($user['acl'] == 3) { // Dont delete the admins
+                                
+                                continue;
+                            }
+                            
+                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">%s</td>", htmlspecialchars($user['email']));
+                            printf("<td class=\"mdl-data-table__cell--non-numeric\">");
+                            printf("<button class=\"mdl-button mdl-js-button mdl-button--icon mdl-button--colored del-account\" name=\"user-%d\">", $user['id']); //Button to delete user, probably needs an id
+                            printf("<i class=\"material-icons\">delete_forever</i></button></td></tr>");
+                        
+                        }
+                    ?>
                   </tbody>
                 </table>
             </div>
@@ -122,7 +155,6 @@
                       <th>IP Address</th>
                       <th>Target E-Mail</th>
                       <th>Suspected Method</th>
-                      <th>Total Attempts</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -130,8 +162,7 @@
                       <td class="mdl-data-table__cell--non-numeric">TIME</td>
                       <td class="mdl-data-table__cell--non-numeric">192.168.0.101</td>
                       <td class="mdl-data-table__cell--non-numeric">test@notturing.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">Bruteforce, Dictionary, Prior-Knowledge, XSS/SQLI</td>
-                      <td class="mdl-data-table__cell--non-numeric">25</td>                      
+                      <td class="mdl-data-table__cell--non-numeric">Bruteforce, Dictionary, Prior-Knowledge, XSS/SQLI</td>                 
                     </tr>
                   </tbody>
                 </table>
@@ -148,16 +179,32 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">TIME</td>
-                      <td class="mdl-data-table__cell--non-numeric">192.168.0.101</td>
-                      <td class="mdl-data-table__cell--non-numeric">test@notturing.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">Success, Failure</td>                   
-                    </tr>
+                    <?php
+                        
+                        foreach($attempts as $attempt) {
+                        
+                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['timestamp']);
+                            printf("<td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['ipaddr']);
+                            printf("<td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['email']);
+                            printf("<td class=\"mdl-data-table__cell--non-numeric\">");
+                            if($attempt['result'] == -1)
+                                printf("Fail");
+                            else if($attempt['result'] == 1)
+                                printf("Success");
+                            else
+                                printf("Not Verfied");
+                                
+                            printf("</td></tr>");
+                            
+                        }
+                        
+                        //check if spamming un-verified account
+                    ?>
                   </tbody>
                 </table>
                 </div>
           </div>
         </div>
     </body>
+    <script src="js/dashboard.js"></script>
 </html>
