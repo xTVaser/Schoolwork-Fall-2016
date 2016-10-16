@@ -1,0 +1,24 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large\textbf{Assignment 1} \hfill \textbf{Tyler Wilding} \\
+\normalsize COSC 4426 \hfill Due Date: 18/10/16 \\
+Prof. Biocchi \hfill \href{https://github.com/xTVaser/Schoolwork-Fall-2016/tree/master/Internet%20Security/acl}{Source Code} \\
+TA: -- \hfill \href{https://notturing.ddns.net/tyler/IS_ASS4/form.php}{Live Demo}
+
+\section*{Description of WebApp}
+I modified the webapp that was used previously and added ACLs to the users, as well as some small features to give the different levels of users more of an obvious purpose.  There are three levels of users: User, Moderator, and Admin.  Users can only post comments and cannot access the admin dashboard (even through a url).  Moderators can delete comments, but also cannot access the admin dashboard.  And finally admins can get into the dashboard and delete accounts as well as change the permissions of other accounts.  Admins cannot change their own account to not have admin privledges, and cannot delete other admin accounts.\\\\
+Test accounts:\\
+User: \textbf{user@notturing.com}\\
+Moderator: \textbf{moderator@notturing.com}\\
+Admin: \textbf{admin@notturing.com}\\
+
+I fixed some things to make it work better in chrome, but there may still be some issues.  I noticed no functional problems in firefox and it what I developed it with.  It is database driven, with a simple flag in the users table, if the users acl does not match the required permissions for a page, they are redirected back to the homepage.
+
+\end{document}
