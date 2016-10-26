@@ -1,51 +1,48 @@
 <?php
     session_start();
-	
-	//echo var_dump($_SESSION);
-	//echo isset($_SESSION['email']);
-    
+
+    //echo var_dump($_SESSION);
+    //echo isset($_SESSION['email']);
+
     //Redirect back to login if user isnt logged in
-    if(!isset($_SESSION['email'])) {
-        
+    if (!isset($_SESSION['email'])) {
         header('Location: form.php');
     }
-    
-    $server = "localhost";
-    $user = "tyler";
-    $password = "MR83ggJu";
-    $db = "tyler";
-    
+
+    $server = 'localhost';
+    $user = 'tyler';
+    $password = 'MR83ggJu';
+    $db = 'tyler';
+
     try {
         $conn = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo $select.'Error: '.$e->getMessage();
     }
-    catch(PDOException $e) {
-    
-        echo $select . "Error: " . $e->getMessage();
-    }
-    
-    $aclQuery = $conn->prepare("SELECT acl FROM users WHERE email=:email");
-    $aclQuery->bindParam(":email", $_SESSION['email']);
+
+    $aclQuery = $conn->prepare('SELECT acl FROM users WHERE email=:email');
+    $aclQuery->bindParam(':email', $_SESSION['email']);
     $aclQuery->execute();
     $acl = $aclQuery->fetch(PDO::FETCH_ASSOC);
-    
+
     $permFlag = $acl['acl'];
-    
-    if($permFlag != 3) {
+
+    if ($permFlag != 3) {
         header('Location: home.php');
     }
-    
+
     //Getting all the users to use later on.
-    $userQuery = $conn->prepare("SELECT * FROM users WHERE email!=:email ORDER BY email ASC");
-    $userQuery->bindParam(":email", $_SESSION['email']);
+    $userQuery = $conn->prepare('SELECT * FROM users WHERE email!=:email ORDER BY email ASC');
+    $userQuery->bindParam(':email', $_SESSION['email']);
     $userQuery->execute();
     $users = $userQuery->fetchAll();
-    
+
     //Getting all the users to use later on.
-    $attemptQuery = $conn->prepare("SELECT * FROM login_attempts ORDER BY timestamp DESC LIMIT 25");
+    $attemptQuery = $conn->prepare('SELECT * FROM login_attempts ORDER BY timestamp DESC LIMIT 25');
     $attemptQuery->execute();
     $attempts = $attemptQuery->fetchAll();
-    
+
     //TODO
     //Lastly, can view the information on past logins.
 ?>
@@ -55,7 +52,7 @@
     <head>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-yellow.min.css" /> 
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-yellow.min.css" />
         <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
         <link rel="stylesheet" href="styles.css">
         <meta charset="UTF-8">
@@ -92,27 +89,25 @@
                   </thead>
                   <tbody>
                     <?php
-                        foreach($users as $user) {
-                            
-                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">");
-                            printf("%s</td><td class=\"mdl-data-table__cell--non-numeric\">",$user['email']);
-                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_user\" name=\"user-%d\" value=\"\"", $user['id']);
-                            if($user['acl'] == 1) {
-                                printf(" checked");
+                        foreach ($users as $user) {
+                            printf('<tr><td class="mdl-data-table__cell--non-numeric">');
+                            printf('%s</td><td class="mdl-data-table__cell--non-numeric">', $user['email']);
+                            printf('<input type="radio" class="mdl-radio__button acl_user" name="user-%d" value=""', $user['id']);
+                            if ($user['acl'] == 1) {
+                                printf(' checked');
                             }
-                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
-                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_mod\" name=\"user-%d\" value=\"\"", $user['id']);
-                            if($user['acl'] == 2) {
-                                printf(" checked");
+                            printf(' /></td><td class="mdl-data-table__cell--non-numeric">');
+                            printf('<input type="radio" class="mdl-radio__button acl_mod" name="user-%d" value=""', $user['id']);
+                            if ($user['acl'] == 2) {
+                                printf(' checked');
                             }
-                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
-                            printf("<input type=\"radio\" class=\"mdl-radio__button acl_admin\" name=\"user-%d\" value=\"\"", $user['id']);
-                            if($user['acl'] == 3) {
-                                printf(" checked");
+                            printf(' /></td><td class="mdl-data-table__cell--non-numeric">');
+                            printf('<input type="radio" class="mdl-radio__button acl_admin" name="user-%d" value=""', $user['id']);
+                            if ($user['acl'] == 3) {
+                                printf(' checked');
                             }
-                            printf(" /></td><td class=\"mdl-data-table__cell--non-numeric\">");
-                            printf("</tr>");
-                        
+                            printf(' /></td><td class="mdl-data-table__cell--non-numeric">');
+                            printf('</tr>');
                         }
                     ?>
                   </tbody>
@@ -129,18 +124,16 @@
                   </thead>
                   <tbody>
                     <?php
-                        foreach($users as $user) {
-                            
-                            if($user['acl'] == 3) { // Dont delete the admins
-                                
+                        foreach ($users as $user) {
+                            if ($user['acl'] == 3) { // Dont delete the admins
+
                                 continue;
                             }
-                            
-                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">%s</td>", htmlspecialchars($user['email']));
-                            printf("<td class=\"mdl-data-table__cell--non-numeric\">");
-                            printf("<button class=\"mdl-button mdl-js-button mdl-button--icon mdl-button--colored del-account\" name=\"user-%d\">", $user['id']); //Button to delete user, probably needs an id
-                            printf("<i class=\"material-icons\">delete_forever</i></button></td></tr>");
-                        
+
+                            printf('<tr><td class="mdl-data-table__cell--non-numeric">%s</td>', htmlspecialchars($user['email']));
+                            printf('<td class="mdl-data-table__cell--non-numeric">');
+                            printf('<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored del-account" name="user-%d">', $user['id']); //Button to delete user, probably needs an id
+                            printf('<i class="material-icons">delete_forever</i></button></td></tr>');
                         }
                     ?>
                   </tbody>
@@ -162,7 +155,7 @@
                       <td class="mdl-data-table__cell--non-numeric">TIME</td>
                       <td class="mdl-data-table__cell--non-numeric">192.168.0.101</td>
                       <td class="mdl-data-table__cell--non-numeric">test@notturing.com</td>
-                      <td class="mdl-data-table__cell--non-numeric">Bruteforce, Dictionary, Prior-Knowledge, XSS/SQLI</td>                 
+                      <td class="mdl-data-table__cell--non-numeric">Bruteforce, Dictionary, Prior-Knowledge, XSS/SQLI</td>
                     </tr>
                   </tbody>
                 </table>
@@ -180,24 +173,23 @@
                   </thead>
                   <tbody>
                     <?php
-                        
-                        foreach($attempts as $attempt) {
-                        
-                            printf("<tr><td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['timestamp']);
-                            printf("<td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['ipaddr']);
-                            printf("<td class=\"mdl-data-table__cell--non-numeric\">%s</td>",$attempt['email']);
-                            printf("<td class=\"mdl-data-table__cell--non-numeric\">");
-                            if($attempt['result'] == -1)
-                                printf("Fail");
-                            else if($attempt['result'] == 1)
-                                printf("Success");
-                            else
-                                printf("Not Verfied");
-                                
-                            printf("</td></tr>");
-                            
+
+                        foreach ($attempts as $attempt) {
+                            printf('<tr><td class="mdl-data-table__cell--non-numeric">%s</td>', $attempt['timestamp']);
+                            printf('<td class="mdl-data-table__cell--non-numeric">%s</td>', $attempt['ipaddr']);
+                            printf('<td class="mdl-data-table__cell--non-numeric">%s</td>', $attempt['email']);
+                            printf('<td class="mdl-data-table__cell--non-numeric">');
+                            if ($attempt['result'] == -1) {
+                                printf('Fail');
+                            } elseif ($attempt['result'] == 1) {
+                                printf('Success');
+                            } else {
+                                printf('Not Verfied');
+                            }
+
+                            printf('</td></tr>');
                         }
-                        
+
                         //check if spamming un-verified account
                     ?>
                   </tbody>

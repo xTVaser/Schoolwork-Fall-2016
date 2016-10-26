@@ -13,7 +13,7 @@
     //Email contains SQL statements
         //SQLi attempt
     //Detect Proxy Connection if ip_fwd isnt empty.
-        
+
     //Array must return a list of all: Latest Timestamp | IP Addr of Suspect | Target E-Mail | Suspected Method
 
 

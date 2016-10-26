@@ -2,8 +2,8 @@ $("#resetform").submit(function(event) {
 
     var string1 = $("#password").val();
     var string2 = $("#passwordconf").val();
-    
-    if(string1 != string2)
+
+    if (string1 != string2)
         printError("Passwords are not the same");
     else {
         $.ajax({
@@ -12,12 +12,11 @@ $("#resetform").submit(function(event) {
             data: $("#resetform").serialize(),
             success: function(result) {
                 console.log(result);
-                if(result === "success")
+                if (result === "success")
                     location.href = "form.php#loginform-panel";
-                else if(result === "pin") {
+                else if (result === "pin") {
                     printError("Incorrect PIN, try again");
-                }
-                else
+                } else
                     printError("An Error Occured");
             }
         });
@@ -30,7 +29,9 @@ function printError(msg) {
 
     'use strict';
     var snackbarContainer = document.querySelector('#toast-error');
-    var data = {message: msg};
+    var data = {
+        message: msg
+    };
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
-    
+
 }

@@ -1,53 +1,56 @@
 <!doctype = HTML>
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-yellow.min.css" /> 
-        <link rel="stylesheet" href="styles.css">
-        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-        <meta charset="UTF-8">
-        <title>Reset Password - Secure Login - Tyler Wilding</title>
-    </head>
-    <body>
-        <div class="mdl-layout">
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-                    <div class="mdl-tabs__tab-bar">
-                        <a href="#reset-panel" class="mdl-tabs__tab is-active">Reset Password</a>
-                    </div>
 
-                    <div class="mdl-tabs__panel is-active" id="reset-panel">
-                        <form id="resetform" class="mdl-layout" method="POST">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="email" name="email" required>
-                                <label class="mdl-textfield__label" for="email">Email...</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" id="password" name="password" pattern="^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9]{8,}$" required>
-                                <label class="mdl-textfield__label" for="password">New Password...</label>
-                                <span class="mdl-textfield__error">Atleast 8 Characters with 1 Digit and 1 Uppercase!</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" id="passwordconf" name="passwordconf" required>
-                                <label class="mdl-textfield__label" for="passwordconf">Re-Enter New Password...</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="number" id="pin" name="pin" required>
-                                <label class="mdl-textfield__label" for="pin">PIN...</label>
-                            </div>
-                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-yellow.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Reset Password - Secure Login - Tyler Wilding</title>
+</head>
+
+<body>
+    <div class="mdl-layout">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                <div class="mdl-tabs__tab-bar">
+                    <a href="#reset-panel" class="mdl-tabs__tab is-active">Reset Password</a>
+                </div>
+
+                <div class="mdl-tabs__panel is-active" id="reset-panel">
+                    <form id="resetform" class="mdl-layout" method="POST">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="email" name="email" required>
+                            <label class="mdl-textfield__label" for="email">Email...</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="password" name="password" pattern="^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9]{8,}$" required>
+                            <label class="mdl-textfield__label" for="password">New Password...</label>
+                            <span class="mdl-textfield__error">Atleast 8 Characters with 1 Digit and 1 Uppercase!</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="passwordconf" name="passwordconf" required>
+                            <label class="mdl-textfield__label" for="passwordconf">Re-Enter New Password...</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="number" id="pin" name="pin" required>
+                            <label class="mdl-textfield__label" for="pin">PIN...</label>
+                        </div>
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                                 Reset
                             </button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <div id="toast-error" class="mdl-js-snackbar mdl-snackbar">
-                 <div class="mdl-snackbar__text"></div>
-                 <button class="mdl-snackbar__action" type="button"></button>
-            </div>
         </div>
-        <script src="js/reset.js"></script>
-    </body>
+        <div id="toast-error" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+        </div>
+    </div>
+    <script src="js/reset.js"></script>
+</body>
+
 </html>

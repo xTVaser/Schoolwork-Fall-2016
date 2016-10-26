@@ -5,15 +5,13 @@ $("#verifyform").submit(function(event) {
         data: $("#verifyform").serialize(),
         success: function(result) {
             console.log(result);
-            if(result === "success")
+            if (result === "success")
                 location.href = "form.php#loginform-panel";
-            else if(result === "alreadyverified") {
+            else if (result === "alreadyverified") {
                 printError("That Account has Already been Verified!");
-            }
-            else if(result === "pin") {
+            } else if (result === "pin") {
                 printError("Incorrect PIN, try again");
-            }
-            else
+            } else
                 printError("An Error Occured");
         }
     });
@@ -25,7 +23,9 @@ function printError(msg) {
 
     'use strict';
     var snackbarContainer = document.querySelector('#toast-error');
-    var data = {message: msg};
+    var data = {
+        message: msg
+    };
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
-    
+
 }
