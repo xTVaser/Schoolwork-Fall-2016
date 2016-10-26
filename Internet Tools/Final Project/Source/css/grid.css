@@ -1,0 +1,96 @@
+/*
+    Recreating the minimal features from bootstrap that makes building a website
+    Make some columns of different lengths to be used with div tags.
+
+    The nessecary and non-obvious 4 css rules needed for this to work were found and explained off of
+    https://css-tricks.com/dont-overthink-it-grids/
+    A website referred to and linked to in the slideshows of the course
+*/
+
+
+/*
+    This ensures that nothing will appear after the row and mess up the layout.
+    Clear the content, Display like a normal HTML table, and clear the floats.
+*/
+
+div.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*
+    By using box-sizing, it ensures that the padding and border are considered with the size of the element itself
+    This prevents overflows when dividing the full width up evenly.
+    The other two options are for browser compatibility if required.
+*/
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/*
+    Any div that contains the class col-? will be floated left, and have padding added to it
+*/
+
+div[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+}
+
+
+/*
+    The last div, will have no padding however
+*/
+
+div[class*='col-']:last-of-type {
+    padding-right: 0;
+}
+
+
+/*
+    That's it, now just make whatever sized columns we want and we can use them.
+*/
+
+div.row {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.row.centered {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+div.col-2-3 {
+    width: 66.66%;
+}
+
+div.col-2 {
+    width: 50%;
+}
+
+div.col-3 {
+    width: 33.33%;
+}
+
+div.col-4 {
+    width: 25.00%;
+}
+
+div.col-6 {
+    width: 12.5%;
+}
+
+div.col-12 {
+    width: 6.25%;
+}

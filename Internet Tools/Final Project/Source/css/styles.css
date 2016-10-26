@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,700,800');
+
+#imgBackground {
+
+    background-size: cover;
+    background-image: url('http://assets2.thecreatorsproject.com/content-images/contentimage/no-slug/0dfc4227f0f080fba7e6309b1182eab9.jpg');
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+body {
+    margin: 0px;
+    font-family: 'Dosis', sans-serif;
+}
+
+footer {
+    margin-top: 100px;
+    padding: 25px;
+    background-color: #DDEE22;
+}
+
+div.row.heading {
+    text-align: center;
+}
+
+ul.mainNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-weight: 800;
+}
+
+ul.mainNav li {
+    float: right;
+}
+
+ul.mainNav li a {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 15px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+ul.mainNav.left li {
+    float: left;
+}
