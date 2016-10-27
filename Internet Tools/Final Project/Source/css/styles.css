@@ -12,6 +12,14 @@
 
 }
 
+.centered {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 body {
     margin: 0px;
     font-family: 'Dosis', sans-serif;
@@ -33,10 +41,11 @@ ul.mainNav {
     padding: 0;
     overflow: hidden;
     font-weight: 800;
+    float: right;
 }
 
 ul.mainNav li {
-    float: right;
+    float: left;
 }
 
 ul.mainNav li a {
@@ -46,6 +55,10 @@ ul.mainNav li a {
     text-decoration: none;
     transition: 0.5s;
     font-size: 18px;
+}
+
+ul.mainNav.left {
+    float: left;
 }
 
 ul.mainNav.left li {

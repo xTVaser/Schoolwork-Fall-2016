@@ -64,11 +64,9 @@ div.row {
 }
 
 div.row.centered {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 div.col-2-3 {
