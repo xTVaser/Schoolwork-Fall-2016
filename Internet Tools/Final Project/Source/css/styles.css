@@ -35,6 +35,15 @@ div.row.heading {
     text-align: center;
 }
 
+div.row.friend-card {
+    text-align: center;
+}
+
+div.row.friend-card img {
+    width: 50%;
+    height: auto;
+}
+
 ul.mainNav {
     list-style-type: none;
     margin: 0;
@@ -44,6 +53,9 @@ ul.mainNav {
     float: right;
 }
 
+ul.mainNav img {
+    height: auto;
+}
 ul.mainNav li {
     float: left;
 }

@@ -1,5 +1,5 @@
 /*
-    Recreating the minimal features from bootstrap that makes building a website
+    Recreating the minimal features from bootstrap that makes building a website easier and responsive
     Make some columns of different lengths to be used with div tags.
 
     The nessecary and non-obvious 4 css rules needed for this to work were found and explained off of
@@ -42,6 +42,11 @@ div[class*='col-'] {
     padding-right: 20px;
 }
 
+div[class*='col-'] img {
+    width: 100%;
+    height: 400px;
+}
+
 
 /*
     The last div, will have no padding however
@@ -79,6 +84,10 @@ div.col-2 {
 
 div.col-3 {
     width: 33.33%;
+}
+
+div.col-3-2 {
+    width: 16.665%;
 }
 
 div.col-4 {
