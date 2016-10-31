@@ -1,40 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Activity 4</title>
-    </head>
-    <body>
-        <style media="screen">
-            video {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            #videoBox {
-                padding: 20px;
-                margin: 20px;
-                background: cornflowerblue;
-            }
-        </style>
 
-        <div class="">
-            Width of 300 and I mute
-            <video src="small.mp4" width = "300" muted controls>
+<head>
+    <meta charset="utf-8">
+    <title>Activity 4</title>
+</head>
+
+<body>
+
+    <style media="screen">
+        video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #videoBox {
+            padding: 20px;
+            margin: 20px;
+            background: cornflowerblue;
+        }
+    </style>
+
+    <div class="">
+
+        <tbody>
+            <table>
+                <tr>
+                    <th style="width:25%">Browser</th>
+                    <th style="width:25%">MP4</th>
+                    <th style="width:25%">WebM</th>
+                    <th style="width:25%">Ogg</th>
+                </tr>
+                <tr>
+                    <td>Internet Explorer</td>
+                    <td>YES</td>
+                    <td>NO</td>
+                    <td>NO</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>YES</td>
+                    <td>YES</td>
+                    <td>YES</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>YES</td>
+                    <td>YES</td>
+                    <td>YES</td>
+                </tr>
+                <tr>
+                    <td>Safari</td>
+                    <td>YES</td>
+                    <td>NO</td>
+                    <td>NO</td>
+                </tr>
+                <tr>
+                    <td>Opera</td>
+                    <td>YES (from Opera 25)</td>
+                    <td>YES</td>
+                    <td>YES</td>
+                </tr>
+        </tbody>
+        </table>
+
+    </div>
+
+    <div class="">
+        Width of 300 and I mute
+        <video src="small.mp4" width="300" muted controls>
 
             </video>
-        </div>
+    </div>
 
-        <div class="">
-            Width of 600 and I autoplay
-            <video src="small.ogv" width = "600" autoplay controls>
+    <div class="">
+        Width of 600 and I autoplay
+        <video src="small.ogv" width="600" autoplay controls>
             </video>
-        </div>
+    </div>
 
-        <div class="">
-            Width of 900 and i loop
-            <video src="small.webm" width = "900" loop controls>
+    <div class="">
+        Width of 900 and i loop
+        <video src="small.webm" width="900" loop controls>
             </video>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
