@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Move and Copy</title>
+	<meta charset="UTF-8">
+	<style>
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		div {
+			text-align: center;
+		}
+
+		#startmove {
+			display: inline-block;
+			width: 30%;
+			height: 250px;
+			background: cornflowerblue;
+		}
+
+		#endmove {
+			display: inline-block;
+			width: 30%;
+			height: 250px;
+			background: lightgreen;
+		}
+
+		#endcopy {
+			display: inline-block;
+			width: 30%;
+			height: 250px;
+			background: lightyellow;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="startmove" draggable="true">I pray this works!
+		<img src="cuteadorablekitty.jpg" width="240" height="165" draggable="false">
+	</div>
+	<div id="endcopy">
+		You can copy it here!
+	</div>
+	<div id="endmove">
+		You can move it here from the copy!
+	</div>
+
+	<script type="text/javascript">
+
+		var dragged;
+		var startMove = document.getElementById("startmove");
+		startMove.addEventListener('dragstart', function(e) {
+			e.dataTransfer.effectAllowed = 'copy';
+			e.dataTransfer.setData('text/uri', "image.jpg");
+			e.dataTransfer.setData('text/plain', "hello!");
+			e.dataTransfer.setData('text', "hello!");
+			dragged = e.target;
+		}, false);
+
+		var endcopy = document.getElementById("endcopy");
+		endcopy.addEventListener('dragover', function(e) {
+			e.dataTransfer.dropEffect = "copy";
+			e.preventDefault(); //this is needed
+		}, false);
+
+		endcopy.addEventListener('drop', function(e) {
+			e.target.innerHTML = "Ready for another copy!<br>" + dragged.innerHTML;
+			e.target.draggable = true;
+			e.preventDefault();
+		}, false);
+
+		endcopy.addEventListener('dragstart', function(e) {
+			e.dataTransfer.effectAllowed = 'copy';
+			e.dataTransfer.setData('text/uri', "image.jpg");
+			e.dataTransfer.setData('text/plain', "hello!");
+			e.dataTransfer.setData('text', "hello!");
+			dragged = e.target;
+		}, false);
+
+		var endmove = document.getElementById("endmove");
+		endmove.addEventListener('dragover', function(e) {
+			e.dataTransfer.dropEffect = "copy";
+			e.preventDefault(); //this is needed
+		}, false);
+
+		endmove.addEventListener('drop', function(e) {
+			e.target.innerHTML = dragged.innerHTML;
+			e.target.draggable = true;
+			e.preventDefault();
+		}, false);
+
+	</script>
+</body>
+
+</html>
