@@ -15,7 +15,7 @@
 
 div.row:after {
     content: "";
-    display: table;
+    display: flex;
     clear: both;
 }
 
@@ -100,4 +100,18 @@ div.col-6 {
 
 div.col-12 {
     width: 6.25%;
+}
+
+@media all and (max-width: 850px) {
+    div.row {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: column;
+    }
+    div.col-4 {
+        width: 100%;
+        margin-bottom: 25px;
+    }
 }

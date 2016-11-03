@@ -1,5 +1,4 @@
 #include "Rational.hpp"
-#include <string>
 
 Rational::Rational(int n, int d) {
 
@@ -9,23 +8,29 @@ Rational::Rational(int n, int d) {
     this->denominator = d/gcf;
 }
 
-void Rational::add(Rational * frac) {
-    
-    int numerator = this->numerator+frac->numerator;
-    int denominator = this->denominator+frac->denominator;
-
-    int gcf = Rational::gcf(numerator, denominator);
-
-    this->numerator = numerator/gcf;
-    this->denominator = denominator/gcf;
-}
-
-void Rational::subtract(Rational * frac) {
+Rational* Rational::add(Rational * frac) {
 
     int commonDenominator = this->denominator*frac->denominator;
 
-    int newNum1 = this->numerator*(this->denominator/commonDenominator);
-    int newNum2 = frac->numerator*(frac->denominator/commonDenominator);
+    int newNum1 = this->numerator*(commonDenominator/this->denominator);
+    int newNum2 = frac->numerator*(commonDenominator/frac->denominator);
+
+    int resultNum = newNum1 + newNum2;
+
+    int gcf = Rational::gcf(resultNum, commonDenominator);
+
+    this->numerator = resultNum/gcf;
+    this->denominator = commonDenominator/gcf;
+
+    return this;
+}
+
+Rational* Rational::subtract(Rational * frac) {
+
+    int commonDenominator = this->denominator*frac->denominator;
+
+    int newNum1 = this->numerator*(commonDenominator/this->denominator);
+    int newNum2 = frac->numerator*(commonDenominator/frac->denominator);
 
     int resultNum = newNum1 - newNum2;
 
@@ -33,9 +38,11 @@ void Rational::subtract(Rational * frac) {
 
     this->numerator = resultNum/gcf;
     this->denominator = commonDenominator/gcf;
+
+    return this;
 }
 
-void Rational::multiply(Rational * frac) {
+Rational* Rational::multiply(Rational * frac) {
 
     int resultNum = this->numerator*frac->numerator;
     int resultDenom = this->denominator*frac->denominator;
@@ -44,43 +51,51 @@ void Rational::multiply(Rational * frac) {
 
     this->numerator = resultNum/gcf;
     this->denominator = resultDenom/gcf;
+
+    return this;
 }
 
-void Rational::divide(Rational * frac) {
+Rational* Rational::divide(Rational * frac) {
 
-    int resultNum = this->numerator*frac->denominator;
-    int resultDenom = this->denominator*frac->denominator;
+    int commonDenominator = this->denominator*frac->denominator;
+
+    int resultNum = this->numerator*(commonDenominator/this->denominator);
+    int resultDenom = frac->numerator*(commonDenominator/frac->denominator);
 
     int gcf = Rational::gcf(resultNum, resultDenom);
 
     this->numerator = resultNum/gcf;
-    this->denominator = resultNum/gcf;
+    this->denominator = resultDenom/gcf;
+
+    return this;
 }
 
-char * Rational::toRationalString() {
-    
-    return std::to_string(this->numerator) + "/" + std::to_string(this->denominator);
+std::string Rational::toRationalString() {
+
+    return "("+std::to_string(this->numerator) + "/" + std::to_string(this->denominator)+")";
 }
 
 double Rational::toDouble() {
 
-    return 0.0+this->numerator/this->denominator;
+    return (double)this->numerator/(double)this->denominator;
 }
 
 int Rational::gcf(int n, int d) {
 
-    if(n >= d)
-        return 1;
+    if (n > d) {
+        int temp = n;
+        n = d;
+        d = temp;
+    }
 
     int gcf = d % n;
 
     while(gcf != 0) {
 
-        int temp = n;
-        n = d;
-        d = gcf;
+        d = n;
+        n = gcf;
         gcf = d % n;
     }
 
-    return gcf;
+    return n;
 }

@@ -1,6 +1,8 @@
 #ifndef Rational_H
 #define Rational_H
 
+#include <string>
+
 class Rational {
 
     private:
@@ -10,18 +12,17 @@ class Rational {
         int gcf(int n, int d);
 
     public:
-        Rational(int n, int d);
+        Rational(int n = 1, int d = 1);
 
         //Pass another fraction to these methods, will store result in Callers
-        void add(Rational * frac);
-        void subtract(Rational * frac);
-        void multiply(Rational * frac);
-        void divide(Rational * frac);
+        Rational* add(Rational * frac);
+        Rational* subtract(Rational * frac);
+        Rational* multiply(Rational * frac);
+        Rational* divide(Rational * frac);
 
-        const char * toRationalString();
+        std::string toRationalString();
         double toDouble();
-        
+
 };
 
 #endif
-

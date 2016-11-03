@@ -21,7 +21,7 @@ endcopy.addEventListener('drop', function(e) {
 }, false);
 
 endcopy.addEventListener('dragstart', function(e) {
-    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/uri', "image.jpg");
     e.dataTransfer.setData('text/plain', "hello!");
     e.dataTransfer.setData('text', "hello!");
@@ -30,12 +30,13 @@ endcopy.addEventListener('dragstart', function(e) {
 
 var endmove = document.getElementById("endmove");
 endmove.addEventListener('dragover', function(e) {
-    e.dataTransfer.dropEffect = "copy";
+    e.dataTransfer.dropEffect = "move";
     e.preventDefault(); //this is needed
 }, false);
 
 endmove.addEventListener('drop', function(e) {
     e.target.innerHTML = dragged.innerHTML;
     e.target.draggable = true;
+    dragged.innerHTML = "&nbsp";
     e.preventDefault();
 }, false);
