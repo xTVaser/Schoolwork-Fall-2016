@@ -13,10 +13,11 @@ private:
     double savingsBalance;
 
 public:
+    SavingsAccount(double initialBalance = 1000, double rate = 3);
     void calculateMonthlyInterestRate(); //Store result back into savingsBalance
+    double getBalance();
+    double getRate();
     static void modifyInterestRate(double rate);
-    
-
 
 };
 
