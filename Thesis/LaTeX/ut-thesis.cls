@@ -151,7 +151,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01] % robust macros with * form
 \ProvidesClass{ut-thesis}[\utthesisupdated\space\utthesisversion\space
-   graduate theses at the University of Toronto]
+   graduate theses at Algoma University ]
 
 
 %%%%%%%%%%%%         INITIAL CODE         %%%%%%%%%%%%
@@ -280,6 +280,8 @@
 %% generate the title page and abstract page automatically.
 \newcommand*{\degree}[1]%
   {\ifx\empty#1\empty\else\gdef\@degree{#1}\fi}
+\newcommand*{\school}[1]%
+  {\ifx\empty#1\empty\else\gdef\@school{#1}\fi}
 \newcommand*{\department}[1]%
   {\ifx\empty#1\empty\else\gdef\@department{#1}\fi}
 \newcommand*{\gradyear}[1]%
@@ -295,6 +297,7 @@
 \gradyear{\emph{(year of graduation)}}
 \author{\emph{(author)}}
 \title{\emph{(title)}}
+\school{\emph{(school)}}
 
 %%%%%%    New formatting environments and commands.
 
@@ -321,8 +324,8 @@
       \vfill
       A thesis submitted in conformity with the requirements\\
       for the degree of {\@degree}\\
-      Graduate Department of {\@department}\\
-      University of Toronto\\
+      Undergraduate Department of {\@department}\\
+      {\@school}\\
       \vfill
       {\copyright} Copyright {\@gradyear} by {\@author}\\
       \vspace{.01\textheight}
@@ -341,8 +344,8 @@
       {\@title}\\[2ex]
       {\@author}\\
       {\@degree}\\
-      Graduate Department of {\@department}\\
-      University of Toronto\\
+      Undergraduate Department of {\@department}\\
+      {\@school}\\
       {\@gradyear}\\
    \end{center}
    \begingroup
