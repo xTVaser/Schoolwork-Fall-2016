@@ -103,6 +103,7 @@ div.col-12 {
     width: 6.25%;
 }
 
+/* Add rules for all columns */
 @media all and (max-width: 850px) {
     div.row {
         width: 100%;

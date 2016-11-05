@@ -88,6 +88,14 @@ bool Rational::operator==(Rational &frac) { return toDouble() == frac.toDouble()
 
 bool Rational::operator!=(Rational &frac) { return toDouble() != frac.toDouble(); }
 
+bool Rational::operator<(Rational &frac) { return toDouble() < frac.toDouble(); }
+
+bool Rational::operator>(Rational &frac) { return toDouble() > frac.toDouble(); }
+
+bool Rational::operator<=(Rational &frac) { return toDouble() <= frac.toDouble(); }
+
+bool Rational::operator>=(Rational &frac) { return toDouble() >= frac.toDouble(); }
+
 std::string Rational::toRationalString() {
 
     return "("+std::to_string(this->numerator) + "/" + std::to_string(this->denominator)+")";

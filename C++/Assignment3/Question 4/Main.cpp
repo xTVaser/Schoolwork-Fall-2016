@@ -68,10 +68,17 @@ int main(int argc, char * argv[]) {
     cout << "Fraction 3 " + frac3.toRationalString() + ": " << fixed << showpoint << setprecision(2) << frac3.toDouble() << endl;
     cout << "Fraction 4 " + frac4.toRationalString() + ": " << fixed << showpoint << setprecision(2) << frac4.toDouble() << endl << endl;
 
+    cout << "Testing Relational Operators" << endl;
+    cout << "------------================----------" << endl;
+    cout << frac1.toRationalString() + " < " << frac2.toRationalString() << ": " << ((frac1 < frac2) ? "True" : "False") << endl;
+    cout << frac3.toRationalString() + " > " << frac4.toRationalString() << ": " << ((frac3 > frac4) ? "True" : "False") << endl;
+    cout << frac1.toRationalString() + " <= " << frac1.toRationalString() << ": " << ((frac1 <= frac1) ? "True" : "False") << endl;
+    cout << frac3.toRationalString() + " >= " << frac4.toRationalString() << ": " << ((frac3 >= frac4) ? "True" : "False") << endl << endl;
+
     cout << "Testing Equality and In-Equality" << endl;
     cout << "------------================----------" << endl;
     cout << frac1.toRationalString() + " == " << frac2.toRationalString() << ": " << ((frac1 == frac2) ? "True" : "False") << endl;
-    cout << frac3.toRationalString() + " == " << frac4.toRationalString() << ": " << ((frac3 == frac4) ? "True" : "False") << endl;
+    cout << frac3.toRationalString() + " == " << frac3.toRationalString() << ": " << ((frac3 == frac3) ? "True" : "False") << endl;
     cout << frac1.toRationalString() + " != " << frac2.toRationalString() << ": " << ((frac1 != frac2) ? "True" : "False") << endl;
     cout << frac3.toRationalString() + " != " << frac4.toRationalString() << ": " << ((frac3 != frac4) ? "True" : "False") << endl;
 

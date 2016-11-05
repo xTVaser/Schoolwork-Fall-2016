@@ -27,6 +27,10 @@ public:
 
     bool operator==(Rational &frac);
     bool operator!=(Rational &frac);
+    bool operator>(Rational &frac);
+    bool operator<(Rational &frac);
+    bool operator>=(Rational &frac);
+    bool operator<=(Rational &frac);
 
     std::string toRationalString();
     double toDouble();
