@@ -2,14 +2,21 @@
 
 #imgBackground {
 
+
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url('../assets/img/bg.jpg');
     background-size: cover;
-    background-image: url('http://assets2.thecreatorsproject.com/content-images/contentimage/no-slug/0dfc4227f0f080fba7e6309b1182eab9.jpg');
     height: 500px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+
+.site-title {
+    font-weight: 300;
+    font-size: 3.5em;
+    color: #FFF;
 }
 
 .centered {
@@ -20,19 +27,53 @@
     text-align: center;
 }
 
+.btn-row {
+
+    margin-top: 25px;
+}
+
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
+    color: #212121;
 }
 
 footer {
     margin-top: 100px;
     padding: 25px;
-    background-color: #DDEE22;
+    padding-bottom: 15px;
+    background: #212121;
+    color: #757575;
+    border-top: 3px solid #DCEDC8;
+}
+
+footer > div.row, footer > div.row.centered {
+
+    margin-bottom: 15px
+}
+
+footer img {
+
+    width: 48px;
+    height: 48px;
+}
+
+div.navbar {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    background: linear-gradient( 0deg, #689F38, #8BC34A 5% );
 }
 
 div.row.heading {
     text-align: center;
+}
+
+div.row.heading > h1 {
+    font-weight: 300;
+}
+
+div.row.heading > hr {
+    width: 65%;
 }
 
 div.row.friend-card {
@@ -49,7 +90,7 @@ ul.mainNav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-weight: 800;
+    font-weight: 300;
     float: right;
 }
 
@@ -65,8 +106,14 @@ ul.mainNav li a {
     text-align: center;
     padding: 20px 15px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
     font-size: 18px;
+    color: #212121;
+}
+
+ul.mainNav li a:hover {
+
+    color: #795548;
 }
 
 ul.mainNav.left {
@@ -76,3 +123,37 @@ ul.mainNav.left {
 ul.mainNav.left li {
     float: left;
 }
+
+form.btn-link {
+
+    padding-top: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+    background: #795548;
+    color: #FFF;
+    font-weight: 800;
+    border-radius: 4px;
+    font-size: 0.75em;
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+a.button:hover {
+
+    background: #8BC34A;
+    color: #212121;
+}
+
+button:

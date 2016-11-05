@@ -30,6 +30,7 @@ div.row:after {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
 }
 
 
@@ -63,9 +64,9 @@ div[class*='col-']:last-of-type {
 
 div.row {
     width: 100%;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 div.row.centered {
