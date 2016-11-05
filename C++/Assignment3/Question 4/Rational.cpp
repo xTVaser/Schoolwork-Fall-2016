@@ -1,6 +1,13 @@
 #include <stdexcept>
 #include "Rational.hpp"
 
+/**
+ * I aint gonna comment this class that much since its copy paste from question 1
+ * All i did was change it to be reference based instead of pointer based
+ * @param n
+ * @param d
+ * @return
+ */
 Rational::Rational(int n, int d) {
 
     if(d == 0)
@@ -18,6 +25,11 @@ Rational::Rational(int n, int d) {
     this->denominator = d/gcf;
 }
 
+/**
+ * My ingenius way of operator overloading, just call the method with the same name
+ * @param frac
+ * @return
+ */
 Rational Rational::operator+(Rational &frac) { return add(frac); }
 Rational Rational::add(Rational &frac) {
 
@@ -84,6 +96,10 @@ Rational Rational::divide(Rational &frac) {
     return *this;
 }
 
+/*
+ * This next part is really intense, you can tell how good of a programmer I am because i was able to do it all in a single lines
+ * If you are starting to think about potential floating point rounding errors, stop.
+ */
 bool Rational::operator==(Rational &frac) { return toDouble() == frac.toDouble(); }
 
 bool Rational::operator!=(Rational &frac) { return toDouble() != frac.toDouble(); }

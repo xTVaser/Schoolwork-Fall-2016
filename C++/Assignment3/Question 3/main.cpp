@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
 
+    //The following looks extremely gross, but its all just stuff from the textbook mostly i swear dont hate me
     Complex x;
     Complex y(4.3, 8.2);
     Complex z(3.3, -1.1);
