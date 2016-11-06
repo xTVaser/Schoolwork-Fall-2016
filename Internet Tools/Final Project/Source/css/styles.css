@@ -233,3 +233,27 @@ div.card img {
     border-radius: 2px;
     height: 225px;
 }
+
+div.row.videoContainer {
+
+    margin-bottom: 15px;
+}
+
+#giveVideo iframe {
+
+    width: 100%;
+    height: 450px;
+}
+
+.videoLink {
+
+	text-decoration: none;
+	color: #689F38;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+
+.videoLink:hover {
+
+    color: #8BC34A;
+}

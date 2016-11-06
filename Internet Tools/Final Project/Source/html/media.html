@@ -92,15 +92,13 @@
     </script>
 
     <div class="row heading">
-        <h2>Random Video</h2>
+        <h2 id="videoTitle">Random Video</h2>
         <hr>
     </div>
 
-    <div class="row centered">
-        <div class="col-2-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+    <div class="row centered videoContainer"><div class="col-2-3" id="giveVideo">API Failure</div></div>
+    <div class="row centered"><div class="col-2-3" id="videoLink"></div>
+
     </div>
 
     <div class="row heading">
@@ -108,11 +106,8 @@
         <hr>
     </div>
 
-    <div class="row centered">
-        <div class="col-2-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+    <div class="gallery-row" id="gallery">
+
     </div>
 
     <!-- Footer -->
@@ -135,5 +130,8 @@
             <small>Copyright (c) 2016 Tyler Wilding All Rights Reserved.</small>
         </div>
     </footer>
+    <script type="text/javascript" src="../js/lib.js"></script>
+    <script type="text/javascript" src="../js/video.js"></script>
+    <script type="text/javascript" src="../js/gallery.js"></script>
 </body>
 </html>
