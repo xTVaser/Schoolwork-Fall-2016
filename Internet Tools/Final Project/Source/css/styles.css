@@ -2,15 +2,48 @@
 
 #imgBackground {
 
-
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url('../assets/img/bg.jpg');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url('../assets/img/bg1.jpg');
     background-size: cover;
-    height: 500px;
-
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+.imgBackground-2 {
+
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url('../assets/img/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    background-attachment: fixed;
+}
+
+.imgBackground-3 {
+
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%), url('../assets/img/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    background-attachment: fixed;
+}
+
+.imgBackground-4 {
+
+    background: linear-gradient(to bottom, rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.60) 100%), url('../assets/img/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    background-attachment: fixed;
 }
 
 .site-title {
@@ -39,7 +72,6 @@ body {
 }
 
 footer {
-    margin-top: 100px;
     padding: 25px;
     padding-bottom: 15px;
     background: #212121;
@@ -104,7 +136,10 @@ ul.mainNav li {
 ul.mainNav li a {
     display: inline-block;
     text-align: center;
-    padding: 20px 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
     text-decoration: none;
     outline: none;
     transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
@@ -157,4 +192,44 @@ a.button:hover {
     color: #212121;
 }
 
-button:
+.card {
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2px;
+    text-align: left;
+    min-height: 375px;
+}
+
+.card-text {
+
+    padding-left: 10px;
+}
+
+.card-link {
+
+    padding-top: 15px;
+}
+
+.card-link a {
+
+	text-decoration: none;
+	color: #689F38;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+
+.card-link a:hover {
+
+    color: #8BC34A;
+}
+
+.card-container {
+
+    padding: 20px;
+}
+
+div.card img {
+
+    border-radius: 2px;
+    height: 225px;
+}
