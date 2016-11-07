@@ -19,7 +19,20 @@ is to measure what effect the micro-optimizations had, compared to
 unoptimized code.  Possible future expansions to the project are also
 discussed.
 
-\section{Motivations for micro-optimization}
+
+\begin{figure}
+\vspace{2.4in}
+\caption{Armadillo slaying lawyer.}
+\label{arm:fig1}
+\end{figure}
+
+\begin{table}
+\vspace{2.4in}
+\caption{Armadillo slaying lawyer.}
+\label{arm:fig1}
+\end{table}
+
+\section{Problem Definition}
 
 The idea of micro-optimization is motivated by the recent trends in computer
 architecture towards low-level parallelism and small, pipelineable
@@ -52,7 +65,7 @@ many hidden redundancies that can be eliminated by allowing the compiler to
 control the floating point operations down to their lowest level.  These
 optimizations are described in detail in section~\ref{ch1:opts}.
 
-\section{Description of micro-optimization}\label{ch1:opts}
+\section{Objective}\label{ch1:opts}
 
 In order to perform a sequence of floating point operations, a normal FPU
 performs many redundant internal shifts and normalizations in the process of
@@ -69,4 +82,4 @@ the floating point format used is shown in figures
 and. A discussion of the mathematics behind
 unnormalized arithmetic is in appendix.}
 
-The optimizations that the compiler can perform fall into several categories:
+\section{Thesis Overview}
