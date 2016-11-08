@@ -13,8 +13,10 @@
     Clear the content, Display like a normal HTML table, and clear the floats.
 */
 
-div.row:after {
+*.row:after {
     content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     clear: both;
 }
@@ -30,6 +32,7 @@ div.row:after {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
     transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
 }
 
@@ -38,12 +41,12 @@ div.row:after {
     Any div that contains the class col-? will be floated left, and have padding added to it
 */
 
-div[class*='col-'] {
+*[class*='col-'] {
     float: left;
     padding-right: 20px;
 }
 
-div[class*='col-'] img {
+*[class*='col-'] img {
     width: 100%;
     height: 400px;
 }
@@ -53,7 +56,7 @@ div[class*='col-'] img {
     The last div, will have no padding however
 */
 
-div[class*='col-']:last-of-type {
+*[class*='col-']:last-of-type {
     padding-right: 0;
 }
 
@@ -62,57 +65,70 @@ div[class*='col-']:last-of-type {
     That's it, now just make whatever sized columns we want and we can use them.
 */
 
-div.row {
+*.row {
     width: 100%;
     margin-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-div.row.centered {
+*.row.centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
-div.col-2-3 {
+*.col-2-3 {
     width: 66.66%;
 }
 
-div.col-2 {
+*.col-2 {
     width: 50%;
 }
 
-div.col-3 {
+*.col-3 {
     width: 33.33%;
 }
 
-div.col-3-2 {
+*.col-3-2 {
     width: 16.665%;
 }
 
-div.col-4 {
+*.col-4 {
     width: 25.00%;
 }
 
-div.col-6 {
+*.col-3-4 {
+    width: 75.00%;
+}
+
+*.col-6 {
     width: 12.5%;
 }
 
-div.col-12 {
+*.col-12 {
     width: 6.25%;
 }
 
 /* Add rules for all columns */
 @media all and (max-width: 850px) {
-    div.row {
+    *.row {
         width: 100%;
         margin-bottom: 10px;
         padding-left: 10px;
         padding-right: 10px;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
-    div.col-4 {
+    *.col-4 {
         width: 100%;
         margin-bottom: 25px;
     }

@@ -1,49 +1,69 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-
 #imgBackground {
-
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url('../assets/img/bg1.jpg');
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    border-bottom: 3px solid #4FC3F7;
     height: 600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .imgBackground-2 {
-
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url('../assets/img/bg2.jpg');
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 400px;
     background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+    border-bottom: 3px solid #4FC3F7;
 }
 
 .imgBackground-3 {
-
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%), url('../assets/img/bg3.jpg');
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 400px;
     background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+    border-bottom: 3px solid #4FC3F7;
 }
 
 .imgBackground-4 {
-
-    background: linear-gradient(to bottom, rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.60) 100%), url('../assets/img/bg4.jpg');
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 500px;
     background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+}
+
+@media screen and (min-height: 750px) {
+    #imgBackground {
+        height: 850px;
+    }
+    .imgBackground-4 {
+        min-height: 750px;
+    }
 }
 
 .site-title {
@@ -53,15 +73,19 @@
 }
 
 .centered {
-
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
 }
 
 .btn-row {
-
     margin-top: 25px;
 }
 
@@ -75,17 +99,15 @@ footer {
     padding: 25px;
     padding-bottom: 15px;
     background: #212121;
-    color: #757575;
-    border-top: 3px solid #DCEDC8;
+    color: #424242;
+    border-top: 3px solid #4FC3F7;
 }
 
-footer > div.row, footer > div.row.centered {
-
+footer>div.row, footer>div.row.centered {
     margin-bottom: 15px
 }
 
 footer img {
-
     width: 48px;
     height: 48px;
 }
@@ -93,18 +115,19 @@ footer img {
 div.navbar {
     margin-bottom: 0px;
     padding-bottom: 10px;
-    background: linear-gradient( 0deg, #689F38, #8BC34A 5% );
+    background: -webkit-linear-gradient( bottom, #4FC3F7, #01579B 5%);
+    background: linear-gradient( 0deg, #4FC3F7, #01579B 5%);
 }
 
 div.row.heading {
     text-align: center;
 }
 
-div.row.heading > h1 {
+div.row.heading>h1 {
     font-weight: 300;
 }
 
-div.row.heading > hr {
+div.row.heading>hr {
     width: 65%;
 }
 
@@ -129,6 +152,7 @@ ul.mainNav {
 ul.mainNav img {
     height: auto;
 }
+
 ul.mainNav li {
     float: left;
 }
@@ -142,14 +166,14 @@ ul.mainNav li a {
     padding-bottom: 5px;
     text-decoration: none;
     outline: none;
-    transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
+    -webkit-transition: all cubic-bezier(.62, .28, .23, .99) 0.7s;
+    transition: all cubic-bezier(.62, .28, .23, .99) 0.7s;
     font-size: 18px;
-    color: #212121;
+    color: #F5F5F5;
 }
 
 ul.mainNav li a:hover {
-
-    color: #795548;
+    color: #9E9E9E;
 }
 
 ul.mainNav.left {
@@ -161,7 +185,6 @@ ul.mainNav.left li {
 }
 
 form.btn-link {
-
     padding-top: 20px;
     text-align: center;
 }
@@ -187,73 +210,61 @@ a.button {
 }
 
 a.button:hover {
-
     background: #8BC34A;
     color: #212121;
 }
 
 .card {
-
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     text-align: left;
     min-height: 375px;
 }
 
 .card-text {
-
     padding-left: 10px;
 }
 
 .card-link {
-
     padding-top: 15px;
 }
 
 .card-link a {
-
-	text-decoration: none;
-	color: #689F38;
-	font-weight: 300;
-	font-size: 1.25em;
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
 }
 
 .card-link a:hover {
-
-    color: #8BC34A;
+    color: #03A9F4;
 }
 
 .card-container {
-
     padding: 20px;
 }
 
 div.card img {
-
     border-radius: 2px;
     height: 225px;
 }
 
 div.row.videoContainer {
-
     margin-bottom: 15px;
 }
 
 #giveVideo iframe {
-
     width: 100%;
     height: 450px;
 }
 
 .videoLink {
-
-	text-decoration: none;
-	color: #689F38;
-	font-weight: 300;
-	font-size: 1.25em;
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
 }
 
 .videoLink:hover {
-
-    color: #8BC34A;
+    color: #03A9F4;
 }

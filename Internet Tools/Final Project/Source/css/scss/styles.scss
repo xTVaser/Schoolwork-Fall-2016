@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+/*navbar colrs */
+$navbarPrimary: #01579B;
+$navbarFade: #4FC3F7;
+$navbarLink: #F5F5F5;
+$navbarHover: #9E9E9E;
+
+/*Text Colors */
+$primaryText: #212121;
+$secondaryText: #424242;
+$captionText: #FFF;
+$linkColors: #D84315;
+$linkHover: #03A9F4;
+
+/* Aesthetics */
+$sectionFade: #4FC3F7;
+$backgroundColor: #FFF;
+$footerBackground: #212121;
+
+
+#imgBackground {
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.imgBackground-2 {
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  background-attachment: fixed;
+}
+
+.imgBackground-3 {
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  background-attachment: fixed;
+}
+
+.imgBackground-4 {
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/img/bg4.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/img/bg4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  background-attachment: fixed;
+}
+
+@media screen and (min-height: 750px) {
+  #imgBackground {
+    height: 850px;
+  }
+  .imgBackground-4 {
+    min-height: 750px;
+  }
+}
+
+.site-title {
+  font-weight: 300;
+  font-size: 3.5em;
+  color: $captionText;
+}
+
+.centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-row {
+  margin-top: 25px;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  color: $primaryText;
+}
+
+footer {
+  padding: 25px;
+  padding-bottom: 15px;
+  background: $footerBackground;
+  color: $secondaryText;
+  border-top: 3px solid $sectionFade;
+  > div.row {
+    margin-bottom: 15px;
+    &.centered {
+      margin-bottom: 15px;
+    }
+  }
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+div {
+  &.navbar {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    background: -webkit-linear-gradient(bottom, $navbarFade, $navbarPrimary 5%);
+    background: linear-gradient(0deg, $navbarFade, $navbarPrimary 5%);
+  }
+  &.row {
+    &.heading {
+      text-align: center;
+      > {
+        h1 {
+          font-weight: 300;
+        }
+        hr {
+          width: 65%;
+        }
+      }
+    }
+    &.friend-card {
+      text-align: center;
+      img {
+        width: 50%;
+        height: 150px;
+      }
+    }
+  }
+}
+
+ul.mainNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-weight: 300;
+  float: right;
+  img {
+    height: auto;
+  }
+  li {
+    float: left;
+    a {
+      display: inline-block;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      text-decoration: none;
+      outline: none;
+      -webkit-transition: all cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.7s;
+      transition: all cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.7s;
+      font-size: 18px;
+      color: $navbarLink;
+      &:hover {
+        color: $navbarHover;
+      }
+    }
+  }
+  &.left {
+    float: left;
+    li {
+      float: left;
+    }
+  }
+}
+
+form.btn-link {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 40px;
+  border: 2px solid rgba(33, 68, 72, 0.59);
+  background: #795548;
+  color: #FFF;
+  font-weight: 800;
+  border-radius: 4px;
+  font-size: 0.75em;
+  text-decoration: none;
+  text-align: center;
+  line-height: 35px;
+}
+
+a.button {
+  text-decoration: none;
+  &:hover {
+    background: #8BC34A;
+    color: #212121;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  text-align: left;
+  min-height: 375px;
+}
+
+.card-text {
+  padding-left: 10px;
+}
+
+.card-link {
+  padding-top: 15px;
+  a {
+    text-decoration: none;
+    color: $linkColors;
+    font-weight: 300;
+    font-size: 1.25em;
+    &:hover {
+      color: $linkHover;
+    }
+  }
+}
+
+.card-container {
+  padding: 20px;
+}
+
+div {
+  &.card img {
+    border-radius: 2px;
+    height: 225px;
+  }
+  &.row.videoContainer {
+    margin-bottom: 15px;
+  }
+}
+
+#giveVideo iframe {
+  width: 100%;
+  height: 450px;
+}
+
+.videoLink {
+  text-decoration: none;
+  color: $linkColors;
+  font-weight: 300;
+  font-size: 1.25em;
+  &:hover {
+    color: $linkHover;
+  }
+}
