@@ -184,6 +184,15 @@ ul.mainNav.left li {
     float: left;
 }
 
+ul.mainNav.left li a {
+    padding: 0px;
+}
+
+ul.mainNav.left li canvas {
+
+    padding-top: 10px;
+}
+
 form.btn-link {
     padding-top: 20px;
     text-align: center;
