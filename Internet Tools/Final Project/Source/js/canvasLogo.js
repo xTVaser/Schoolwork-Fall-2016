@@ -1,5 +1,5 @@
 var context = document.getElementById("canvasLogo").getContext("2d");
-setInterval("animate()", 1);
+setInterval("animate()", 60);
 var text = "Tyler Wilding";
 var textDirection = "right";
 var textXpos = 5;
