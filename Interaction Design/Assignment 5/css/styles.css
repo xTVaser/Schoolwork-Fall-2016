@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+#imgBackground {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 3px solid #4FC3F7;
+    height: 600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.imgBackground-2 {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+    border-bottom: 3px solid #4FC3F7;
+}
+
+.imgBackground-3 {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+    border-bottom: 3px solid #4FC3F7;
+}
+
+.imgBackground-4 {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    background-attachment: fixed;
+    border-top: 3px solid #4FC3F7;
+}
+
+@media screen and (min-height: 750px) {
+    #imgBackground {
+        height: 850px;
+    }
+    .imgBackground-4 {
+        min-height: 750px;
+    }
+}
+
+.site-title {
+    font-weight: 300;
+    font-size: 3.5em;
+    color: #FFF;
+}
+
+.centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-row {
+    margin-top: 25px;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+footer {
+    padding: 25px;
+    padding-bottom: 15px;
+    background: #212121;
+    color: #424242;
+    border-top: 3px solid #4FC3F7;
+}
+
+footer>div.row, footer>div.row.centered {
+    margin-bottom: 15px
+}
+
+footer img {
+    width: 48px;
+    height: 48px;
+}
+
+div.navbar {
+    margin-bottom: 75px;
+    padding-bottom: 10px;
+    background: #FFF;
+    border-bottom: 2px solid black;
+    color: #000;
+    line-height: 2em;
+}
+
+div.row.heading {
+    text-align: center;
+}
+
+div.row.heading>h1 {
+    font-weight: 300;
+}
+
+div.row.heading>hr {
+    width: 65%;
+}
+
+div.row.friend-card {
+    text-align: center;
+}
+
+div.row.friend-card img {
+    width: 100%;
+    height: 225px;
+}
+
+div.row.friend-card .card {
+
+    min-height: 325px;
+}
+div.navbar a {
+
+    text-decoration: underline;
+    color: #000;
+}
+div.navbar a:hover {
+
+    color: #a2a2a2;
+}
+div.card img {
+    border-radius: 2px;
+    height: 400px;
+}
+
+div.card h1 {
+    font-size: 1.5em;
+}
+div.card h2 {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+div.card ul li {
+
+    font-weight: 400;
+    font-size: 0.5em;
+}
+div.card a {
+
+    font-weight: 700;
+    text-decoration: underline;
+    color: #000;
+}
+div.card a:hover {
+
+    color: #a2a2a2;
+}
+
+.text h1 {
+
+    font-size: 1.5em;
+}
+
+.text h2 {
+
+    font-size: 1em;
+}
+
+.text p {
+
+    font-weight: 400;
+    font-size: 0.5em;
+}
+
+.text img {
+
+    height: auto;
+}
+
+.caption {
+
+    font-weight: 400;
+    font-size: 0.75em;
+}
+
+.text ul li {
+
+    font-weight: 400;
+    font-size: 0.75em;
+    padding: 10px;
+    line-height: 1.25em;
+}
+ul.mainNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: right;
+}
+
+ul.mainNav img {
+    height: auto;
+}
+
+ul.mainNav li {
+    float: left;
+    color: #FFF;
+}
+
+ul.mainNav li a {
+    display: inline-block;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: all cubic-bezier(.62, .28, .23, .99) 0.7s;
+    transition: all cubic-bezier(.62, .28, .23, .99) 0.7s;
+    font-size: 18px;
+    color: #F5F5F5;
+}
+
+ul.mainNav li a:hover {
+    color: #FF5722;
+}
+
+ul.mainNav.left {
+    float: left;
+}
+
+ul.mainNav.left li {
+    float: left;
+}
+
+ul.mainNav.left li a {
+    padding: 0px;
+}
+
+ul.mainNav.left li canvas {
+
+    padding-top: 10px;
+}
+
+form.btn-link {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+    background: #795548;
+    color: #FFF;
+    font-weight: 800;
+    border-radius: 4px;
+    font-size: 0.75em;
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+a.button:hover {
+    background: #8BC34A;
+    color: #212121;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    text-align: left;
+    min-height: 375px;
+}
+
+.card-text {
+    padding-left: 10px;
+}
+
+.card-link {
+    padding-top: 15px;
+}
+
+.card-link a {
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+.card-link a:hover {
+    color: #03A9F4;
+}
+
+.card-container {
+    padding: 20px;
+}
+
+
+
+div.row.videoContainer {
+    margin-bottom: 15px;
+}
+
+table.card {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+table.card th {
+    background-color: #01579B;
+    color: #FFF;
+    font-weight: 300;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+
+table.card td {
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 20px;
+    vertical-align: top;
+}
+
+table.card td a {
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+table.card td a:hover {
+
+    color: #FFF;
+}
+
+table.card tr:hover {
+    background-color: #03A9F4;
+}
+
+*.col-3.table-cards {
+    min-height: 400px;
+}
+
+
+
+#giveVideo iframe {
+    width: 100%;
+    height: 450px;
+}
+
+.videoLink {
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+.videoLink:hover {
+    color: #03A9F4;
+}
+
+*.col-3 img.project-image {
+
+    height: auto;
+}
+
+*.row.project h3 {
+
+    font-style: italic;
+}
+
+.project-links {
+
+    margin-bottom: 50px;
+}
+
+*.row.project a {
+
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+*.row.project a:hover {
+
+    color: #03A9F4;
+}
+
+.contact-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    text-align: left;
+    padding: 25px;
+}
+.contact-card .col-3 {
+
+    text-align: center;
+}
+
+.contact-card a {
+
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+.contact-card a:hover {
+
+    color: #03A9F4;
+}
+
+*.col-2-3.text {
+
+    text-align: left;
+}
+
+footer.top-padding {
+
+    margin-top: 200px;
+}
+
+*.col-2-3.text.skills ul {
+
+    text-align: left;
+}
+
+*.col-2-3.text.skills *.col-3 {
+
+    text-align: center;
+}
+
+*.col-2-3.text.skills *.row.card {
+
+    padding: 25px;
+    min-height: auto;
+}
+
+*.row.card li {
+
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+}
+
+*.row.card h3 {
+
+    margin-top: 0px;
+    color: #FFF;
+}
+
+*.row.card {
+
+    background-color: #03A9F4;
+}

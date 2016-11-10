@@ -19,7 +19,7 @@ var molecule = new THREE.Object3D();
 //All of the included XYZ molecule files.
 var xyzFiles = {
         Anatoxin: function() {
-                readMolecule('./molecules/anatoxin-a.xyz');
+                readMolecule('molecules/anatoxin-a.xyz');
         },
         Diamorphine: function() {
                 readMolecule('./molecules/heroin.xyz');
