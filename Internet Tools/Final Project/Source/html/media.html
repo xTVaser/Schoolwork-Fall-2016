@@ -16,7 +16,7 @@
         <div class="col-3">
             <ul class="mainNav left">
                 <li>
-                    <a href="../index.html"><canvas id="canvasLogo" width="300" height="40"></canvas></a>
+                    <a href="../index.html" id="canvasLogoContainer"><canvas id="canvasLogo"></canvas></a>
                 </li>
             </ul>
         </div>
@@ -51,42 +51,6 @@
         </select>
         <input type="range" min="0" max="100" />
     </div>
-
-    <script type="text/javascript">
-        var canvas = document.getElementById('canvasNonLogo');
-        fitToContainer(canvas);
-
-        function fitToContainer(canvas) {
-            // Make it visually fill the positioned parent
-            canvas.style.width = '75%';
-            canvas.style.height = '350px';
-            // ...then set the internal size to match
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        }
-
-        var theCanvas = canvas;
-        var context = theCanvas.getContext("2d");
-
-        function drawScreen() {
-            //background
-            context.fillStyle = "#ffffaa";
-            context.fillRect(0, 0, 500, 300);
-
-            //text
-            context.fillStyle = "#000000";
-            context.font = "20px _sans";
-            context.textBaseline = "top";
-            context.fillText("IM A CANVAS!", 195, 80);
-
-            //box
-            context.strokeStyle = "#000000";
-            context.strokeRect(5, 5, 490, 290);
-
-        }
-
-        drawScreen();
-    </script>
 
     <div class="row heading">
         <h2 id="videoTitle">Random Video</h2>
@@ -131,5 +95,6 @@
     <script type="text/javascript" src="../js/video.js"></script>
     <script type="text/javascript" src="../js/gallery.js"></script>
     <script type="text/javascript" src="../js/canvasLogo.js"></script>
+    <script type="text/javascript" src="../js/visualization.js"></script>
 </body>
 </html>

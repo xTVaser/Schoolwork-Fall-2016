@@ -30,3 +30,23 @@ function verifyImageURL(url) {
         return true;
     return false;
 }
+
+//Returns a random int in a range, inclusive.
+function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//Returns a random int in a range, inclusive.
+function randomDouble(min, max) {
+        return Math.random() * (max - min + 1) + min;
+}
+
+//Converts degrees to radians.
+function toRads(degrees) {
+        return degrees * (3.14 / 180)
+}
+
+//get the magnitude of a 3D vector
+function magnitude(vector3) {
+        return vector3.x * vector3.x + vector3.y * vector3.y + vector3.z * vector3.z;
+}
