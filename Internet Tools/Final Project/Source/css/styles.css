@@ -103,8 +103,13 @@ footer {
     border-top: 3px solid #4FC3F7;
 }
 
-footer>div.row, footer>div.row.centered {
+footer > div.row, footer>div.row.centered {
     margin-bottom: 15px
+}
+
+footer .col-2-3 {
+
+    color: #929292;
 }
 
 footer img {
@@ -423,4 +428,11 @@ footer.top-padding {
 *.row.card {
 
     background-color: #03A9F4;
+}
+
+#shapeGallery {
+
+    height: 250px;
+    width: 75%;
+    background: #F5F5F5;
 }
