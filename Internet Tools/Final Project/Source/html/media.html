@@ -41,18 +41,20 @@
         <h1>Media</h1>
     </div>
 
-    <div class="row centered">
-        <canvas id="canvasNonLogo">
+    <div class="row centered" id="visualizationContainer">
+        <canvas id="visualization">
             Your Browser doesn't support HTML5 Canvas Elements
         </canvas>
-
     </div>
 
     <div class="row centered">
-        <select class="songMenu" name="songs">
-            <option>Ye</option>
+        <select class="songMenu" name="songs" id="songMenu">
+            <option>Song 1</option>
+            <option>Song 2</option>
+            <option>Song 3</option>
         </select>
-        <input type="range" min="0" max="100" />
+        <audio id="visualizationSong"></audio>
+        <input type="range" min="0" max="100" value="50" id="volSlider"/>
     </div>
 
     <div class="row heading">
