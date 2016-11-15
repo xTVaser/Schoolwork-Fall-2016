@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+
+/* Below are the in*idual css rules for the image backgrounds, they are each different and thus requiring seperate rules */
 #imgBackground {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../assets/img/bg1.jpg');
@@ -19,7 +22,7 @@
     justify-content: center;
 }
 
-.imgBackground-2 {
+#imgBackground-2 {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../assets/img/bg2.jpg');
     background-size: cover;
@@ -32,7 +35,7 @@
     border-bottom: 3px solid #4FC3F7;
 }
 
-.imgBackground-3 {
+#imgBackground-3 {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../assets/img/bg3.jpg');
     background-size: cover;
@@ -45,7 +48,7 @@
     border-bottom: 3px solid #4FC3F7;
 }
 
-.imgBackground-4 {
+#imgBackground-4 {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../assets/img/bg4.jpg');
     background-size: cover;
@@ -57,6 +60,7 @@
     border-top: 3px solid #4FC3F7;
 }
 
+/* For responsive design, different rules for different screen sizes */
 @media screen and (min-height: 750px) {
     #imgBackground {
         height: 850px;
@@ -66,35 +70,13 @@
     }
 }
 
-.site-title {
-    font-weight: 300;
-    font-size: 3.5em;
-    color: #FFF;
-}
-
-.centered {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-}
-
-.btn-row {
-    margin-top: 25px;
-}
-
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
     color: #212121;
 }
 
+/* Footer related Styling */
 footer {
     padding: 25px;
     padding-bottom: 15px;
@@ -103,12 +85,11 @@ footer {
     border-top: 3px solid #4FC3F7;
 }
 
-footer > div.row, footer>div.row.centered {
+footer>*.row, footer>*.row.centered {
     margin-bottom: 15px
 }
 
 footer .col-2-3 {
-
     color: #929292;
 }
 
@@ -117,37 +98,22 @@ footer img {
     height: 48px;
 }
 
-div.navbar {
+footer.top-padding {
+    margin-top: 200px;
+}
+
+.site-title {
+    font-weight: 300;
+    font-size: 3.5em;
+    color: #FFF;
+}
+
+/* Navbar Styles */
+*.navbar {
     margin-bottom: 0px;
     padding-bottom: 10px;
     background: -webkit-linear-gradient( bottom, #4FC3F7, #01579B 5%);
     background: linear-gradient( 0deg, #4FC3F7, #01579B 5%);
-}
-
-div.row.heading {
-    text-align: center;
-}
-
-div.row.heading>h1 {
-    font-weight: 300;
-}
-
-div.row.heading>hr {
-    width: 65%;
-}
-
-div.row.friend-card {
-    text-align: center;
-}
-
-div.row.friend-card img {
-    width: 100%;
-    height: 225px;
-}
-
-div.row.friend-card .card {
-
-    min-height: 325px;
 }
 
 ul.mainNav {
@@ -199,40 +165,10 @@ ul.mainNav.left li a {
 }
 
 ul.mainNav.left li canvas {
-
     padding-top: 10px;
 }
 
-form.btn-link {
-    padding-top: 20px;
-    text-align: center;
-}
-
-.button {
-    display: inline-block;
-    position: relative;
-    width: 120px;
-    height: 40px;
-    border: 2px solid rgba(33, 68, 72, 0.59);
-    background: #795548;
-    color: #FFF;
-    font-weight: 800;
-    border-radius: 4px;
-    font-size: 0.75em;
-    text-decoration: none;
-    text-align: center;
-    line-height: 35px;
-}
-
-a.button {
-    text-decoration: none;
-}
-
-a.button:hover {
-    background: #8BC34A;
-    color: #212121;
-}
-
+/* General Card Style */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 2px;
@@ -263,15 +199,56 @@ a.button:hover {
     padding: 20px;
 }
 
-div.card img {
+*.card img {
     border-radius: 2px;
     height: 225px;
 }
 
-div.row.videoContainer {
-    margin-bottom: 15px;
+
+/* Cards for Skills Page */
+*.col-2-3.text.skills ul {
+    text-align: left;
 }
 
+*.col-2-3.text.skills *.col-3 {
+    text-align: center;
+}
+
+*.col-2-3.text.skills *.row.card {
+    padding: 25px;
+    min-height: auto;
+}
+
+*.row.card li {
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+}
+
+*.row.card h3 {
+    margin-top: 0px;
+    color: #FFF;
+}
+
+*.row.card {
+    background-color: #03A9F4;
+}
+
+/* Friends Cards */
+*.row.friend-card {
+    text-align: center;
+}
+
+*.row.friend-card img {
+    width: 100%;
+    height: 225px;
+}
+
+*.row.friend-card .card {
+    min-height: 325px;
+}
+
+/* Article Cards and Table Styling */
 table.card {
     border-collapse: collapse;
     margin: 15px;
@@ -302,7 +279,6 @@ table.card td a {
 }
 
 table.card td a:hover {
-
     color: #FFF;
 }
 
@@ -314,8 +290,48 @@ table.card tr:hover {
     min-height: 400px;
 }
 
+/* Contact page cards */
+.contact-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    text-align: left;
+    padding: 25px;
+}
 
+.contact-card .col-3 {
+    text-align: center;
+}
 
+.contact-card a {
+    text-decoration: none;
+    color: #D84315;
+    font-weight: 300;
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+.contact-card a:hover {
+    color: #03A9F4;
+}
+
+*.col-2-3.text {
+    text-align: left;
+}
+
+/*Titles with underlines */
+*.row.heading {
+    text-align: center;
+}
+
+*.row.heading>h1 {
+    font-weight: 300;
+}
+
+*.row.heading>hr {
+    width: 65%;
+}
+
+/* Media Page Styles */
 #giveVideo iframe {
     width: 100%;
     height: 450px;
@@ -333,22 +349,18 @@ table.card tr:hover {
 }
 
 *.col-3 img.project-image {
-
     height: auto;
 }
 
 *.row.project h3 {
-
     font-style: italic;
 }
 
 .project-links {
-
     margin-bottom: 50px;
 }
 
 *.row.project a {
-
     text-decoration: none;
     color: #D84315;
     font-weight: 300;
@@ -357,93 +369,59 @@ table.card tr:hover {
 }
 
 *.row.project a:hover {
-
     color: #03A9F4;
 }
 
-.contact-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    text-align: left;
-    padding: 25px;
-}
-.contact-card .col-3 {
-
-    text-align: center;
+*.row.videoContainer {
+    margin-bottom: 15px;
 }
 
-.contact-card a {
-
-    text-decoration: none;
-    color: #D84315;
-    font-weight: 300;
-    font-size: 1.25em;
-    line-height: 2em;
-}
-
-.contact-card a:hover {
-
-    color: #03A9F4;
-}
-
-*.col-2-3.text {
-
-    text-align: left;
-}
-
-footer.top-padding {
-
-    margin-top: 200px;
-}
-
-*.col-2-3.text.skills ul {
-
-    text-align: left;
-}
-
-*.col-2-3.text.skills *.col-3 {
-
-    text-align: center;
-}
-
-*.col-2-3.text.skills *.row.card {
-
-    padding: 25px;
-    min-height: auto;
-}
-
-*.row.card li {
-
-    box-sizing: border-box;
-    float: left;
-    width: 25%;
-}
-
-*.row.card h3 {
-
-    margin-top: 0px;
-    color: #FFF;
-}
-
-*.row.card {
-
-    background-color: #03A9F4;
+input {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #shapeGallery {
-
     height: 250px;
     width: 75%;
     background: #F5F5F5;
 }
 
 #songMenu {
-
     margin-left: 15px;
 }
 
-input {
+/*Miscellanous Element Styles */
+form.btn-link {
+    padding-top: 20px;
+    text-align: center;
+}
 
-    margin-left: 15px;
-    margin-right: 15px;
+.button {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+    background: #795548;
+    color: #FFF;
+    font-weight: 800;
+    border-radius: 4px;
+    font-size: 0.75em;
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+a.button:hover {
+    background: #8BC34A;
+    color: #212121;
+}
+
+.btn-row {
+    margin-top: 25px;
 }
