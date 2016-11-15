@@ -1,6 +1,14 @@
-from Tkinter import Tk
-from tkFileDialog import askopenfilename
+import tkinter as tk
+from tkinter import filedialog
+from os import listdir
+from os.path import isfile, join
 
-Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
-filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
-print(filename)
+file_path = tk.filedialog.askdirectory()
+print(file_path)
+
+files = [f for f in listdir(file_path) if isfile(join(file_path, f))]
+print(files)
+
+
+
+

@@ -1,3 +1,5 @@
+//Very simple script to make new shapes for ever.
+
 var shapeContainer = document.getElementById("shapeGallery");
 
 function newShape() {
@@ -11,5 +13,5 @@ function newShape() {
     shapeContainer.style.borderBottom = randomInt(1, 100) + "px solid " + Math.random() > 0.5 ? "transparent" : randomColor();
     shapeContainer.style.transition = randomDouble(0.25, 2.5) + "s";
 }
-
+//Every 2.5 seconds we call it.
 setInterval(newShape, 2500);
