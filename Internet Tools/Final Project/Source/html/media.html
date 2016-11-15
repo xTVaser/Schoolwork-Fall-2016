@@ -48,13 +48,19 @@
     </div>
 
     <div class="row centered">
+        Song List
         <select class="songMenu" name="songs" id="songMenu">
-            <option>Song 1</option>
-            <option>Song 2</option>
-            <option>Song 3</option>
+            <option value="Song 1">Я очень рад, ведь я, наконец, возвращаюсь домой</option>
+            <option value="Song 2">Mount and Blade Warband Theme</option>
+            <option value="Song 3">Developers - Steve Balmer</option>
         </select>
+    </div>
+
+    <div class="row centered">
         <audio id="visualizationSong"></audio>
-        <input type="range" min="0" max="100" value="50" id="volSlider"/>
+        Volume <input type="range" min="0" max="100" value="25" id="volSlider"/>
+        Bottom Color <input type="color" name="name" id="botColor" value="#ff0000"/>
+        Top Color <input type="color" name="name" id="topColor" value="#00ff00"/>
     </div>
 
     <div class="row heading">

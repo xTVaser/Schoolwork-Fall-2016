@@ -436,3 +436,14 @@ footer.top-padding {
     width: 75%;
     background: #F5F5F5;
 }
+
+#songMenu {
+
+    margin-left: 15px;
+}
+
+input {
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
