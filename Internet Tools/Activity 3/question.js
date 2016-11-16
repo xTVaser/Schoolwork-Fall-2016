@@ -8,7 +8,7 @@ for(i = 0; i < 25; i++) {
 
 var div = document.getElementById("question3")
 
-var userInput = prompt("Give me a number NOW!!!")
+var userInput = "10";//prompt("Give me a number NOW!!!")
 
 var array = new Array(parseInt(userInput))
 
@@ -31,4 +31,32 @@ for(i = 0; i < array.length; i++) {
 for(i = 0; i < array.length; i++) {
 
     div.innerHTML += array[i] + ", "
+}
+
+var q2 = document.getElementById("question2");
+
+var input = parseInt(prompt("Give number please"));
+
+for(i = 0; i < input/2; i++) {
+
+    for(x = 0; x < input/2; x++) {
+        q2.innerHTML += "&nbsp"
+    }
+
+    for(j = 0; j < i*2+1; j++) {
+
+        q2.innerHTML += "* ";
+    }
+
+    q2.innerHTML += "<br>";
+}
+
+for(i = input/2; i > 0; i--) {
+
+    for(j = 0; j < i*2+1; j++) {
+
+        q2.innerHTML += "* ";
+    }
+
+    q2.innerHTML += "<br>";
 }
