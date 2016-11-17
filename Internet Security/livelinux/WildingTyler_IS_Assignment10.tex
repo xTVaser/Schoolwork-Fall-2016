@@ -1,0 +1,94 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{listings}
+
+\lstset{language=bash}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large\textbf{Assignment 10} \hfill \textbf{Tyler Wilding} \\
+\normalsize COSC 4426 \hfill Due Date: 27/11/16 \\
+Prof. Biocchi \hfill -- \\
+TA: -- \hfill --
+
+\section*{Tools Used}
+For this assignment I used Kali-linux as, while this could be done on any livecd, Kali comes with all of these various tools preinstalled which makes things much faster.  The tools within Kali that I used to access passwords and files are:
+\begin{enumerate}
+\item bulk-extractor
+\item John the Ripper
+\item creddump
+\item Foremost
+\item dumpzilla.py
+\end{enumerate}
+
+These tools look for passwords of any kind including Windows account passwords, as well as looking for other sensitive information like credit cards.
+
+\section*{Preamble}
+The point of this assignment is that gaining physical access gives you full control.  It doesnt matter how many passwords you have protecting your account or logging into your computer, all of these can easily be removed with a live-cd.  This is because when booting into Linux from a livecd it does not care about any of the Windows security permissions as there is no Windows to enforce them.  It sees everything as simple files that can be read and wrote to.
+
+\section*{Results}
+\subsection*{bulk-extractor}
+Mount the drive, and then run 
+\begin{lstlisting}
+bulk\_extractor -R /dev/sda2 -o ~/output.txt
+\end{lstlisting}
+This will scan the entire harddrive and output the results into a text file in the home directory. After parsing through 60gb of the harddrive I found the following:
+\begin{enumerate}
+\item Credit Card Numbers
+\item Email Addresses
+\item IP Addresses
+\item Bitcoin Addresses
+\item Telephone Numbers
+\item Many more
+\end{enumerate}
+\subsection*{creddump}
+Mount the drive, then navigate to the System32/config folder.  Run
+\begin{lstlisting}
+pwdump SYSTEM SAM > ~/hashes.txt
+\end{lstlisting}
+This will get all all of the windows account password hashes and store it into a file hashes.txt in your home directory.
+\begin{enumerate}
+\item Password Hashes
+\item Can find other hashes as well
+\end{enumerate}
+\subsection*{John the Ripper}
+This script allows for automated hash cracking, since we just retrieved the windows password's hashes we can now figure out what they actually are instead of just removing them.
+\begin{lstlisting}
+john --format=NT hashes.txt
+\end{lstlisting}
+Windows passwords are hashed using MD4, this will use dictionaries and a bruteforce methods to attempt to reverse the hashes.
+\begin{enumerate}
+\item Reverse Hashes
+\item Supports Dictionaries
+\item Was able to crack a few of the hashes in a reasonable amount of time.
+\end{enumerate}
+\subsection*{Foremost}
+Can scan for deleted and stored files of specific formats.  Run
+\begin{lstlisting}
+foremost -t jpg -i /dev/sda2
+\end{lstlisting}
+This will get all of the jpgs on the harddrive.
+\begin{enumerate}
+\item Any file off the computer that fits a specific pattern or has the matching file extensions of the search.
+\end{enumerate}
+\subsection*{dumpzilla.py}
+Specifically designed to scan through Firefox profiles for passwords, bookmarks, history, downloads, etc.
+\begin{lstlisting}
+python dumpzilla.py <profile location> --All > ~/output.txt
+\end{lstlisting}
+This will scan the profile for any possible information and place it in output.txt
+\begin{enumerate}
+\item Saved Passwords (none found)
+\item History
+\item Downloads
+\item Bookmarks
+\end{enumerate}
+
+\section*{Solutions}
+This emphasizes how important it is to restrict physical access to computers, if this is not done than many other security efforts will be for nothing when someone gets physical access.  However in addition to that, it may be a good idea to enable secure boot on all computers so that people cannot so easily run a livecd off of your computer.  Secureboot ensures that only signed versions of operating systems can run.  However, if someone has physical access they can just as easily go into the BIOS and change it, so a BIOS password must also be set.  Another option that the user can take is to fully encrypt their harddrive, this enables security on the files so that someone cannot just easily see and access them through the live cd; however this opens the opportunity for brute-forcing the password so it must be a secure password.  Other than that, there isnt very much you can do to stop the damage if someone gets phyiscal access, the best defense is to forbid physical access by ensuring the systems are in a secure location.
+
+\end{document}
