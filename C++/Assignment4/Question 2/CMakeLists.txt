@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
-project(Question1)
+project(Question_2)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES main.cpp)
-add_executable(Question1 ${SOURCE_FILES})
+add_executable(Question_2 ${SOURCE_FILES})
