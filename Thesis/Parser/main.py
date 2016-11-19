@@ -3,9 +3,9 @@ from tkinter import filedialog
 from os import listdir
 from os.path import isfile, join
 
-def gatherStrings(array, file):
-    for line in open(file):
-        array.append(line)
+#Import Custom Libraries
+from libs.requestStripper import *
+
 
 file_path = "/home/tyler/Documents/Thesis Testing"#tk.filedialog.askdirectory()
 print(file_path)
@@ -20,15 +20,12 @@ lines = []
 for f in files:
     gatherStrings(lines, f)
 
-def exportFile(lines, file):
-    for l in lines:
-        request = l.split("\"")[1]
-        file.write(request+"\n")
+
 
 newFile = open(file_path+"/"+"compiledRequests", "w")
 
 exportFile(lines, newFile)
-newFile.close();
+newFile.close()
 
 
 
