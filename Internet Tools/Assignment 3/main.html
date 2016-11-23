@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="animation.css" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="contents" class="wrapper"></div>
+        <div class="counter">
+            <p id="counterText"></p>
+        </div>
+        <script type="text/javascript">
+
+            /*
+                color
+                opacity
+                width
+                height
+                filter
+                border
+                perspective
+            */
+            var contentArea = document.getElementById("contents");
+            var counterText = document.getElementById("counterText");
+
+            var counter = 1;
+
+            setInterval(drawDigits, 5000);
+
+            function drawDigits() {
+
+                contentArea.innerHTML = "";
+
+                var binaryString = "";
+
+                var tempCounter = counter;
+
+                if(counter <= 7)
+                    binaryString += "0";
+                if(counter <= 3)
+                    binaryString += "0";
+                if(counter <= 1)
+                    binaryString += "0";
+
+                var tempSubsetString = "";
+
+                while(tempCounter >= 1) {
+
+                    if(tempCounter % 2 == 0) {
+
+                        tempSubsetString += "0";
+                    }
+                    else {
+
+                        tempSubsetString += "1";
+                    }
+
+                    tempCounter = Math.floor(tempCounter/2);
+                }
+
+                binaryString += tempSubsetString.split("").reverse().join("");
+
+                for(var i = 0; i < 4; i++) {
+
+                    if(binaryString.charAt(i) === "0")
+                        printZero();
+                    else
+                        printOne();
+                }
+
+                counterText.innerHTML = binaryString + ": " + counter;
+
+                counter++;
+
+                if(counter > 15)
+                    counter = 1;
+            }
+
+            function printZero() {
+
+                contentArea.innerHTML += "<div class='digit'>" + printFullRow() + printHalfRow() + printHalfRow() + printHalfRow() + printHalfRow() + printFullRow() + "</div>";
+            }
+
+            function printOne() {
+
+                var string = "<div class='digit'>";
+
+                for(var i = 0; i < 6; i++) {
+
+                    string += "<div class='container'><div class='empty-block'></div>";
+
+                    string += "<div class='block'><div class='face left'></div><div class='face right'></div><div class='face front'></div><div class='face back'></div><div class='face top'></div><div class='face bottom'></div></div>"
+
+                    string += "<div class='block'><div class='face left'></div><div class='face right'></div><div class='face front'></div><div class='face back'></div><div class='face top'></div><div class='face bottom'></div></div>"
+
+                    string += "<div class='empty-block'></div></div>";
+                }
+
+                string += "</div>";
+
+                contentArea.innerHTML += string;
+            }
+
+            function printFullRow() {
+
+                var string = "<div class='container'>";
+
+                for(var i = 0; i < 4; i++) {
+
+                    string += "<div class='block'><div class='face left'></div><div class='face right'></div><div class='face front'></div><div class='face back'></div><div class='face top'></div><div class='face bottom'></div></div>"
+                }
+
+                string += "</div>";
+
+                return string;
+            }
+
+            function printHalfRow() {
+
+                var string = "<div class='container'>";
+
+                string += "<div class='block'><div class='face left'></div><div class='face right'></div><div class='face front'></div><div class='face back'></div><div class='face top'></div><div class='face bottom'></div></div><div class='empty-block'></div><div class='empty-block'></div>"
+
+                string += "<div class='block'><div class='face left'></div><div class='face right'></div><div class='face front'></div><div class='face back'></div><div class='face top'></div><div class='face bottom'></div></div>"
+
+                string += "</div>";
+
+                return string;
+            }
+        </script>
+    </body>
+</html>

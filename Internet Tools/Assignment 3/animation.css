@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    transform-style: preserve-3d;
+}
+
+.counter {
+
+    text-align: center;
+    font-size: 2em;
+    font-family: "sans-serif";
+}
+
+.counter p {
+
+    margin: 0;
+}
+
+.wrapper {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 500px;
+}
+
+.container {
+    width: 250px;
+    margin: 15px;
+    transform: rotateX(-20deg) rotateY(-30deg) translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    padding-left: 50px;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    float: left;
+    transform-style: preserve-3d;
+    flex-grow: 1;
+}
+
+.empty-block {
+
+    flex-grow: 2;
+    padding-left: 50px;
+    width: 25px;
+    height: 25px;
+}
+
+.face {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.left {
+    transform-origin: 0% 50%;
+    transform: rotateY(-90deg) translateX(-25px);
+    animation-name: left;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    background: #373C94;
+    z-index: 2;
+}
+
+.right {
+    transform-origin: 0% 0%;
+    transform: rotateY(-90deg) translateZ(-39.5px) translateY(-11px);
+    animation-name: right;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    background: #373C94;
+    z-index: 4;
+}
+
+.front {
+    animation-name: front;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    background: #5287A5;
+    z-index: 5;
+}
+
+.back {
+    transform: translateZ(-25px);
+    background: #5287A5;
+    z-index: 3;
+}
+
+.top {
+    transform-origin: 50% 0%;
+    transform: rotateX(90deg) translateY(-25px);
+    animation-name: top;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    background: #81C8A8;
+    z-index: 6;
+}
+
+.bottom {
+    transform-origin: 0% 100%;
+    transform: rotateX(90deg) rotateZ(90deg) translateX(-25px);
+    animation-name: bottom;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    background: #81C8A8;
+    z-index: 1;
+}
+
+@keyframes left {
+    0% {
+        width: 50px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes right {
+    0% {
+        width: 50px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+}
+
+@keyframes bottom {
+    0% {
+        width: 50px;
+        opacity: 0;
+    }
+    10% {
+        width: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes top {
+    0% {
+        height: 50px;
+        opacity: 0;
+    }
+    10% {
+        height: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes front {
+    0% {
+        opacity: 0;
+        transform: translateZ(25px);
+    }
+    10% {
+        opacity: 1;
+    }
+}
