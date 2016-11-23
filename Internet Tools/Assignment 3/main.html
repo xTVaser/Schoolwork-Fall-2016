@@ -17,9 +17,8 @@
                 opacity
                 width
                 height
-                filter
-                border
-                perspective
+                font-size
+                border-radius
             */
             var contentArea = document.getElementById("contents");
             var counterText = document.getElementById("counterText");
@@ -31,9 +30,9 @@
             function drawDigits() {
 
                 contentArea.innerHTML = "";
-
                 var binaryString = "";
 
+                //Convert to binary
                 var tempCounter = counter;
 
                 if(counter <= 7)
@@ -59,8 +58,10 @@
                     tempCounter = Math.floor(tempCounter/2);
                 }
 
+                //Reverse results
                 binaryString += tempSubsetString.split("").reverse().join("");
 
+                //Print the digits
                 for(var i = 0; i < 4; i++) {
 
                     if(binaryString.charAt(i) === "0")
@@ -73,15 +74,18 @@
 
                 counter++;
 
+                //Reset
                 if(counter > 15)
                     counter = 1;
             }
 
+            //Prints a Zero
             function printZero() {
 
                 contentArea.innerHTML += "<div class='digit'>" + printFullRow() + printHalfRow() + printHalfRow() + printHalfRow() + printHalfRow() + printFullRow() + "</div>";
             }
 
+            //Prints a One
             function printOne() {
 
                 var string = "<div class='digit'>";
@@ -102,6 +106,7 @@
                 contentArea.innerHTML += string;
             }
 
+            //Top and Bottom of Zeros
             function printFullRow() {
 
                 var string = "<div class='container'>";
@@ -116,6 +121,7 @@
                 return string;
             }
 
+            //Middle of Zeros
             function printHalfRow() {
 
                 var string = "<div class='container'>";

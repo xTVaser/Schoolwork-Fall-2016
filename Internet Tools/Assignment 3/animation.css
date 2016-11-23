@@ -14,6 +14,12 @@ body {
 .counter p {
 
     margin: 0;
+    border-radius: 50px;
+    border: solid 3px black;
+    animation-name: textcounter;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 .wrapper {
@@ -69,7 +75,7 @@ body {
     animation-timing-function: ease-in-out;
     animation-direction: normal;
     animation-iteration-count: 1;
-    background: #373C94;
+    background: #933c36;
     z-index: 2;
 }
 
@@ -81,7 +87,7 @@ body {
     animation-timing-function: ease-in-out;
     animation-direction: normal;
     animation-iteration-count: 1;
-    background: #373C94;
+    background: #933c36;
     z-index: 4;
 }
 
@@ -91,13 +97,18 @@ body {
     animation-timing-function: ease-in-out;
     animation-direction: normal;
     animation-iteration-count: 1;
-    background: #5287A5;
+    background: #a55752;
     z-index: 5;
 }
 
 .back {
+    animation-name: back;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-iteration-count: 1;
     transform: translateZ(-25px);
-    background: #5287A5;
+    background: #a55752;
     z-index: 3;
 }
 
@@ -109,7 +120,7 @@ body {
     animation-timing-function: ease-in-out;
     animation-direction: normal;
     animation-iteration-count: 1;
-    background: #81C8A8;
+    background: #c6a57f;
     z-index: 6;
 }
 
@@ -121,22 +132,41 @@ body {
     animation-timing-function: ease-in-out;
     animation-direction: normal;
     animation-iteration-count: 1;
-    background: #81C8A8;
+    background: #c6a57f;
     z-index: 1;
+}
+
+@keyframes textcounter {
+    0% {
+        border-radius: 0px;
+        font-size: 0em;
+    }
+}
+
+@keyframes back {
+    0% {
+        background: #000;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
 }
 
 @keyframes left {
     0% {
+        background: #000;
         width: 50px;
         opacity: 0;
     }
-    100% {
+    10% {
         opacity: 1;
     }
 }
 
 @keyframes right {
     0% {
+        background: #000;
         width: 50px;
         opacity: 0;
     }
@@ -147,6 +177,7 @@ body {
 
 @keyframes bottom {
     0% {
+        background: #000;
         width: 50px;
         opacity: 0;
     }
@@ -158,6 +189,7 @@ body {
 
 @keyframes top {
     0% {
+        background: #000;
         height: 50px;
         opacity: 0;
     }
@@ -169,6 +201,7 @@ body {
 
 @keyframes front {
     0% {
+        background: #000;
         opacity: 0;
         transform: translateZ(25px);
     }
