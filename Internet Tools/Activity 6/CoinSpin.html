@@ -1,0 +1,126 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spin the coins</title>
+	<style>
+		div {
+			background-color: gold;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			border: 2px black;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font: bold 24px Arial;
+		}
+
+		#coin4 {
+
+			animation: memes 2s linear 0s infinite alternate;
+			/*
+			animation-name: memes;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+			*/
+		}
+
+
+		@keyframes memes {
+			0% {
+				transform: scale(0.85,0.85);
+			}
+
+			100% {
+				transform: scale(1.15, 1.15);
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="coin1"><img src="http://pngimg.com/upload/glasses_PNG49.png" alt="" /></div>
+	<p></p>
+	<div id="coin2"><img src="http://www.clipartkid.com/images/175/insect-cartoon-free-cliparts-that-you-can-download-to-you-computer-sMKqI4-clipart.png" alt="" /></div>
+	<p></p>
+	<div id="coin3"><img src="http://pngimg.com/upload/glasses_PNG49.png" alt="" /></div>
+	<p></p>
+	<div id="coin4"><img src="http://www.clipartkid.com/images/175/insect-cartoon-free-cliparts-that-you-can-download-to-you-computer-sMKqI4-clipart.png" alt="" /></div>
+	<script>
+		var c1 = document.getElementById("coin1");
+		var c2 = document.getElementById("coin2");
+		var c3 = document.getElementById("coin3");
+		var c4 = document.getElementById("coin4");
+
+		var intervalIdC1 = 0;
+		var c1Angle = 0;
+
+		var intervalIdC2 = 0;
+		var c2Angle = 0;
+
+		var intervalIdC3 = 0;
+		var c3Angle = 0;
+
+		c1.addEventListener("click", function(e) {
+			clearInterval(intervalIdC1);
+			intervalidIdC1 = setInterval("rotateXY()", 10);
+		});
+
+		c2.addEventListener("click", function(e) {
+			clearInterval(intervalIdC2);
+			intervalidIdC2 = setInterval("rotateXAxis()", 10);
+		});
+
+		c3.addEventListener("click", function(e) {
+			clearInterval(intervalIdC3);
+			intervalidIdC3 = setInterval("rotateYAxis()", 10);
+		});
+
+
+		function rotateXY() {
+
+			c1Angle = c1Angle + 1;
+			c1.style.transform = "rotate(" + c1Angle + "deg)";
+			if (c1Angle == 180 || c1Angle == 360) {
+
+				clearInterval(intervalIdC1);
+				if (c1Angle == 360) {
+					c1Angle = 0;
+				}
+			}
+		}
+
+		function rotateXAxis() {
+
+			c2Angle = c2Angle + 1;
+			c2.style.transform = "rotateX(" + c2Angle + "deg)";
+			if (c2Angle == 180 || c2Angle == 360) {
+
+				clearInterval(intervalIdC2);
+				if (c2Angle == 360) {
+					c2Angle = 0;
+				}
+			}
+		}
+
+		function rotateYAxis() {
+
+			c3Angle = c3Angle + 1;
+			c3.style.transform = "rotateY(" + c3Angle + "deg)";
+			if (c3Angle == 180 || c3Angle == 360) {
+
+				clearInterval(intervalIdC2);
+				if (c3Angle == 360) {
+					c3Angle = 0;
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
